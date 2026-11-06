@@ -1,0 +1,510 @@
+digunakan,  dan metode  untuk menghitung  jarak tempuh  pengiriman.  
+pada  proses  pengelolaan  pengiriman,  penentuan  tarif, pihak-pihak  yang  terlibat, data  yang  
+digunakan  untuk menjelaskan  kondisi sistem  saat ini. Oleh  karena  itu, bab ini berkonsentrasi  
+menentukan   jenis truk yang  digunakan,  jadwal  pengiriman,  dan tarif. Hasil wawancara  
+tarif dan pengiriman.  Menurut  sifat barang  dan jarak tempuh  pengiriman,  manajemen  
+bagian  komersial  dan pimpinan  perusahaan,  bertanggung  jawab  atas seluruh proses  pengaturan  
+   Hasil wawancara  dengan  direktur  PT  X menunjukkan  bahwa  manajemen,   khususnya  
+dari proses  pengelolaan  pengiriman.  
+jumlah  dan ukuran  yang  besar. Oleh  karena  itu, pemilihan  jenis truk merupakan  bagian  penting  
+diangkut  pada  armada  tersebut  menunjukkan  bahwa  PT  X dapat mengangkut   barang  dalam  
+mengangkut   barang  dari lokasi  pengambilan  menuju  lokasi  tujuan  pelanggan.  Muatan  yang  
+lokasi  tujuan. Gambar  3.1 menunjukkan  salah satu armada  truk yang  digunakan  PT  X untuk 
+mulai dari menerima  permintaan  pengiriman  dari pelanggan  hingga  mengirimkan  barang  ke 
+transportasi  dan pengiriman  truk di PT  X terdiri dari beberapa  langkah  yang  saling  berkaitan,  
+menggunakan   armada  truk untuk menyediakan  layanan  pengiriman  barang.  Proses  pengelolaan  
+Salah satu cara  utama  PT  X menjalankan  operasi pengiriman  adalah  dengan  
+ 
+3.1 Analisis Sistem Saat Ini  
+ 
+pengiriman  truk tanpa mempertimbangkan    kondisi lalu lintas. 
+Sesuai  dengan  ruang lingkup  penelitian, analisis  ini difokuskan  pada  proses  operasional  
+bab ini juga  menganalisis  kebutuhan  sistem  yang  diperlukan  sebagai  dasar perancangan  sistem. 
+proses  bisnis  yang  berkaitan  dengan  perhitungan  tarif dan penentuan  rute pengiriman.  Selain  itu, 
+membahas   analisis  kondisi sistem  saat ini. Ini juga  membahas   masalah  yang  dihadapi  dalam  
+   Berdasarkan  informasi  yang  diperoleh  dari wawancara  dengan  Direktur  PT  X,  bab ini 
+ANALISIS SISTEM  
+BAB 3  
+----------------Page (0) Break----------------
+pengiriman  selesai dilakukan.  
+● Bagian  Keuangan:  Mengelola  proses  penagihan  (billing) setelah seluruh rangkaian  
+instruksi dari bagian  komersial.  
+● Bagian  Operasional:   Mengatur  teknis  armada  dan jadwal  keberangkatan  berdasarkan  
+dokumen  kesepakatan  awal. 
+● Bagian  Marketing:   Bertugas  menerima  permintaan  dari pelanggan  serta mengelola  
+yang  akan  dilalui. 
+merangkum  data  pengiriman,  serta menentukan   komponen   biaya operasional  dan rute 
+● Bagian  Komersial:  Bertanggung  jawab  penuh  dalam  melakukan  perhitungan  biaya,  
+persetujuan  akhir terhadap  tarif pengiriman  yang  telah disusun.  
+● Pimpinan   Perusahaan   (Dir ektur):  Memiliki  otoritas  tertinggi dalam  memberikan   
+kebijakan  perusahaan.  Bagian-bagian  yang  terlibat secara  langsung  meliputi: 
+organisasi  yang  terlibat difokuskan  pada  pihak manajemen  untuk menjaga  otoritas  dan validitas 
+terstruktur di bawah  kepemimpinan   Direktur . Dalam  konteks  penentuan  tarif dan rute, struktur  
+   Operasional  pengiriman  di PT  X dijalankan  melalui  koordinasi  antar bagian  yang  
+3.1.1 Gambaran   Umum   Pr oses  Pengelolaan  Pengiriman   
+ 
+Gambar   3.1 Armada  truk yang  digunakan  PT  X dalam  kegiatan  pengiriman  barang  
+ 
+----------------Page (1) Break----------------
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+oleh  perusahaan  
+ditunjukkan  pada  Gambar  3.2, yang  menunjukkan  contoh  kesepakatan  pengiriman  yang  dibuat  
+dasar hukum  dan operasional  sebelum  pengiriman  dilakukan.  Contoh  kesepakatan  ini 
+kesepakatan  pengiriman  yang  ditandatangani  oleh  kedua  belah pihak,  yang  berfungsi  sebagai  
+penawaran  disetujui,  pelanggan  secara  resmi menyatakan   persetujuan  melalui  dokumen  
+penawaran  pengiriman  yang  mencakup  ruang lingkup  layanan  serta estimasi  biaya.  Setelah 
+pelanggan.  Setelah menerima  permintaan  tersebut, perusahaan  akan  menyusun  dan memberikan   
+   Di  PT  X,  proses  pengiriman  dimulai  dengan  adanya  permintaan  pengiriman  dari 
+memiliki  otoritas  untuk menentukan   atau  mengubah   tarif dan rute pengiriman  secara  mandiri  
+Pemisahan  fungsi  ini memastikan   bahwa  tidak ada karyawan  di luar struktur  manajemen  yang  
+----------------Page (2) Break----------------
+sistematis  untuk mendukung  kegiatan  operasional.  Alur  dokumen  dimulai  dari Bagian  Marketing  
+Selain  pengaturan  teknis  armada,  perusahaan  juga  menjalankan  alur dokumentasi  yang  
+ 
+rekanan  guna  memastikan   layanan  kepada  pelanggan  tetap terpenuhi.  
+semua,  PT  X membuka  kemungkinan  untuk melakukan  penyewaan  unit armada  dari perusahaan  
+operasional.  Namun,  apabila seluruh unit milik perusahaan  sedang  beroperasi  atau  terpakai  
+truk yang  sesuai  sangat  krusial untuk menjamin  keamanan  muatan  dan efisiensi biaya 
+lowbed  trailer, 10  unit sliding trailer, 3 unit multiaxle,  dan 6 unit lowbed  trailer. Pemilihan  jenis 
+yang  tepat. Saat  ini total armada  yang  dimiliki  PT  X,  terdiri dari 40  unit flatbed 40  feet, 10  unit 
+Informasi  tersebut  menjadi  dasar utama  bagi  bagian  operasional  untuk menentukan   jenis truk 
+pengiriman,  seperti tujuan  pengiriman,  jenis barang,  dimensi,  jumlah,  dan berat muatan.  
+Setelah mendapatkan  persetujuan,  perusahaan  mengumpulkan   informasi  tentang 
+ 
+Gambar   3.2 Contoh  dokumen  persetujuan  pengiriman  antara  PT  X dan customer  
+ 
+----------------Page (3) Break----------------
+pengemudi,  biaya tol, bahan  bakar, hingga  biaya tambahan  lainnya secara  lebih terukur. 
+telah ditetapkan  di awal, manajemen  dapat mengidentifikasi  biaya operasional  seperti uang  saku  
+untuk mengantisipasi  pengeluaran  tidak terduga  di lapangan.  Dengan  tersedianya  anggaran  yang  
+awal  (budgeting).  Melalui  metode  ini, perusahaan  menyiapkan   dana  darurat atau  budget  darurat 
+menentukan   komponen   biaya yang  mungkin  timbul  dengan  cara  melakukan  penganggaran   di 
+bagian  komersial,  dengan  persetujuan  pimpinan  perusahaan.  Dalam  proses  ini, bagian  komersial  
+   Penentuan  tarif pengiriman  truk di PT  X dilakukan  oleh  pihak manajemen,   khususnya  
+3.1.2 Alur  Penentuan  Tarif Pengiriman   Truk 
+ 
+Gambar   3.3 Proses  keberangkatan  truk untuk pengiriman  barang  ke lokasi  tujuan  
+ 
+ 
+sesuai  dengan  rencana  pengiriman  yang  telah disepakati.  
+truk menuju  lokasi  tujuan, yang  menunjukkan  truk PT  X dalam  kondisi siap membawa  muatan  
+truk diberangkatkan   ke lokasi  tujuan. Gambar  3.3 menunjukkan  proses  keberangkatan  armada  
+telah siap, dan pada  hari pelaksanaan,  konfirmasi  ulang dilakukan  kepada  pelanggan  sebelum  
+sebelum  jadwal  keberangkatan,  perusahaan  memastikan   pengawasan   dan pengaturan  perjalanan  
+Keuangan  untuk proses  penagihan  (billing) setelah pengiriman  selesai dilakukan.  Satu  hari 
+Operasional  untuk pengaturan  teknis  serta keberangkatan  armada,  dan diakhiri  di Bagian  
+yang  menerima  permintaan  dan kesepakatan  dari pelanggan,  kemudian  diteruskan  ke Bagian  
+----------------Page (4) Break----------------
+ 
+ 
+ 
+perusahaan  menghitung  secara  manual  seluruh komponen   biaya tersebut. 
+biaya tambal  ban,  dan biaya buruh  lashing di truk. Sebelum  menetapkan   tarif kepada  pelanggan,  
+perusahaan  juga  memperhitungkan   biaya tambahan  seperti uang  hadir atau  absen pengemudi,  
+yang  berdampak  langsung  pada  biaya pengiriman.  Selain  komponen   biaya utama  tersebut, 
+aktivitas lashing yang  dilakukan  oleh  pengemudi  dan helper  memerlukan   tenaga  kerja tambahan,  
+operasional  pengemudi  dan asisten,  seperti pengamanan   dan Gambar  3.4 menunjukkan  bahwa  
+berpengaruh  langsung  terhadap  pengeluaran  BBM  dan biaya operasional  lainnya.  Aktivitas  
+serta gaji asisten.  Jarak tempuh  pengiriman  merupakan  bagian  penting  dari tarif karena  
+seperti konsumsi  BBM,  biaya tol, biaya pelabuhan,  biaya masuk  lokasi  tertentu, gaji pengemudi,  
+Dalam  menghitung  tarif tersebut, PT  X menggunakan   berbagai  data  dan informasi  utama  
+dan anggaran  darurat tersebut. 
+perusahaan  akan  menghitung  margin keuntungan  setelah mengakumulasi   seluruh estimasi  biaya 
+biaya pengiriman.  Untuk  menentukan   tarif pengiriman  akhir yang  ditawarkan  kepada  pelanggan,  
+seluruh komponen   biaya yang  telah diperkirakan  ini digabungkan  untuk menghasilkan   total 
+bahan  bakar minyak  (BBM)  juga  dimasukkan   ke dalam  perhitungan  tersebut. Selanjutnya,  
+pengemudi  yang  dianggarkan  sebesar Rp350.000  per perjalanan.  Selain  itu, biaya tol dan biaya 
+Rp50.000,  biaya tenaga  kerja tambahan  atau  kuli pelabuhan  sebesar Rp50.000,  serta uang  saku  
+dengan  menetapkan   plafon  anggaran  tertentu, seperti biaya tambal  ban yang  diperkirakan  sebesar 
+berdasarkan  standar pengeluaran  di lapangan.  Bagian  komersial  melakukan  perkiraan  biaya 
+   Biaya  operasional  yang  diperhitungkan  mencakup  berbagai  komponen   yang  diestimasi  
+----------------Page (5) Break----------------
+pengiriman  beserta jarak dan estimasi  waktu  tempuh  sebagai  dasar perhitungan.  
+jarak pengiriman  alamat-ke-alamat   ini ditunjukkan  pada  Gambar  3.5, yang  memperlihatkan   rute 
+uang  saku  pengemudi  (sangu),  dan biaya tol. Contoh  penggunaan   Google  Maps  dalam  penentuan  
+sebagai  dasar perkiraan  untuk menentukan   komponen   biaya lainnya,  seperti konsumsi  BBM,  
+Google  Maps  untuk memperoleh   estimasi  jarak tempuh.  Jarak tersebut  kemudian  digunakan  
+memasukkan   alamat  lengkap  lokasi  muat  di Surabaya  dan alamat  bongkar  di Madiun  ke dalam  
+   Sebagai  contoh  riil, pada  pengiriman  dengan  rute Surabaya  menuju  Madiun,  manajemen  
+(destination).  
+berdasarkan   titik alamat  pengambilan   (origin)  hingga  ke  titik alamat  tujuan  
+wawancara   dengan  Direktur  PT  X,  penentuan  jarak  ini dilakukan  secara  spesifik  
+serta rute  pengiriman   yang  dapat  dilalui oleh  armada  truk. Berdasarkan   hasil 
+digunakan  untuk  memper  oleh  informasi  jarak  tempuh,  estimasi  waktu  perjalanan,  
+dilakukan  dengan  menggunakan   Google  Maps  sebagai  acuan  utama.  Google  Maps  
+   Penentuan  jarak  tempuh  pengiriman   dari  titik asal  ke  titik tujuan  di PT  X 
+3.1.3 Penentuan  Jarak  Tempuh  Pengiriman    
+ 
+ 
+Gambar   3.4 Aktivitas  operasional  pengemudi  dan helper  dalam  proses  pengiriman  barang  
+----------------Page (6) Break----------------
+Kilometer  yang  statis dan mengalikannya  dengan  jarak rute yang  optimal,  manajemen  dapat 
+tarif pengiriman  truk secara  keseluruhan.  Dengan  menggunakan   parameter  Tarif Dasar  per 
+Metode  standarisasi  perhitungan  ini merupakan  elemen  krusial dalam  menyusun  struktur  
+ 
+kapasitas  mesinnya.  
+truk memiliki  nilai Tarif Dasar  per Kilometer  yang  berbeda-beda  sesuai  dengan  spesifikasi dan 
+distandarisasi  ke dalam  satu metrik  tunggal,  yaitu Tarif Dasar  per Kilometer . Setiap  jenis armada  
+konsumsi  BBM  rata-rata, penyusutan  ban,  oli, dan perawatan  rutin—telah  diakumulasikan   dan 
+secara  manual  per liter. Seluruh  variabel  biaya operasional  dasar armada—termasuk   proyeksi  
+   Setelah data  jarak diperoleh,  manajemen  tidak lagi menghitung  konsumsi  bahan  bakar 
+ 
+Gambar   3.5 Contoh  penggunaan   Google  Maps  sebagai  acuan  penentuan  jarak pengiriman  
+ 
+----------------Page (7) Break----------------
+lain: 
+ini menyebabkan   timbulnya  beberapa  dampak  negatif pada  aspek operasional  perusahaan,  antara  
+Ketergantungan  yang  tinggi  pada  metode  perhitungan  manual  dan subjektivitas  manusia  
+riwayat  transaksi lama  yang  tidak terdokumentasi   dengan  baik. 
+berbeda  untuk jarak tempuh  yang  sama,  karena  hanya  didasarkan  pada  perkiraan  kas kasar atau  
+yang  berbeda  di bagian  komersial  dapat memberikan   estimasi  biaya operasional  dasar yang  
+konsumsi  BBM,  alokasi biaya tol, dan uang  saku  pengemudi)  menjadi  sangat  subjektif.  Personel  
+terintegrasi  secara  sistematis  membuat  penetapan  plafon  biaya operasional  (seperti  estimasi  
+komersial  melakukan  perhitungan  manual,  tidak adanya  acuan  Tarif Dasar  per Kilometer  yang  
+Surabaya  menuju  beberapa  daerah  seperti Tuban, Cepu,  Bojonegoro,  dan Subang.  Ketika  bagian  
+Sebagai  contoh  riil di lapangan,  kendala  ini sering  terjadi pada  pengiriman  dengan  rute 
+personel  di bagian  komersial  saat melakukan  penganggaran   awal  (budgeting ). 
+biaya yang  masih  bergantung  pada  ingatan,  catatan fisik yang  tidak terpusat, serta subjektivitas  
+dan jenis armada  yang  digunakan  sama.  Kendala  ini utamanya  disebabkan  oleh  proses  penentuan  
+pengiriman  sering  kali mengalami  perbedaan  dan ketidakkonsistenan,  meskipun  rute pengiriman  
+   Hasil wawancara  dengan  manajemen  PT  X menunjukkan  bahwa  hasil perhitungan  tarif 
+3.2.1 Permasalahan   Perbedaan  Perhitungan  Tarif Pengiriman   
+ 
+pengiriman,  dan efeknya  terhadap  operasi perusahaan  dan keputusan  manajemen.   
+berkonsentrasi  pada  masalah  dalam  proses  perhitungan  tarif pengiriman,  penentuan  rute 
+dalam  penentuan  tarif dan pengelolaan  pengiriman  menunjukkan  bahwa  analisis  ini 
+PT  X yang  saat ini beroperasi.  Hasil wawancara  dengan  manajemen  PT  X yang  langsung  terlibat 
+   Sub Bab ini membahas   masalah  yang  terjadi dengan  sistem  pengelolaan  pengiriman  truk 
+  
+3.2 Analisis Permasalahan Sistem
+ 
+ 
+ 
+ 
+dan meminimalkan   kesalahan  hitung  akibat  fluktuasi operasional  di lapangan.  
+memberikan   penawaran  harga (estimasi biaya)  kepada  pelanggan  dengan  sangat  cepat,  konsisten,  
+----------------Page (8) Break----------------
+dikembangkan   dirancang  untuk mengatasi  dampak  tersebut  melalui  beberapa  mekanisme:   
+Menanggapi    kendala   situasi  lapangan   (seperti   masalah   sosial),  sistem   yang  
+harga yang  konsisten,  yang  berpotensi  mempengaruhi   kinerja operasional  secara  keseluruhan.   
+pelaporan  sering  tertunda. Tidak  adanya  tarif yang  jelas membuat  perusahaan  kesulitan menjaga  
+   Selain  itu, perhitungan  manual  yang  menghabiskan   banyak  waktu  menyebabkan   
+lambat.  
+sebelum  menetapkan   harga pengiriman,  yang  mengakibatkan  waktu  respons  pelanggan  yang  
+proses  penentuan  tarif yang  lebih lama  karena  manajemen  perlu mengumpulkan   data  pendukung  
+mempengaruhi   efektivitas operasional  bisnis  PT  X.  Salah satu dampak  yang  dirasakan  adalah  
+   Metode  perhitungan  tarif dan penentuan  rute yang  saat ini digunakan  sangat  
+3.2.2 Dampak   Metode  Perhitungan  Tarif terhadap  Operasional  Perusahaan   
+ 
+operasional  tetap menjadi  sebuah  kalkulasi yang  objektif.  
+memiliki  sebuah  platform  terstandarisasi  yang  dapat secara  otomatis  mengunci  parameter  biaya 
+terhadap  kesalahan  manusia  (human  error ) dan keterlambatan  administratif,  karena  belum  
+Kondisi  tersebut  menunjukkan  bahwa  sistem  perhitungan  tarif saat ini sangat  rentan  
+merespons  permintaan  pengiriman.   
+ini berpotensi  menurunkan   tingkat kepuasan  pelanggan  karena  perusahaan  lambat  dalam  
+untuk menyampaikan   surat penawaran  tarif final kepada  pelanggan  menjadi  tertunda. Hal 
+operasional  yang  cepat,  pasti, dan akurat, waktu  yang  diperlukan  oleh  bagian  marketing  
+● Hambatan   Komunikasi   dengan  Pelanggan:   Akibat  sulitnya  melakukan  estimasi  biaya 
+berulang  demi  mengurangi  risiko salah hitung.  
+kalkulasi ulang dari awal, serta memvalidasi  jarak tempuh  melalui  Google  Maps  secara  
+karena  bagian  komersial  harus memeriksa  ulang catatan manual  terdahulu,  melakukan  
+● Waktu  Respons  yang  Lambat:  Proses  penentuan  tarif memerlukan   waktu  yang  lama  
+sangat  bergantung  pada  penilaian  subjektif personel  yang  menghitung  pada  hari itu.  
+harga dasar baseline  yang  digunakan  tidak dikunci  di dalam  suatu sistem, melainkan  
+yang  sama  dapat berubah-ubah   pada  waktu  yang  berbeda.  Hal ini terjadi karena  standar 
+● Ketidakkonsistenan    Tarif: Nilai penawaran  tarif pengiriman  untuk rute dan jenis truk 
+ 
+----------------Page (9) Break----------------
+ 
+strategis dalam  operasional  pengiriman.  
+administrasi  menjadi  lebih panjang  dan berpotensi  memperlambat   pengambilan  keputusan  
+pimpinan.  Ketergantungan  yang  tinggi  terhadap  persetujuan  pimpinan  menyebabkan   proses  
+setiap  penentuan  tarif dan evaluasi  biaya harus mendapatkan  persetujuan  langsung  dari 
+   Selain  itu, proses  pengambilan  keputusan  manajemen  menjadi  kurang  fleksibel karena  
+diperiksa  kembali.   
+setiap  transaksi pengiriman,  komponen   biaya yang  digunakan  dalam  perhitungan  tarif harus 
+terstruktur dengan  baik, bidang  keuangan  menghadapi   kesulitan dalam  menyusun  laporan.  Untuk  
+evaluasi  biaya dan pengambilan  keputusan  manajemen.   Karena  data  biaya pengiriman  tidak 
+Sistem  atau  metode  yang  digunakan  saat ini juga  menimbulkan   kendala  dalam  proses  
+3.2.3 Permasalahan   Evaluasi  Biaya  dan Pengambilan   Keputusan  Manajemen   
+    
+ 
+strategis secara  lebih cepat dan objektif  meski  di tengah  situasi lapangan  yang  dinamis.  
+tarif sebagai  bahan  evaluasi  manajemen,   sehingga  pimpinan  dapat mengambil  keputusan  
+● Percepatan  Rantai  Pengambilan   Keputusan:   Sistem  menyimpan  riwayat  perhitungan  
+dasar, sehingga  tarif akhir tetap dapat diproses  dalam  waktu  singkat.   
+tambahan  tersebut  secara  fleksibel ke dalam  sistem  yang  sudah  memiliki  standar harga 
+atau  penambahan   buruh  lashing ), manajemen  dapat memasukkan   parameter  biaya 
+mendadak  di lapangan  (seperti  adanya  komponen   biaya tol tambahan,  biaya tambal  ban,  
+● Fleksibilitas  Parameter  Biaya  Tambahan:   Jika terjadi kendala  atau  kebutuhan  
+mempercepat  proses  internal  dalam  menghadapi   situasi darurat.  
+manajemen  tidak perlu menghitung  ulang seluruh elemen  dari awal, sehingga  
+● Efisiensi Alur  Administrasi:  Dengan  adanya  tarif standar yang  tersedia  secara  instan, 
+operasional  tetap sebagai  standar awal. 
+manual  dengan  menyediakan  tarif otomatis  berdasarkan  rute terpendek  dan biaya 
+● Otomatisasi  Perhitungan  Dasar  (Baseline ): Sistem  memangkas  waktu  perhitungan  
+----------------Page (10) Break----------------
+peta, lengkap  dengan  urutan  titik lokasi  yang  harus dilalui oleh  kurir. Dengan  adanya  tampilan  
+pada  Gambar  3.8. Halaman  ini menyajikan  rute pengiriman  dalam  bentuk  jalur yang  jelas pada  
+Hasil akhir dari proses  optimasi  rute ditampilkan  pada  halaman  kurir seperti yang  terlihat 
+dengan  jarak tempuh  yang  lebih optimal  dibandingkan  rute awal. 
+Pada  tahap ini, algoritma  Simple  Hill Climbing  digunakan  untuk menentukan   urutan  pengiriman  
+melakukan  perhitungan  dan pengurutan  rute pengiriman  berdasarkan  beberapa  titik lokasi  tujuan. 
+Proses  pencarian  rute pengiriman  ditampilkan  pada  Gambar  3.7, di mana  sistem  
+awal  pengiriman  berdasarkan  data  lokasi  yang  telah dimasukkan.  
+peta  digital serta informasi  titik lokasi  pengiriman.  Pada  halaman  ini, sistem  menampilkan  jalur 
+ditunjukkan  pada  Gambar  3.6, aplikasi  menampilkan  halaman  pencarian  rute pesanan  yang  berisi 
+dengan  menyediakan  fitur pencarian  dan visualisasi rute pengiriman  yang  optimal.  Seperti yang  
+Aplikasi  kurir berbasis  web  ini dirancang  untuk membantu   proses  pengiriman  barang  
+Climbing(Malik   et al., 2023)  
+3.3.1  Aplikasi   Kurir   Berbasis   Web   Menggunakan    Algoritma   Simple   Hill 
+ 
+sisi manajerial  dan administratif.  
+manajemen  transportasi  berbasis  web  yang  mendukung  pengelolaan  operasional  pengiriman  dari 
+Sementara  itu, Track-POD  dan Slidescope  TMS  digunakan  sebagai  pembanding   sistem  
+menentukan   rute pengiriman  yang  lebih optimal  berdasarkan  beberapa  titik lokasi  tujuan. 
+berbasis  web  dipilih karena  memiliki  fungsi  utama  yang  relevan,  yaitu membantu   kurir dalam  
+Transportation  Management   System,  serta Slidescope  TMS  (Demo  Web App).  Aplikasi  kurir 
+optimalisasi  rute pengiriman  menggunakan   algoritma  Simple  Hill Climbing  (SHC),  Track-POD  
+Sistem  yang  dijadikan  acuan  dalam  analisis  ini adalah  aplikasi  kurir berbasis  web  untuk 
+pengiriman  barang  pada  e-commerce.  
+efisien, dan sesuai  dengan  kebutuhan  pengguna,  khususnya  dalam  konteks  pengelolaan  dan 
+telah tersedia, sehingga  dapat dijadikan  acuan  dalam  pengembangan   sistem  yang  lebih efektif, 
+Analisis  ini bertujuan  untuk mengidentifikasi  kelebihan  dan keterbatasan  dari sistem-sistem  yang  
+sistem  yang  dikembangkan   memiliki  kesesuaian  dengan  kebutuhan  pengguna  di dunia nyata.  
+Analisis  sistem  sejenis dilakukan  sebagai  proses  benchmarking    untuk memastikan   bahwa  
+3.3 Analisis Sistem Sejenis 
+----------------Page (11) Break----------------
+Gambar  3.7 Fitur pencarian  rute 
+ 
+Gambar   3.6 Tampilan  aplikasi  pencarian  
+ 
+ 
+ 
+ 
+manual,  sehingga  proses  pengantaran  menjadi  lebih efisien. 
+ini, kurir dapat mengikuti  rute pengiriman  secara  langsung  tanpa harus menentukan   jalur secara  
+----------------Page (12) Break----------------
+ 
+tujuan  secara  visual. 
+digital yang  memungkinkan   pengguna  untuk memantau   jalur distribusi  dan titik-titik lokasi  
+waktu  keberangkatan.  Selain  itu, sistem  menampilkan  visualisasi rute pengiriman  pada  peta  
+telah dibuat  beserta informasi  terkait, seperti tanggal pengiriman,  pengemudi,  status rute, serta 
+halaman  Plan  & Track. Pada  halaman  ini, pengguna  dapat melihat  daftar  rute pengiriman  yang  
+Tampilan  utama  sistem  Track-POD  ditunjukkan  pada  Gambar  3.9, yang  memperlihatkan   
+pengiriman,  data  pesanan,  kendaraan,  serta pemantauan   jalur distribusi  berbasis  peta  digital. 
+dalam  lingkungan  logistik  dan distribusi  untuk membantu   perusahaan  dalam  mengatur  rute 
+serta pemantauan   aktivitas pengiriman  barang  secara  terintegrasi. Sistem  ini banyak  digunakan  
+transportasi  berbasis  web  yang  dirancang  untuk mendukung  proses  perencanaan,  pengelolaan,  
+   Track-POD   Transportation  Management   System  merupakan  sistem  manajemen  
+3.3.2 Track-POD   Transportation  Management   System  (https://www .track-pod.com  ) 
+Gambar  3.8 Rute  Aplikasi  kurir 
+ 
+----------------Page (13) Break----------------
+sistem  menampilkan  jalur pengiriman  yang  menghubungkan   beberapa  titik lokasi  tujuan  pada  
+Visualisasi  rute pengiriman  secara  lebih rinci ditunjukkan  pada  Gambar  3.11, di mana  
+Gambar   3.10  Form  input data  pesanan  pada  Track-POD  TMS  
+ 
+pengiriman  secara  terstruktur sebelum  pesanan  dialokasikan  ke dalam  rute distribusi. 
+serta detail barang  yang  dikirim.  Fitur ini memungkinkan   pengguna  untuk mengelola  data  
+pesanan  pengiriman,  meliputi  informasi  depot asal, data  klien, alamat  tujuan, waktu  layanan,  
+menunjukkan  halaman  New  Order  Details.  Halaman  ini digunakan  untuk memasukkan   data  
+Proses  pengelolaan  data  pesanan  pada  Track-POD  ditampilkan  pada  Gambar  3.10, yang  
+ 
+Gambar   3.9 Tampilan  halaman  Plan  & Track  pada  Track-POD  TMS  
+ 
+----------------Page (14) Break----------------
+ 
+Gambar   3.12  Halaman  manajemen  kendaraan  pada  Track-POD  TMS  
+ 
+perencanaan  rute dan alokasi armada  yang  sesuai  dengan  kebutuhan  pengiriman.  
+bertugas,  serta lokasi  depot awal. Fitur manajemen  kendaraan  ini berperan  dalam  mendukung  
+yang  digunakan  dalam  proses  pengiriman,  termasuk  kapasitas  kendaraan,  pengemudi  yang  
+ditunjukkan  pada  Gambar  3.12. Pada  halaman  ini, pengguna  dapat mengelola  data  kendaraan  
+Selain  itu, Track-POD  juga  menyediakan  fitur manajemen  kendaraan  seperti yang  
+ 
+Gambar   3.11 Visualisasi  rute pengiriman  berbasis  peta  pada  Track-POD  TMS  
+ 
+distribusi. 
+pengguna  dalam  memahami   cakupan  wilayah  pengiriman  serta pola  pergerakan  kendaraan  
+pengguna  dapat mengetahui  urutan  distribusi  barang  secara  jelas. Visualisasi  ini membantu   
+peta  digital. Setiap  titik lokasi  ditandai  dengan  simbol  dan nomor  urutan  kunjungan,  sehingga  
+----------------Page (15) Break----------------
+ 
+dari proses  administrasi  logistik. 
+Fitur ini berperan  dalam  mendukung  pencatatan  transaksi operasional  pengiriman  sebagai  bagian  
+memasukkan   informasi  pengirim,  penerima,  alamat  tujuan, serta detail barang  yang  dikirim.  
+3.14, yang  menunjukkan  halaman  input data  pesanan.  Pada  halaman  ini, pengguna  dapat 
+   Fitur pengelolaan  pesanan  pengiriman  pada  Slidescope  TMS  ditampilkan  pada  Gambar  
+ 
+Gambar   3.13  Tampilan  Dashboard  Slidescope  TMS  (Demo  Web App)  
+ 
+ 
+pusat pemantauan   administratif  terhadap  kegiatan  transportasi  yang  sedang  berlangsung.  
+pengiriman,  serta data  armada  yang  terdaftar di dalam  sistem. Dashboard  ini berfungsi  sebagai  
+dapat melihat  informasi  umum  terkait aktivitas transportasi, seperti jumlah  pesanan,  status 
+dashboar  d sistem  berisi ringkasan  data  operasional  pengiriman.  Pada  halaman  ini, pengguna  
+Tampilan  utama  Slidescope  TMS  ditunjukkan  pada  Gambar  3.13, yang  memperlihatkan   
+menampilkan  proses  optimasi  rute pengiriman  secara  visual  berbasis  peta  digital. 
+operasional  pengiriman,  seperti data  pesanan,  pelanggan,  dan armada  kendaraan,  tanpa 
+Transport  Management   System  (TMS).  Sistem  ini dirancang  untuk mendukung  pengelolaan  data  
+web  yang  disediakan  dalam  bentuk  demo  untuk memperkenalkan   fungsi  dasar dari sistem  
+Slidescope  TMS  (Demo  Web App)  merupakan  aplikasi  manajemen  transportasi  berbasis  
+/) 
+(https://slidescope.com/absolutely-fr   ee-transport-management-softwar    e-for-logistics
+3.3.3 Slidescope  TMS  (Demo  Web  App)   
+----------------Page (16) Break----------------
+berfungsi  sebagai  sarana  pemantauan   data  pengiriman  secara  administratif.  
+menampilkan  rincian biaya,  detail transaksi,  maupun  hasil perhitungan  otomatis.  Tampilan  ini 
+ditunjukkan  pada  Gambar  3.16. Halaman  ini menampilkan  informasi  umum  pengiriman,  tanpa 
+Selain  itu, Slidescope  TMS  juga  menyediakan  tampilan  daftar  pengiriman  seperti yang  
+    
+Gambar   3.15  Halaman  Manajemen  Armada  Kendaraan  
+ 
+ 
+armada  ini mendukung  perencanaan  operasional  pengiriman  dari sisi administratif.  
+transportasi, seperti identitas armada  dan status ketersediaan  kendaraan.  Fitur manajemen  
+3.15 . Halaman  ini digunakan  untuk menyimpan  dan memperbarui  informasi  kendaraan  
+   Pengelolaan  data  armada  kendaraan  pada  Slidescope  TMS  ditunjukkan  pada  Gambar   
+ 
+Gambar   3.14  Halaman  Input Data  Pesanan  Pengiriman  
+ 
+----------------Page (17) Break----------------
+          rute pengiriman  yang   pemantauan   rute dan  pengelolaan  data  
+Kelebihan  Utama    Mampu  menentukan    Mendukung       Mendukung   
+Pengiriman                 secara  rinci 
+Perhitungan  Biaya    Tidak  dijelaskan     Tidak  dijelaskan     Tidak  tersedia  
+Rute                    secara  eksplisit 
+Algoritma  Optimasi   Simple  Hill Climbing   Tidak  dijelaskan     Tidak  tersedia  
+Visualisasi  Rute     peta  digital)     peta  digital) 
+Perencanaan  &    Tersedia (berbasis   Tersedia (berbasis   Tidak  tersedia  
+secara  spesifik  
+Pengelolaan  Armada   Tidak  dijelaskan     Tersedia       Tersedia 
+Pengiriman  
+Pengelolaan  Data    Tersedia       Tersedia       Tersedia 
+kurir        pengiriman  barang    transportasi  
+pengiriman  untuk   pemantauan       administrasi  
+Fokus  Utama  Sistem   Optimasi  rute     Manajemen  dan    Manajemen  data  dan 
+Sistem         hasil penelitian     komersial       (demo ) 
+Platform  & Jenis   Aplikasi  berbasis  web  Aplikasi  berbasis  web  Aplikasi  berbasis  web  
+Climbing)  
+(Simple  Hill     Management   System  
+Berbasis  Web     Transportation     (Demo  Web App)  
+Aspek  Perbandingan    Aplikasi  Kurir    Track-POD       Slidescope  TMS  
+Tabel  3.2 Perbandingan   Sistem  Sejenis (Data Diolah  dari Berbagai  Sumber , 2026)  
+Gambar   3.16  Tampilan  Halaman  Daftar  Pengiriman  
+ 
+ 
+----------------Page (18) Break----------------
+biaya pengiriman  secara  terstruktur. Sistem  yang  dirancang  dalam  penelitian  ini memungkinkan   
+perhitungan  tarif pengiriman,  penentuan  rute berdasarkan  jarak optimal,  dan mengelola  data  
+Oleh  karena  itu, diperlukan  suatu sistem  yang  mampu  mengotomatisasi  proses  
+mekanisme  perhitungan  jalur terpendek  yang  dapat digunakan  untuk menghitung  biaya rutin. 
+kesulitan dalam  proses  evaluasi  dan pelaporan.  Selain  itu, Google  Maps  belum  memiliki  
+manajemen.   Ini dapat menyebabkan   hasil yang  berbeda,  keterlambatan  respons  pelanggan,  dan 
+penentuan  rute pengiriman  masih  sangat  bergantung  pada  perhitungan  manual  dan pengalaman   
+Permasalahan-permasalahan    tersebut  menunjukkan  bahwa  proses  perhitungan  tarif dan 
+manajemen  akibat  data  pengiriman  yang  belum  terstruktur dengan  baik  (Sub  Bab 3.2.3). 
+Bab 3.2.2), serta kesulitan dalam  melakukan  evaluasi  biaya dan pengambilan  keputusan  
+lamanya  proses  penentuan  tarif yang  berdampak  pada  efektivitas operasional  perusahaan  (Sub  
+ketidakkonsistenan   hasil perhitungan  tarif pengiriman  untuk rute yang  sama  (Sub  Bab 3.2.1), 
+di PT  X masih  memiliki  beberapa  kendala  utama.  Permasalahan   tersebut  meliputi  
+permasalahan   pada  Sub Bab 3.2, dapat disimpulkan  bahwa  sistem  pengelolaan  pengiriman  truk 
+Berdasarkan  hasil analisis  sistem  yang  berjalan  pada  Sub Bab 3.1 serta analisis  
+ 
+3.4 Analisis Kebutuhan Sistem  
+ 
+kebutuhan  sistem  di PT  X.  
+* Untuk  Analisis  keterbatasan  didasarkan  pada  hasil benchmarking   untuk mengidentifikasi  celah 
+Track-POD  dan portal  demo  Slidescope.  
+* Data  perbandingan  fitur diperoleh  dari pengamatan   langsung  pada  dokumentasi  resmi 
+Keterangan   :  
+rute                   transportasi  
+Penelitian       algoritma  optimasi    TMS  berbasis  peta    administrasi  
+Relevansi  terhadap    Pembanding       Pembanding   sistem   Pembanding   sistem  
+menyeluruh  
+transportasi  secara    terbuka        visualisasi peta  
+manajemen       dan algoritma  tidak  optimasi  rute dan 
+Keterbatasan  Sistem   Tidak  berfokus  pada   Bersifat  komersial    Tidak  menyediakan  
+terintegrasi       administratif  
+lebih optimal      operasional  secara    pengiriman  secara  
+----------------Page (19) Break----------------
+3.2.2)  
+sistematis  (Sub  Bab 
+metode  perhitungan  
+dan tidak menggunakan                    tujuan. 
+pengalaman   manajemen               satu titik asal ke satu titik 
+bergantung  pada        jarak      menentukan   rute terpendek  dari 
+pengiriman  masih     pengiriman  berbasis     algoritma  Dijkstra  untuk 
+Penentuan  rute    Sistem  optimalisasi  rute  Sistem  mengimplementasikan   
+3.2.1)  
+jalur terpendek  (Sub  Bab             perhitungan  biaya pengiriman.  
+mekanisme  perhitungan              perhitungan  graf sebagai  dasar 
+Google  Maps  tanpa                tujuan  menggunakan   
+hanya  mengandalkan       terpendek       terpendek  antara  titik asal dan 
+Penentuan  jarak tempuh   Sistem  penentuan  jarak   Sistem  menghitung  jarak 
+(Sub  Bab 3.2.2)                  operasional  lainnya.  
+dilakukan  secara  manual                pengemudi,  dan biaya 
+lama  karena  perhitungan              berdasarkan  jarak tempuh,  biaya 
+yang  memerlukan   waktu      otomatis      tarif pengiriman  secara  otomatis  
+Proses  penentuan  tarif  Sistem  perhitungan  tarif  Sistem  melakukan  kalkulasi 
+3.2.1)   
+penganggaran   (Sub  Bab 
+subjektivitas                      sistem. 
+perhitungan  manual  dan              ditentukan  sebagai  parameter  
+yang  sama  akibat                operasional  tetap yang  telah 
+pengiriman  untuk rute    terstandarisasi     berdasarkan  komponen   biaya 
+perhitungan  tarif     pengiriman  yang     pengiriman  secara  otomatis  
+Ketidakkonsistenan   hasil  Sistem  perhitungan  tarif  Sistem  menghitung  tarif dasar 
+(Sub  Bab  3.2)                    Sistem   
+Permasalahan   Sistem    Kebutuhan   Sistem    Solusi  yang  Diberikan  oleh  
+Tabel  3.3 Analisis  Kebutuhan  Sistem  Pengiriman  (Data Diolah  dari Hasil Wawancara,  2025)  
+ 
+ 
+ 
+ 
+ 
+ 
+menyimpan  data  pengirim  yang  sudah  ada.  
+perhitungan  tarif pengiriman  berbasis  jarak optimal,  mengelola  komponen   biaya operasional,  dan 
+----------------Page (20) Break----------------
+ 
+ 
+perancangan  sistem  pada  bab berikutnya.  
+Selanjutnya,  hasil analisis  kebutuhan  sistem  ini digunakan  sebagai  acuan  utama  dalam  
+dan efisien, serta menyediakan  informasi  yang  terstruktur sebagai  dasar evaluasi  operasional.  
+diharapkan  mampu  menghasilkan   perhitungan  tarif pengiriman  yang  lebih konsisten,  objektif, 
+data  pengiriman  dalam  basis data  terpusat. Dengan  pendekatan  tersebut, sistem  yang  dirancang  
+penentuan  jarak dan rute terpendek  menggunakan   algoritma,  serta pengelolaan  dan penyimpanan  
+3.2, dan diterjemahkan  ke dalam  bentuk  fungsi  sistem  seperti perhitungan  tarif otomatis,  
+sistem  dirumuskan  sebagai  respon  terhadap  permasalahan   yang  telah diidentifikasi  pada  Sub Bab 
+yang  dapat diimplementasikan   secara  langsung  melalui  mekanisme  program.  Setiap  kebutuhan  
+bahwa  sistem  yang  dikembangkan   dalam  penelitian  ini difokuskan  pada  kebutuhan-kebutuhan   
+   Berdasarkan  hasil analisis  kebutuhan  sistem  yang  telah dilakukan,  dapat disimpulkan  
+(Sumber:  Hasil Wawancara  Direktur  PT  X,  2025)  
+ 
+3.2.3).  
+secara  terpusat  (Sub  Bab 
+tidak terdokumentasi   
+dan riwayat  transaksi                dalam  bentuk  riwayat.   
+karena  komponen   biaya    analisis  biaya      untuk ditampilkan  kembali  
+biaya sulit dilakukan     untuk kemudahan    pengiriman  ke dalam  basis data  
+keuangan  dan evaluasi    riwayat  pengiriman    perhitungan  tarif akhir dan rute 
+Penyusunan   laporan    Sistem  penyimpanan   Sistem  menyimpan  data  histori 
+biaya (Sub  Bab 3.2.3)  
+menyulitkan  evaluasi                  data  terpusat. 
+terpusat  sehingga                biaya pengiriman  dalam  basis 
+terdokumentasi   secara      pengiriman      pembaruan  data  komponen   
+pengiriman  tidak     komponen   biaya   penyimpanan,   pengelolaan,  dan 
+Data  komponen   biaya   Sistem  pengelolaan     Sistem  menyediakan  fitur 
+----------------Page (21) Break----------------

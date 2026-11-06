@@ -1,0 +1,109 @@
+digunakan  pada  proses  pemesanan,  perencanaan  pengiriman,  dan perhitungan  tarif pengiriman.  
+sebelum  disimpan  ke dalam  basis data. Setelah data  tersimpan,  informasi  tersebut  dapat 
+kebutuhan  operasional  perusahaan.  Setiap  data  yang  berhasil  diinput akan  divalidasi  oleh  sistem  
+Administrator  dapat melakukan  proses  tambah,  ubah, maupun  hapus  data  sesuai  
+pengemudi,  dan komponen   biaya operasional.  
+terdiri atas data  pelanggan,  data  barang,  data  lokasi, data  armada  truk, data  pengemudi,  jadwal  
+sistem. Setelah berhasil  masuk  ke sistem, administrator  dapat mengakses  menu  data  master  yang  
+Proses  pengelolaan  data  master  dimulai  ketika  administrator  melakukan  login ke dalam  
+4.5.1  Pr oses  Pengelolaan   Data  Master    
+monitoring  pengiriman  barang  hingga  tujuan  akhir.  
+pengiriman,  optimasi  rute menggunakan   algoritma  Dijkstra, perhitungan  tarif pengiriman,  serta 
+Manajemen  Transportasi.  Proses  yang  dirancang  mencakup  pengelolaan  data  master , pemesanan  
+Pada  subbab  ini dijelaskan  perancangan  alur proses  yang  terdapat  pada  Sistem  
+4.2.  Desain  Pr oses
+ 
+----------------Page (0) Break----------------
+pesan kesalahan  dan meminta  operator  untuk melakukan  perbaikan.  Namun,  jika seluruh data  
+Apabila  terdapat  data  yang  belum  lengkap  atau  tidak sesuai, sistem  akan  menampilkan  
+validasi  guna  memastikan   semua  data  yang  dibutuhkan  telah terisi dengan  lengkap  dan benar. 
+data  tersebut  dimasukkan,  sistem  akan  menerima  informasi  tersebut  untuk dilakukan  proses  
+kedatangan,  serta menambahkan   detail dan jumlah  barang  yang  akan  dikirim.  Setelah seluruh 
+pemesanan  yang  meliputi  tanggal pemesanan,  lokasi  tujuan  pengiriman,  estimasi  waktu  
+sistem  lalu memilih  pelanggan  yang  bersangkutan.  Selanjutnya,  operator  menginput  data  
+Proses  pemesanan  pengiriman  dimulai  ketika  operator  mengakses  menu  order pada  
+4.5.2  Pr oses  Pemesanan   Pengiriman     
+ 
+ 
+ 
+ 
+ 
+Gambar   4.6 Pr oses  Pengelolaan   Data  Master   
+----------------Page (1) Break----------------
+tersebut, operator  kemudian  menentukan   armada  truk dan pengemudi  yang  akan  dialokasikan,  
+lokasi  tujuan, jenis barang,  serta total berat barang  yang  akan  dikirim.  Berdasarkan  informasi  
+terpilih, sistem  akan  menampilkan  rincian informasi  pesanan  yang  meliputi  data  pelanggan,  
+sistem  dan memilih  data  order yang  telah dibuat  sebelumnya  untuk diproses. Setelah data  
+Proses  perencanaan  pengiriman  dimulai  ketika  operator  membuka  menu  shipment  pada  
+4.5.3  Pr oses  Perencanaan   Pengiriman    
+ 
+Gambar   4.7 Pr oses  Pemesanan   Pengiriman   
+ 
+selanjutnya.  
+menghasilkan   data  order baru  yang  siap digunakan  pada  tahap perencanaan  pengiriman  
+dalam  basis data. Proses  ini berakhir  ketika  penyimpanan  berhasil  dilakukan  dan sistem  
+dinyatakan  valid, sistem  akan  langsung  menyimpan  data  pemesanan  beserta detail barangnya  ke 
+----------------Page (2) Break----------------
+4.5.4  Pr oses  Optimasi   Rute  Menggunakan    Algoritma   Dijkstra   
+Gambar   4.8 Pr oses  Perencanaan   Pengiriman    
+dalam  proses  optimasi  rute dan perhitungan  tarif pengiriman  pada  tahap berikutnya.  
+data. Data  shipment  yang  berhasil  dibuat  ini nantinya  akan  digunakan  sebagai  fondasi utama  
+yang  mencakup  informasi  order, armada,  pengemudi,  serta jadwal  pengiriman  ke dalam  basis 
+armada  dinyatakan  mencukupi,  sistem  akan  langsung  memproses  dan menyimpan  data  shipment  
+meminta  operator  untuk memilih  armada  lain yang  lebih sesuai. Sebaliknya,  jika kapasitas  
+Apabila  kapasitas  armada  tidak mencukupi,  sistem  akan  menampilkan  peringatan  dan 
+dipilih mencukupi  total berat muatan.  
+lalu sistem  secara  otomatis  melakukan  pengecekan  untuk memastikan   kapasitas  armada  yang  
+----------------Page (3) Break----------------
+lebih mudah.  
+disajikan dalam  bentuk  visualisasi peta  agar  operator  dapat melihat  jalur yang  akan  dilalui secara  
+shipment_r  outes sebagai  acuan  pengiriman  barang.  Sebagai  pelengkap,  hasil perhitungan  ini juga  
+beserta total jarak tempuhnya,  kemudian  menyimpan  data  tersebut  ke dalam  tabel 
+rute optimal  ditemukan.  Setelah perhitungan  selesai, sistem  akan  menampilkan  hasil rute terbaik 
+jalur dengan  total jarak terpendek  melalui  perhitungan  jarak kumulatif  di setiap  simpul  hingga  
+Selanjutnya,  sistem  mengeksekusi   algoritma  Dijkstra  pada  graf tersebut  untuk mencari  
+seluruh jaringan  jaringan  distribusi  pengiriman  barang  yang  tersedia  di dalam  sistem. 
+graf yang  terdiri dari simpul  (node ) dan sisi (edge ). Graf  inilah yang  nantinya  merepresentasikan  
+secara  otomatis  mengambil  data  lokasi  serta rute terkait dari basis data  untuk membentuk  sebuah  
+sistem  lalu memilih  lokasi  asal dan lokasi  tujuan  pengiriman.  Setelah lokasi  ditentukan,  sistem  
+Proses  optimasi  rute dimulai  ketika  operator  membuka  menu  perhitungan  Dijkstra  pada  
+----------------Page (4) Break----------------
+shipment . Proses  ini berakhir  setelah rincian biaya serta total tarif ditampilkan  kepada  pengguna  
+disimpan  ke dalam  tabel shipment_costs   sekaligus  memperbarui  data  total biaya pada  tabel 
+pengiriman  berlangsung.  Hasil akhir berupa  total tarif yang  dibebankan  kepada  pelanggan  akan  
+dengan  mengakumulasikan    seluruh komponen   biaya operasional  yang  digunakan  selama  proses  
+Berdasarkan  data  yang  telah terkumpul,  sistem  secara  otomatis  melakukan  perhitungan  
+kendaraan  yang  tersimpan  di dalam  basis data. 
+biaya operasional  terkait seperti biaya bahan  bakar, biaya pengemudi,  hingga  biaya pemeliharaan  
+tempuh  dari hasil algoritma  Dijkstra, serta menarik  data  armada,  pengemudi,  dan komponen   
+telah memiliki  hasil perhitungan  rute optimal.  Sistem  kemudian  mengambil  informasi  jarak 
+Proses  perhitungan  tarif pengiriman  dimulai  ketika  operator  memilih  data  shipment  yang  
+4.5.5  Pr oses  Perhitungan   Tarif  Pengiriman    
+ 
+Gambar   4.9 Pr oses  Optimasi   Rute  Menggunakan    Algoritma   Dijkstra  
+ 
+----------------Page (5) Break----------------
+perjalanan,  hingga  selesai saat barang  diterima  oleh  pelanggan.  Setelah pembaruan  dilakukan,  
+status pengiriman  berdasarkan  kondisi aktual  di lapangan—mulai  dari status dijadwalkan,  dalam  
+sedang  berlangsung  maupun  yang  telah selesai. Pada  proses  ini, operator  dapat memperbarui  
+shipment  pada  sistem, yang  kemudian  akan  menampilkan  seluruh data  pengiriman,  baik  yang  
+Proses  monitoring  pengiriman  dimulai  ketika  operator  membuka  menu  monitoring   
+4.5.6  Pr oses  Monitoring   Pengiriman    
+Gambar   4.10  Pr oses  Perhitungan   Tarif  Pengiriman    
+ 
+Gambar  4.10. 
+dan berhasil  tersimpan  ke dalam  sistem, dengan  alur lengkap  BPMN   yang  ditunjukkan  pada  
+----------------Page (6) Break----------------
+ 
+ditunjukkan  pada  Gambar  4.11. 
+maupun  pembuatan  laporan  operasional  perusahaan,  dengan  alur lengkap  BPMN   yang  
+Data  historis ini selanjutnya  dapat digunakan  oleh  pihak manajemen  sebagai  bahan  evaluasi  
+selesai, sistem  akan  mengubah   status menjadi  selesai dan menyimpan  data  tersebut  sebagai  arsip. 
+tujuan, status, hingga  estimasi  waktu  kedatangan  barang.  Apabila  pengiriman  telah sepenuhnya  
+distribusi  barang  yang  sedang  berjalan, meliputi  data  pelanggan,  armada,  pengemudi,  lokasi  
+Selain  operator , manajer  juga  dapat mengakses  menu  ini untuk memantau   perkembangan   
+status pengiriman  selalu  terbarui  secara  real-time . 
+sistem  secara  otomatis  akan  menyimpan  perubahan  tersebut  ke dalam  basis data  agar  informasi  
+----------------Page (7) Break----------------
+Gambar   4.11 Pr oses  Monitoring   Pengiriman   
+----------------Page (8) Break----------------

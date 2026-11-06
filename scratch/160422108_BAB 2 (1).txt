@@ -1,0 +1,458 @@
+paling  efisien melalui  integrasi dengan  data  geografis  dan algoritma  optimasi  rute. 
+dikurangi.  Selain  itu sistem  ini memungkinkan   penentuan  jalur pengiriman  yang  
+menjadi  lebih konsisten  dan kesalahan  yang  disebabkan  oleh  proses  manual  dapat 
+membuat  keputusan  yang  lebih cepat dan berbasis  data  karena  perhitungan  tarif 
+2025),  dengan  menerapkan   sistem  manajemen  tarif modern,  perusahaan  dapat 
+pemesanan,  dan memberikan   laporan  secara  terpusat. Menurut  (Erliyana  et al., 
+informasi  armada,  merencanakan   rute, menghitung  biaya operasional,  mengatur  
+mengotomatisasi  proses  operasional  untuk mendukung  efisiensi. TMS  mengelola  
+menggunakan   Sistem  Manajemen  Transportasi  (TMS)  sebagai  alat utama  untuk 
+Untuk  mendukung  efisiensi tersebut, perusahaan  logistik  semakin  banyak  
+transportasi, dan dukungan  Teknologi  Informasi  (TI). 
+rantai pasokan  sangat  bergantung  pada  kolaborasi  sistem  logistik, moda  
+dan akhirnya  mencapai  konsumen  akhir. Menurut  (Soekirman,  2024),  efisiensi 
+semua  tindakan  mulai dari pengadaan  bahan  baku, pembuatan  produk,  distribusi, 
+yang  efektif. Rantai  pasokan,  juga  dikenal sebagai  “supply chain”, mencakup  
+membutuhkan   perencanaan  rute, pemantauan   kendaraan,  dan pengaturan  muatan  
+dilakukan   tepat  waktu   dan  hemat  biaya,  sistem  logistik  kontemporer  
+yang  paling  populer  dalam  logistik  berbasis  darat. Agar  pengiriman  dapat 
+akhir. Karena  fleksibilitas dan jangkauannya   yang  luas, angkutan  truk adalah  opsi  
+berperan  menghubungkan   proses  produksi  dan distribusi  barang  kepada  konsumen  
+Transportasi  merupakan  komponen   utama  dalam  sistem  logistik  yang  
+2.1 Manajemen Transportasi   
+ 
+Djikstra  pada  PT  “X”. 
+untuk optimalisasi  rute dan perhitungan  tarif truk menggunakan   Algoritma  
+pembuatan  Sistem  Manajemen  Transportasi  (TMS).  Tujuan dari sistem  ini adalah  
+Bab ini membahas   teori-teori dasar dan lanjutan  yang  digunakan  dalam  
+LANDASAN TEORI 
+BAB 2 
+----------------Page (0) Break----------------
+pelanggan  akhir, sehingga  memainkan  peran strategis dalam  meningkatkan   daya  
+yang  terorganisir, mulai dari penyediaan  bahan  baku  hingga  distribusi  produk  ke 
+   Pada  akhirnya,  manajemen  rantai pasokan  mencakup  keseluruhan  proses  
+sistem  distribusi  yang  lebih fleksibel dan responsif  
+lintas fungsi, meningkatkan   hubungan  bisnis  dengan  pemasok,  dan membangun   
+bahwa  penggunaan   teknologi  informasi  dalam  SCM  memungkinkan   interaksi 
+waktu,  dan mengikuti  permintaan  pasar. (Frisca Aprillia  et al., 2025)  menyatakan   
+mengurangi  biaya pengadaan  dan pengiriman,  meluncurkan  produk  secara  tepat 
+jumlah  material  yang  digunakan  dalam  setiap  tahapan  distribusi.Perusahaan  harus 
+meningkatkan   efisiensi operasional  dengan  memaksimalkan   waktu,  lokasi, dan 
+pelanggan  akhir. Supply  Chain  Management   (SCM)  adalah  upaya  untuk 
+distributor, pengecer , dan penyedia  layanan  logistik  yang  berhubungan  dengan  
+mengelola  aliran barang,  jasa, dan informasi.  Ini terdiri dari pemasok,  produsen,  
+   Supply  chain sendiri adalah  jaringan  bisnis  yang  bekerja sama  untuk 
+contohnya.  
+informasi  real-time untuk memantau   status pengiriman  truk adalah  semua  
+Pengawasan   permintaan,  penetapan  stok  optimal,  dan penggunaan   sistem  
+akan  meningkat  sebagai  hasil dari penerapan  bijak elemen-elemen  tersebut. 
+(Soekirman,  2024),  efisiensi, keamanan,  dan kinerja bisnis  secara  keseluruhan  
+tinggi  dan transparansi.  Sebagai  hasil dari penelitian  yang  dilakukan  oleh  
+pengiriman,  dan penjadwalan  muatan.  Rantai  pasok  modern  menuntut  kolaborasi  
+titik produksi.  Logistik  truk mencakup  koordinasi  antar penyedia  angkutan,  rute 
+adalah  mengurangi  biaya dan waktu  untuk mengirimkan  produk  ke pelanggan  dari 
+mencakup  pengelolaan  gudang,  persediaan,  dan angkutan  barang.  Tujuannya  
+   Logistik  adalah  bagian  penting  dari manajemen  rantai pasokan,  yang  
+ 
+2.1.1 Definisi   Logistik  Transportasi  dalam  Konteks  Rantai  Pasokan  
+    
+transportasi  berbasis  teknologi  sangat  penting.   
+saing perusahaan  logistik  yang  bergantung  pada  armada  truk, manajemen  
+Oleh  karena  itu, untuk meningkatkan   produktivitas,  transparansi  biaya,  dan daya  
+----------------Page (1) Break----------------
+pemanfaatan  armada.  Meskipun  penelitian  tersebut  menggunakan   simulasi  
+metode  digital dapat mengurangi  waktu  tidak produktif  dan meningkatkan   
+simulasi  dan optimasi  kebutuhan  truk pada  distribusi  BBM  menunjukkan  bahwa  
+menjadi  tarif per kilometer . Hasil penelitian  (Liperda  et al., 2022)  mengenai  
+menemukan   jarak terbaik,  dan mengkonversi   biaya operasional  kendaraan  (BOK)  
+rute. Manajemen  transportasi  digital membantu   mengolah  data  jaringan  jalan, 
+Penelitian  ini berfokus  pada  perhitungan  tarif berbasis  jarak dan optimasi  
+untuk meningkatkan   kualitas  perencanaan  transportasi. 
+real-time,  temuan  ini menunjukkan  bahwa  digitalisasi  merupakan  dasar penting  
+distribusi. Meskipun  sistem  yang  digunakan  tidak selalu  perlu dipantau  secara  
+digital untuk mengurangi  biaya logistik  dan meningkatkan   akurasi perencanaan  
+mendorong  perusahaan  transportasi  untuk menerapkan   sistem  manajemen  berbasis  
+transportasi. Menurut  (Yulianto & Wulandari, 2025),  perkembangan   e-commerce   
+industri  logistik  nasional  juga  mendorong  penerapan  sistem  digital dalam  
+terstruktur. Meningkatnya   kebutuhan  efisiensi yang  disebabkan  oleh  pertumbuhan  
+dalam  sistem  digital untuk mendukung  keputusan  penetapan  tarif yang  lebih 
+biaya operasional,  perencanaan  rute, dan analisis  jarak dapat diintegrasikan  ke 
+bergantung  pada  armada  truk sebagai  modal  utama  pengiriman.  Penghitungan   
+meningkatkan   efektivitas proses  distribusi, terutama  pada  industri  yang  
+Manajemen   transportasi   digital  memiliki   peran  penting   dalam  
+ 
+2.1.2 Fungsi  dan Tantangan  Manajemen   Transportasi  Digital 
+ 
+konsisten.   
+yang  memungkinkan   distribusi  produk  ke pelanggan  secara  cepat,  tepat, dan 
+2025)  bahwa  performa  logistik  sangat  mempengaruhi   kualitas  rantai pasokan,  
+tingkat hulu  maupun  hilir. Hal ini sejalan dengan  temuan  (Frisca Aprillia  et al., 
+kelancaran  aliran barang  sangat  penting  untuk keberhasilan  distribusi  baik  di 
+darat. Kinerja  pengelolaan  armada  truk, ketepatan  waktu  pengiriman,  dan 
+logistik  transportasi, khususnya  transportasi  truk sebagai  cara  utama  distribusi  
+saing perusahaan.  Oleh  karena  itu, keberhasilan  SCM  langsung  dikaitkan  dengan  
+----------------Page (2) Break----------------
+digunakan  untuk menentukan   tarif angkutan  truk. Perhitungan  Biaya  Operasional  
+   Metode   yang   sistematis  dan dapat dipertanggungjawabkan   harus 
+2.2 Pemodelan Biaya dan Perhitungan Tarif Truk  
+ 
+dari manajemen  transportasi  digital yang  efisien. 
+adalah  pada  optimalisasi  rute dan tarif berbasis  data  offline sebagai  bagian  penting  
+dan simulasi  rute yang  berbeda.  Hasilnya  menunjukkan  bahwa  fokus penelitian  
+menetapkan   tarif layanan  yang  lebih terukur dan objektif, membandingkan   biaya,  
+real-time.  Pendekatan  data-driven  seperti ini memungkinkan   organisasi  untuk 
+tarif dan pemilihan  rute terbaik meskipun  tidak menggunakan   modul  pelacakan  
+rute. Studi tersebut  menunjukkan  bahwa  TMS  masih  memiliki  proses  perencanaan  
+pengelolaan  data  jaringan, pemetaan  biaya operasional,  dan pengujian  skenario  
+manajemen  transportasi  (TMS)  diterapkan  pada  perusahaan  logistik, adalah  
+penelitian  (Royhan  & Dwiridotjahjono,   2025)  tentang bagaimana  sistem  
+Tiga komponen   utama  keberhasilan  digitalisasi  transportasi, menurut  
+proses  optimasi  agar  rekomendasi  yang  bermanfaat  dapat dibuat. 
+pentingnya  membuat  model  jaringan  rute dan struktur  biaya yang  konsisten  untuk 
+proses  validasi  dan pemetaan  ulang data. Tantangan  ini menunjukkan  betapa  
+akurat, sehingga  sebelum  sistem  digunakan  untuk penetapan  tarif, diperlukan  
+dapat menyebabkan   hasil optimasi  tidak mencerminkan   kondisi lapangan  secara  
+yang  akurat  dan perhitungan  biaya distribusi. Kualitas  data  yang  tidak teratur 
+integrasi sistem  logistik  nasional  adalah  kendala  yang  mempengaruhi   analisis  rute 
+berbagai  kondisi jalan, jumlah  data  distribusi  yang  terbatas, dan ketiadaan  
+dan ketersediaan  data  yang  akurat. (Tohir et al., 2023)  menyatakan   bahwa  
+menghadapi   sejumlah  masalah  struktural, terutama  terkait kualitas  infrastruktur  
+Namun,  implementasi  manajemen  transportasi  digital di Indonesia  masih  
+tanpa memerlukan   teknologi  pemantauan   yang  berlangsung  secara  real-time.  
+dengan  tujuan  utama  sistem  digital, yaitu mendukung  proses  optimasi  rute truk 
+signifikan  pada  perhitungan  kebutuhan  armada  dan efisiensi biaya.  Hal ini sejalan 
+yang  didasarkan  pada  model  matematis  dan simulasi  memiliki  efek  yang  
+distribusi  BBM,  temuan  tersebut  menguatkan   gagasan  bahwa  perencanaan  rute 
+----------------Page (3) Break----------------
+benar agar  BOK  tidak terdistorsi. Tarif yang  dihasilkan  tanpa memperhitungkan   
+biaya tidak langsung  yang  paling  signifikan. Depresiasi  harus dihitung  dengan  
+2025)  pada  kendaraan  operasional  truk di Manado,  depresiasi  adalah  komponen   
+penelitian  yang  dilakukan  oleh  (Lalawi,  Ester E. M.  Kumaat,  Meike  M.  Pandey , 
+dan pemeliharaan  kendaraan  yang  tidak dilakukan  setiap  perjalanan.  Menurut  
+   Sebaliknya,  biasa tidak langsung  termasuk  pajak,  asuransi, administrasi,  
+yang  melibatkan  mobil  atau  kendaraan  angkut  jarak jauh.  
+dengan  sebagian  besar penelitian  tentang angkutan  barang  di indonesia,  terutama  
+biaya langsung,  diikuti oleh  ban dan perawatan  berkala.  Hasil ini konsisten  
+2022)  menunjukkan  bahwa  bahan  bakar adalah  komponen   paling  penting  dari 
+bakar, ban,  pelumas,  biaya sopir, dan perawatan  ringan. Studi oleh  (Mandaku,  
+termasuk  biaya yang  muncul  setiap  kali kendaraan  beroperasi,  seperti bahan  
+langsung  (direct cost) dan biaya tidak langsung  (indirect cost). Biaya  langsung  
+   Biaya  transportasi  truk biasanya  dibagi  menjadi  dua kategori  yaitu biaya 
+ 
+2.2.1 Klasifikasi  Komponen   Biaya  Transportasi   
+ 
+ditetapkan  tetap kompetitif  dan menutup  biaya operasional  secara  keseluruhan.  
+tepat harus memperhitungkan   semua  aspek biaya operasional  agar  tarif yang  
+konsumsi  bahan  bakar. Penelitian  ini menunjukkan  bahwa  penyusunan  tarif yang  
+biaya operasional  sangat  dipengaruhi  oleh  faktor  seperti penggunaan   kendaraan,  
+perhitungan  BOK  sangat  penting,  terutama  untuk jasa logistik  cargo, di mana  
+   Selain  itu, penelitian  oleh  (Hernawati  & Putri, 2021)  menunjukkan  bahwa  
+kendaraan  maupun  penyewa  layanan  tidak dirugikan.  
+dasar yang  kuat  untuk menentukan   tarif angkutan  sehingga  baik  pemilik  
+perhitungan  BOK  untuk kendaraan  angkutan  barang  dapat digunakan  sebagai  
+Misalnya,  penelitian  yang  dilakukan  oleh  (Mandaku,  2022)  menunjukkan  bahwa  
+sering  menggunakan   metode  ini untuk menentukan   tarif yang  adil dan transparan.  
+cadang,  perawatan  rutin, depresiasi  kendaraan,  dan upah  sopir. Penelitian  nasional  
+oleh  kendaraan  selama  periode  tertentu, seperti bahan  bakar, ban,  pelumas,  suku  
+Kendaraan  (BOK)  mencakup  semua  biaya tetap dan variabel  yang  dikeluarkan  
+----------------Page (4) Break----------------
+kondisi rute, kapasitas  angkut,  dan beban  kendaraan.  Dengan  menggabungkan   
+stabil dan realistis ketika  mempertimbangkan    faktor -faktor seperti jarak tempuh,  
+Penelitian  tersebut  menemukan   bahwa  tarif yang  didasarkan  pada  BOK  jauh  lebih 
+2023)  pada  perusahaan  angkutan  barang  mendukung  pendekatan  serupa. 
+overhead  operasional.  Sebuah  penelitian  yang  dilakukan  oleh  H(Lubis  et al., 
+transportasi  harus memasukkan   margin keuntungan,  biaya risiko, dan biaya 
+implementasi.  Untuk  mendapatkan  tarif komersial  yang  layak,  perusahaan  
+Sebagai  tarif jual, baseline  cost tidak langsung  digunakan  pada  
+oleh  faktor -faktor seperti jumlah  kendaraan  yang  digunakan  dan kondisi rute. 
+terutama  untuk perusahaan  logistik, di mana  biaya operasional  sangat  dipengaruhi  
+kilometer  sangat  penting  untuk menyusun  tarif yang  akurat  dan kompetitif,  
+perjalanan.  Menurut  penelitian  w(Suliawati  et al., 2021),  perhitungan  biaya per 
+menghasilkan   baseline  cost, yaitu biaya dasar kendaraan  untuk setiap  kilometer  
+tahun untuk mengonversi  biaya tersebut  menjadi  biaya per kilometer . Proses  ini 
+membagi  total biaya tahunan  dengan  jarak tempuh  rata-rata kendaraan  selama  satu 
+Setelah menghitung  total BOK  tahunan,  langkah  berikutnya  adalah  
+dikeluarkan  perusahaan.  
+angkutan  barang  karena  menunjukkan  biaya operasional  sebenarnya  yang  
+bahwa  metode  BOK  dapat digunakan  sebagai  dasar kuat  untuk menentukan   tarif 
+digunakan  dalam  penelitian  nasional. Misalnya,  (Mandaku,  2022)  menunjukkan  
+gambaran  menyeluruh  tentang beban  operasional  kendaraan,  model  ini banyak  
+variabel  (BBM,  ban,  pelumas,  perawatan,  dan upah  sopir). Karena  memberikan   
+adalah  menggabungkan   semua  biaya tetap (depresiasi,  asuransi, administrasi)  dan 
+waktu,  kemudian  menurunkannya   menjadi  biaya per kilometer . Langkah  pertama  
+dimulai  dengan  menghitung  Biaya  Operasional  Kendaraan  (BOK)  sepanjang  
+   Metode  standar untuk menghitung  biaya dasar angkutan  truk biasanya  
+ 
+2.2.2 Metodologi   Perhitungan  Baseline  Cost  Berdasarkan   Jarak  Optimal   
+ 
+merugikan  penyedia  jasa transportasi. 
+depresiasi  kendaraan  cenderung  lebih rendah  dari biaya sebenarnya  dan dapat 
+----------------Page (5) Break----------------
+distribusi  truk dari gudang  ke berbagai  lokasi  tujuan. Hal ini menunjukkan  bahwa  
+pemodelan  jaringan  rute dengan  grafik  dapat membantu   mengoptimalkan   proses  
+tentang perencanaan  rute pengiriman  Shopee  Express  menunjukkan  bahwa  
+pengantaran  barang  se-Jabodetabek.  Studi tambahan  oleh  (Silaban  et al., 2025)  
+studi oleh  (Kusuma  & Agung,  2019)  pada  sistem  penentuan  jarak terpendek  untuk 
+dan memberikan   hasil analisis  jarak yang  akurat, seperti yang  ditunjukkan  oleh  
+graf berbasis  koordinat  dapat digunakan  langsung  untuk membuat  keputusan  rute 
+geometri  atau  data  peta  digital dapat digunakan  untuk membentuk  sisi. Pemodelan  
+sebagai  simpul.  Kemudian,  konektivitas  jalan dan bobot jarak dari perhitungan  
+Setiap  titik, seperti gudang,  depo, pelanggan,  dan persimpangan,  dapat dianggap  
+dengan  menggunakan   koordinat  geografis  sebagai  acuan  untuk membuat  grafik. 
+   Dalam  hal transportasi  truk, pemodelan  jaringan  rute juga  dapat dilakukan  
+harus dilakukan  secara  terstruktur. 
+berguna  dalam  situasi logistik  di mana  analisis  hubungan  antar titik distribusi  
+sebagai  sisi dengan  bobot jarak. Hal ini menunjukkan  bahwa  teori graf sangat  
+distribusi  digambarkan  sebagai  simpul,  dan hubungan  antar lokasi  digambarkan  
+distribusi  komoditas  cabai di Kota  Medan.  Dalam  penelitian  ini, setiap  titik 
+distribusi  barang.  Ini terutama  berlaku  untuk studi tentang perbaikan  rute 
+representasi  jaringan  jalan dalam  bentuk  graf dapat mempermudah   analisis  rute 
+terbaik melalui  pemodelan  seperti ini. Menurut  penelitian  (Verawasty  et al., 2024),  
+matematis  yang  dapat dianalisis  secara  sistematis  untuk keperluan  pencarian  rute 
+digunakan  untuk menilai  setiap  sisi. Jaringan  jalan dapat diubah  menjadi  struktur  
+(edges).Parameter  seperti jarak, waktu  tempuh,  atau  biaya perjalanan  dapat 
+antar lokasi  dalam  bentuk  simpul  (nodes)  dan ruas  jalan sebagai  sisi 
+memodelkan   jaringan  transportasi  karena  mampu  merepresentasikan  hubungan  
+   Teori graf merupakan  dasar matematis  yang  umum  digunakan  untuk 
+ 
+2.3 Teori Graf dan Pemodelan Jaringan Rute 
+ 
+yang  lebih akurat, efisien, dan sesuai  dengan  kondisi pasar.  
+perhitungan  BOK  dan penentuan  rute optimal,  perusahaan  dapat menetapkan   tarif 
+----------------Page (6) Break----------------
+(undirected  weighted  graph)  sering  digunakan  dalam  sistem  transportasi  truk yang  
+Karena  jalur antar titik umumnya  dapat dilalui dua arah, graf tak berarah  
+dasar graf, seperti himpunan  simpul,  himpunan  sisi, bobot,  dan arah  pada  tepi. 
+   Bagaimana  jalur dipetakan  dan dianalisis  tergantung  pada  elemen-elemen  
+yang  paling  sesuai  untuk melakukan  pencarian  rute. 
+memungkinkan   perhitungan  jarak yang  akurat, graf berbobot  merupakan  struktur  
+terpendek.  Penelitian  dari (Sholihin  et al., 2022)  menunjukkan  bahwa,  karena  
+terbentuk  graf berbobot  yang  sangat  relevan yang  digunakan  untuk mencari  rute 
+Ketika  bobot (weights)  diberikan  pada  setiap  sisi, seperti jarak antar lokasi, maka  
+distribusi, sedangkan  sisi menunjukkan  jalur atau  hubungan  antar lokasi  tersebut. 
+transportasi  truk biasanya  menunjukkan  lokasi  fisik, seperti gudang  atau  titik 
+(nodes/vertices)  dan sisi yang  menghubungkan   antar simpul.  Simpul  dalam  
+   Graf  adalah  struktur  matematika  yang  terdiri dari himpunan  simpul  
+ 
+2.3.1 Definisi  dan Elemen  Dasar  Graf  
+ 
+terukur, dan berbasis  data  yang  tervalidasi.  
+pemodelan  graf dalam  jaringan  transportasi  truk harus dilakukan  secara  sistematis, 
+dilakukan.  Oleh  karena  itu, untuk mendukung  proses  optimasi  rute yang  tepat, 
+kualitas  model  akan  menentukan   seberapa  akurat  perhitungan  rute dan tarif akan  
+pemodelan  graf adalah  bagian  penting  dari sistem  manajemen  transportasi  karena  
+sebenarnya,  dan tingkat konektivitas  antar jalan. Ini menunjukkan  bahwa  
+(Musridho  et al., 2025),  pemodelan  graf yang  baik  harus mempertimbangkan    jarak 
+Agar  hasil optimasi  tidak menyimpang   dari kondisi lapangan,  menurut  penelitian  
+pada  ketepatan  pemodelan  jaringan  jalan, terutama  akurasi bobot antar simpul.  
+seperti Dijkstra. Meskipun  demikian,  keberhasilan  teknik  ini sangat  bergantung  
+dilakukan  dengan  lebih efisien dengan  menggunakan   algoritma  jalan terpendek  
+   Dengan  menggunakan   struktur  graf, proses  optimasi  rute truk dapat 
+operasional.  
+logistik  kontemporer  Indonesia  untuk membantu   pengambilan  keputusan  
+teori graf bukan  hanya  ide matematis,  itu telah diterapkan  secara  luas pada  sistem  
+----------------Page (7) Break----------------
+akurat  dalam  kasus transportasi  barang.  
+metode  graf berbobot  dapat menghasilkan   perhitungan  rute yang  efektif dan 
+al., 2022),  penyelesaian  SSSP  (Single-Source  Shortest  Path  Problem)  dengan  
+biasanya  berupa  jarak antar lokasi. Menurut  penelitian  yang  dilakukan  (Sholihin  et 
+rute pengiriman  karena  pada  sistem  transportasi  truk, bobot yang  digunakan  
+awal  ke seluruh titik lain dalam  jaringan. SSSP  sangat  penting  untuk perencanaan  
+Path/SSSP)  adalah  menentukan   jalur dengan  bobot minimum  total dari satu titik 
+   Dalam  teori graf, masalah  jalur terpendek  (Single-Source  Shortest  
+ 
+2.3.3 Masalah  Jalur Terpendek  (Single-Sour ce Shortest  Path  Pr oblem)  
+ 
+dihitung  meskipun  jaringan  distribusi  berkembang.  
+graf sangat  cocok  untuk operasi truk karena  rutenya  tetap teratur dan mudah  
+Menurut  penelitian  (Arthalia & Pristi, 2022),  model  jaringan  transportasi  berbasis  
+beberapa  sisi baru  untuk menghubungkan   titik tersebut  ke simpul  lainnya.  
+Misalnya,  untuk menambah   depo  baru, cukup  menambahkan   satu simpul  dan 
+perubahan  struktur  jaringan  tanpa mengganggu   sistem  secara  keseluruhan.  
+   Selain  itu, model  ini memungkinkan   penambahan   lokasi  baru  dan 
+kondisi jalan. 
+sistem  distribusi  yang  memerlukan   analisis  jarak tanpa mempertimbangkan    
+Menurut  (Cantona  et al., 2020),  model  jaringan  seperti ini sangat  baik  untuk 
+terutama  ketika  tujuan  utama  adalah  menemukan   jalur dengan  jarak paling  kecil. 
+berbobot.  Untuk  perhitungan  optimalisasi  rute, bobot ini sangat  membantu,  
+digambarkan  sebagai  titik, dan hubungan  jarak antar lokasi  digunakan  sebagai  sisi 
+   Dalam  pemodelan  jaringan  transportasi  truk, seluruh lokasi  distribusi  
+ 
+2.3.2 Pemodelan  Jaringan  Transportasi  Truk (Network  Modeling)  
+ 
+model  graf sederhana  tanpa mempertimbangkan    kondisi jalan. 
+et al., 2025),  rute yang  ideal berdasarkan  jarak dapat dibuat  dengan  menggunakan   
+hanya  mencari  jarak terpendek.  Menurut  penelitian  yang  dilakukan  oleh  (Trisani 
+----------------Page (8) Break----------------
+optimal  untuk TMS  berbasis  truk. 
+kondisi jalan. Oleh  karena  itu, ini sangat  relevan untuk model  perhitungan  jarak 
+distribusi  LPG  dapat menurunkan   jarak tempuh  total tanpa mempertimbangkan    
+penelitian  (Perayoga  et al., 2023),  menggunakan   Djikstra  untuk menentukan   rute 
+pengiriman  barang,  kurir, dan komoditas  (V ijayalaxmi  & Pawar , 2024).  Menurut  
+perencanaan  rute berbasis  jarak pada  jaringan  transportasi  yang  melibatkan  
+negara, algoritma  Djikstra  masih  merupakan  algoritma  yang  paling  efisien untuk 
+gudang,  atau  area  distribusi  baru. Sebagai  hasil dari banyak  penelitian  di seluruh 
+algoritme  tidak terpengaruh  oleh  penambahan   atau  perubahan  node  seperti depo, 
+sistem  logistik  yang  menggunakan   pemodelan  graf statis. Ini karena  kestabilan  
+   Selain  memberikan   hasil yang  konsisten,  Djikstra  sangat  cocok  untuk 
+(Nashrullah  et al., 2023).  
+pengiriman  barang  berbasis  web,  menurut  penelitian  yang  diterbitkan  dalam  
+sebagai  parameter  utama,  Dijkstra  mampu  membuat  rute terpendek  untuk aplikasi  
+dan relaksasi jarak berulang.  Meskipun  hanya  menggunakan   jarak antar titik 
+proses  kerja Dijkstra  yang  mengutamakan   pemilihan  node  dengan  jarak minimum  
+Sangat  efektif untuk sistem  manajemen  transportasi  berbasis  data  jarak karena  
+tanpa mempertimbangkan    kondisi jalan, kepadatan  lalu lintas, atau  waktu  tempuh.  
+transportasi  truk karena  dapat memberikan   hasil rute optimal  yang  deterministik  
+memiliki  bobot berupa  jarak antar lokasi. Algoritma  ini sangat  cocok  untuk 
+pencarian  jalur terpendek  pada  graf berbobot  non-negatif,  di mana  setiap  edge  
+   Algoritma  Dijkstra  merupakan  algoritma  paling  umum  digunakan  dalam  
+2.4 Algoritma Dijkstra untuk Optimalisasi Rute 
+ 
+yang  ideal dalam  sistem  manajemen  transportasi  berbasis  jarak. 
+hal-hal eksternal seperti kemacetan  atau  kondisi jalan. Ini menjadikannya  metode  
+transportasi  truk dengan  fokus pada  pencarian  jarak tanpa mempertimbangkan    
+bahwa  Dijkstra  tetap menjadi  metode  yang  andal dan efisien pada  jaringan  
+untuk menyelesaikan  SSSP . Studi dalam  (Trisani et al., 2025),  menunjukkan  
+berbobot  non-negatif,  Djikstra  adalah  algoritma  yang  paling  umum  digunakan  
+   Karena  mampu  menemukan   jalur terpendek  secara  optimal  pada  graf 
+----------------Page (9) Break----------------
+ 
+logistik. 
+karena  itu, Djikstra  dapat digunakan  pada  sistem  manajemen  transportasi  dan 
+Djikstra  dapat menyediakan  rute yang  stabil, akurat, dan hemat  komputasi.  Oleh  
+penelitian  (Fatkharrofiqi,  2022),  jika bobot jarak pada  graf telah divalidasi, 
+perencanaan  rute awal, dan pengalokasian  armada  yang  efisien. Menurut  
+untuk menghasilkan   jarak terpendek  untuk perhitungan  tarif per kilometer , 
+kepadatan  lalu lintas atau  waktu  tempuh.  Algoritma  ini dapat langsung  digunakan  
+deterministik  jarak minimum  tanpa mempertimbangkan    variabel  dinamis  seperti 
+transportasi  (TMS)  berbasis  jarak karena  algoritma  ini memberikan   solusi  
+Prinsip kerja Djikstra  menjadi  sangat  relevan untuk sistem  manajemen  
+2023).  
+perhitungan  jalur terpendek,  seperti yang  ditunjukkan  oleh  studi (Nashrullah  et al., 
+untuk sistem  rute statis yang  membutuhkan   efisiensi dan ketepatan  dalam  
+meningkatkan   performa  pada  graf berukuran  besar. Prinsip kerja ini sangat  cocok  
+penggunaan   struktur  data  seperti queue  prioritas atau  min-heap,  yang  
+yang  minimal.  Pemilihan  simpul  minimum  menjadi  lebih efisien dengan  
+dilanjutkan  hingga  semua  simpul  terpenuhi  atau  simpul  tujuan  berada  di jarak 
+simpul  sumber . Simpul-simpul  yang  telah diproses  akan  ditandai, dan proses  ini 
+untuk memastikan   bahwa  setiap  simpul  berada  di jarak yang  paling  dekat dari 
+diproses, dan kemudian  memperbarui  nilai jarak apabila jalur baru  lebih pendek  
+sementara  suatu simpul  dengan  jarak baru  yang  diperoleh  dari simpul  yang  sedang  
+Selanjutnya,  algoritma  melakukan  proses  relaksasi,  yaitu membandingkan   jarak 
+secara  iteratif memilih  simpul  yang  belum  diproses  dengan  jarak paling  kecil. 
+pada  0 untuk simpul  sumber  dan ∞ untuk simpul  lainnya.  Kemudian,  algoritma  
+non-negatif.  Proses  dimulai  dengan  menginisialisasi  jarak awal, yang  ditetapkan  
+menyelesaikan  masalah  single-source  shortest  path  (SSSP)  pada  graf berbobot  
+   Pendekatan   greedy   digunakan   oleh   Algoritma   Djikstra   untuk 
+ 
+2.4.1 Prinsip  Kerja  Algoritma  Dijkstra  
+ 
+----------------Page (10) Break----------------
+penelitian  oleh  (Sutrisna et al., 2023)yang  mengembangkan   Sistem  Informasi  
+tanpa perlu melakukan  instalasi ulang pada  sisi pengguna.  Hal ini sejalan dengan  
+juga  menguntungkan   karena  perubahan  dapat diterapkan  langsung  pada  server  
+MySQL  sangat  populer . Dalam  proses  pembaruan  sistem, memilih  platform  web  
+seperti API pemetaan  atau  modul  logistik, teknologi  seperti Laravel,  PHP , dan 
+modular , keamanan  tinggi, dan kemudahan  integrasi dengan  layanan  pihak ketiga  
+diakses,  dan mampu  beroperasi  lintas perangkat.  Karena  mendukung  arsitektur  
+memanfaatkan   platform  berbasis  web  karena  sifatnya  yang  fleksibel,  mudah  
+Pengembangan    sistem   manajemen   transportasi   modern   umumnya  
+2.5 Teknologi dan Platform Pengembangan Sistem 
+ 
+dinamis.  
+Ini karena  bobot hanya  berupa  jarak dan tidak ada bobot negatif atau  variabel  
+menggunakan   pendekatan  jarak-terpendek  sebagai  dasar penetapan  tarif dan rute. 
+cocok  sebagai  bagian  utama  dari sistem  manajemen  transportasi  (TMS)  yang  
+Dengan  menghindari  masalah  tambahan  seperti praproses  data  dinamis,  Djikstra  
+menentukan   rute pengiriman  dengan  biaya operasional  yang  relatif rendah.  
+Algoritma  Dijkstra  pada  rute pengiriman  barang",  Djikstra  terbukti  efektif dalam  
+seperti yang  ditunjukkan  oleh  (Silaban  et al., 2025)  yang  berjudul  "Implementasi  
+Selain  itu, dalam  penelitian  tentang distribusi  barang  pada  layanan  logistik, 
+dapat menghasilkan   rute dengan  jarak total minimum.   
+Jakarta.  Penelitian  tersebut  menemukan   bahwa  algoritma  ini secara  konsisten  
+sukses  Dijkstra  dalam  aplikasi  pencarian  rute terpendek  untuk Wisata Kuliner  di 
+empiris,  penelitian  (Pahlevi  & Komalasari,  2022)  menunjukkan  penggunaan   
+tidak mengandalkan   faktor  luar seperti kondisi jalan atau  lalu lintas. Sebagai  bukti 
+yang  hanya  memperhitungkan   jarak antar node  karena  bersifat  deterministik  dan 
+bobot jarak positif. Algoritma  Dijkstra  sangat  cocok  untuk sistem  logistik/truk 
+akurasi ketika  digunakan  untuk menentukan   jalur terpendek  dalam  graf dengan  
+Algoritma  Dijkstra  menunjukkan  keunggulan  pada  aspek kecepatan  dan 
+ 
+2.4.2 Perbandingan   Kinerja  dan Justifikasi  Penggunaan   Dijkstra  
+----------------Page (11) Break----------------
+akses data  dapat ditingkatkan  dan integrasi antar modul  dipermudah  dengan  
+yang  dilakukan  oleh  (Surapati  et al., 2024),  yang  menunjukkan  bahwa  kecepatan  
+sangat  relevan untuk sistem  transportasi. Penemuan   ini sejalan dengan  penelitian  
+antarmuka  web  dari perangkat  apa pun yang  terhubung  ke internet, membuatnya   
+pengiriman  pada  lapisan logika, operator , admin,  dan pelanggan  dapat mengakses  
+model  ini memungkinkan   pengolahan  data  kendaraan,  rute, dan aktivitas 
+skalabilitas  sistem, dan fleksibilitas dalam  melakukan  pemeliharaan.  Karena  
+menawarkan   beberapa  keuntungan,  termasuk  modularitas  yang  lebih baik, 
+lapisan presentasi, lapisan aplikasi  (logika), dan lapisan data. Pemisahan  ini 
+tingkatan  arsitektur . Dalam  arsitektur  ini, aplikasi  terdiri dari tiga lapisan utama:  
+transportasi  biasanya  dibangun  menggunakan   arsitektur  web  berbasis  tiga 
+Sistem  informasi  modern  yang  mencakup  pengelolaan  rute dan manajemen  
+ 
+2.5.1 Arsitektur  Aplikasi  Berbasis  Web  (Thr ee-T ier Ar chitectur e) 
+ 
+truk logistik. 
+sistem  manajemen  transportasi  dan pengelolaan  rute berbasis  kendaraan,  termasuk  
+tersebut  menunjukkan  bahwa  platform  web  adalah  fondasi teknis  ideal untuk 
+dan menyediakan  dashboard  analisis  yang  akurat. Secara  keseluruhan,  penelitian  
+efektif untuk memantau   pergerakan  barang,  mengurangi  keterlambatan  distribusi, 
+Distribution  Center  PT  Akur  Pratama  (YOGY A GROUP).  Teknologi  web  terbukti  
+Susanti,  2022)  merancang  Sistem  Informasi  Tracking  Logistik  Berbasis  Web di 
+logistik  dan meningkatkan   kecepatan  pemrosesan  pesanan.  Penelitian  (Barlian  & 
+Mikro,  Kecil,  dan Menengah,  yang  dapat meningkatkan   transparansi  proses  
+(Sarempta  et al., 2022)  menciptakan  Sistem  Logistik  Berbasis  Web untuk Usaha  
+rute dan pelacakan  distribusi  yang  digunakan  oleh  perusahaan  besar dan UMKM.   
+Selain  itu, terbukti  bahwa  teknologi  web  berguna  untuk sistem  pengelolaan  
+real-time.  
+meningkatkan   aksesibilitas,  dan memudahkan   pemantauan   aktivitas logistik  secara  
+tersebut  menunjukkan  bahwa  arsitektur  web  meningkatkan   efisiensi operasional,  
+Manajemen  Logistik  Berbasis  Web pada  PT . Valeo  AC  Indonesia.  Penelitian  
+----------------Page (12) Break----------------
+yang  memerlukan   visualisasi titik keberangkatan,  tujuan, dan titik distribusi.    
+responsif  dalam  antarmuka  web.  Ini sangat  relevan untuk sistem  manajemen  rute 
+menyajikan  objek dengan  lokasi, titik koordinat,  dan distribusi  secara  akurat  dan 
+OpenStreetMap.   Hasil penelitian  menunjukkan  bahwa  integrasi peta  digital dapat 
+fasilitas umum  di Kota  Pontianak  yang  bergantung  pada  Leaflet dan 
+(Irwansyah  & Novriando,  2021),  yang  menciptakan  aplikasi  WebGIS  untuk 
+untuk kebutuhan  pemetaan.  Hal ini sejalan dengan  penelitian  yang  dilakukan  oleh  
+dalam  aplikasi  berbasis  web  karena  sangat  ringan, open-source,  dan fleksibel 
+secara  interaktif. API seperti Leaflet.js  yang  terhubung  ke OSM  sangat  digunakan  
+menampilkan  lokasi, memvisualisasikan   rute, dan memproses  data  geografis  
+penting  untuk sistem  manajemen  rute karena  memungkinkan   aplikasi  untuk 
+API peta  digital seperti Google  Maps  dan OpenStreetMap   (OSM)  sangat  
+ 
+2.5.2 Integrasi  API  Digital (Google  Maps/OpenStr  eetMap)  
+ 
+dan pemrosesan  data  kendaraan  yang  konsisten.  
+transportasi, terutama  untuk platform  berbasis  web  yang  membutuhkan   integrasi 
+Arsitektur  Tiga Lapisan  sangat  cocok  untuk sistem  manajemen  rute dan 
+informasi  transportasi  secara  real-time.  Beberapa  penelitian  menunjukkan  bahwa  
+performa  akses,  mendukung  mobilitas  pengguna,  dan memudahkan   monitoring  
+web  dan ponsel  dan menunjukkan  bahwa  arsitektur  bertingkat  meningkatkan   
+(Hikmawaty   et al., 2025)  menganalisis  aplikasi  informasi  transportasi  berbasis  
+memudahkan   pembaruan  fitur tanpa mengganggu   operasi pengguna.  Selain  itu, 
+Metode  ini telah ditunjukkan  untuk meningkatkan   keandalan  sistem  dan 
+utama,  tampilan  antarmuka  client, dan pengolahan  data  pengiriman  pada  server . 
+Strukturnya  terdiri dari tiga lapisan,  dengan  basis data  sebagai  penyimpanan  
+2025)  membuat  sistem  informasi  pengiriman  dan pelacakan  berbasis  web.  
+pelacakan  logistik  dan mengelola  sistem  pengiriman.  (Panggabean  & Wijaya, 
+Studi tambahan  menunjukkan  bahwa  arsitektur  web  berguna  untuk 
+pengiriman  barang.  
+penggunaan   web  service dan pemisahan  arsitektur  pada  sistem  pemantauan   
+----------------Page (13) Break----------------
+dan menyajikan  informasi  lokasi  secara  interaktif  dalam  aplikasi  berbasis  web.  
+yang  membutuhkan   kemampuan   untuk pemetaan  rute, menandai  posisi  kendaraan,  
+API peta  digital ideal harus diintegrasikan  dalam  sistem  manajemen  transportasi  
+memberikan   informasi  lebih akurat  tentang lokasi. Hasilnya  menegaskan   bahwa  
+secara  real-time,  termasuk  menandai  koordinat,  membuat  layer peta, dan 
+bahwa  API peta  dapat digunakan  untuk menampilkan  dan mengelola  data  spasial 
+Berbasis  Web yang  menggunakan   Leaflet dan OpenStreetMap   menunjukkan  
+Penelitian  (W alad  et al., 2024)  tentang Sistem  Informasi  Geografis  Pelaporan  
+layanan,  yang  sangat  penting  untuk sistem  pengelolaan  logistik  dan transportasi. 
+pemetaan  titik-titik penting  seperti lokasi  distribusi, depot,  kendaraan,  dan 
+   API peta  digital memungkinkan   visualisasi lokasi  selain  memungkinkan   
+----------------Page (14) Break----------------

@@ -1,0 +1,471 @@
+ 
+2025
+SURABAYA 
+FAKULTAS TEKNIK UNIVERSITAS SURABAYA 
+SYSTEM  
+PROGRAM INFORMATION MANAGEMENT & ENTERPRISE 
+PROGRAM STUDI TEKNIK INFORMATIKA 
+ 
+ 
+NRP:  160422108  
+Chandra  Pratama  Setya  Putra  
+Disusun Oleh: 
+ 
+ 
+ 
+ 
+ 
+ 
+PROPOSAL TUGAS AKHIR 
+ 
+ 
+Algoritma Dijkstra pada PT ‘X’ 
+Optimalisasi Rute dan Perhitungan Tarif Truk dengan 
+Pengembangan Sistem Manajemen Transportasi untuk 
+----------------Page (0) Break----------------
+yang  bisa  mengotomatisasi   seluruh  proses  logistik. Sistem  ini tidak hanya  
+Mengatasi  masalah  ini memerlukan   sebuah  sistem  manajemen   transportasi  
+(Sahabuddin  et al., 2024).  
+berkurangnya   rasa  kepercayaan  pelanggan  karena  tidak adanya  transparansi  biaya  
+untuk  menemukan   tren biaya atau  rute yang  paling  optimal.  Pada  akhirnya  
+terpadu  menyulitkan  manajemen   dalam  menganalisis   data  riwayat  pengiriman   
+tarif yang  menguntungkan   namun  tetap terjangkau.  Selain  itu, proses  yang  tidak 
+didapatkan  tidak konsisten.  Kondisi  ini menghalangi   PT  ‘X’ untuk  menawarkan   
+penting.  Tidak  adanya  standarisasi  untuk  perhitungan  tarif membuat  hasil yang  
+Keterbatasan   sistem  manual  tersebut  menyebabkan   beberapa  masalah  
+terbukti  tidak efektif, memakan   banyak  waktu,  rawan  kesalahan  dan beresiko.  
+BBM,   gaji supir, biaya e-toll, dan komponen   lainnya  dari operasi.  Metode  manual  
+perhitungan  kompleks   dari berbagai  elemen  biaya,  seperti jarak tempuh,  konsumsi   
+masih  menggunakan   metode  perhitungan  tarif manual  tradisional,yang  melibatkan  
+pada  armada  truk, adalah  salah satu  pemain  dalam  industri  logistik  ini. PT  ‘X’ 
+PT  ‘X’, sebuah  perusahaan   pengiriman   barang  yang  operasinya  sangat  bergantung  
+yang  merupakan  komponen   penting  dari rantai  pasokan   (Erliyana  et al., 2025).  
+keunggulan   kompetitif  yang  berkelanjutan.  Untuk  mencapai   tujuan  ini, logistik  
+Perkembangan    ekonomi  global  mengharuskan   perusahaan   memiliki  
+2.   LA TAR  BELAKANG    
+dan Perhitungan  Tarif Truk dengan  Algoritma  Dijkstra  pada  PT  ‘X’ 
+Pengembangan    Sistem  Manajemen   Transportasi  untuk  Optimalisasi  Rute  
+1.   JUDUL  
+----------------Page (1) Break----------------
+Google   Maps  atau  OpenStreetMap.    Model  jaringan  ini akan  memberi  algoritma  
+konektivitas  jalan yang  dikumpulkan   dari platform  peta  digital, seperti API  
+bekerja  pada  model  jaringan  yang  berasal dari data  koordinat  geografis  dan 
+memecahkan    masalah  ini (Aldy  Cantona  & Artikel,  2020).  Algoritma  ini akan  
+lokasi  lain dalam  jaringan,yang  menjadikannya   algoritma  yang  sempurna   untuk  
+Algoritma  ini bertujuan  untuk  menemukan   rute terpendek  dari satu  lokasi  ke  
+Dermawan,   2022),  suatu kondisi  yang  tidak berlaku  pada  perhitungan  logistik. 
+Bellman-Ford   yang  dibutuhkan   hanya  jika ada bobot  negatif (Pratama  & 
+path  seperti Floyd-W arshall yang  terlalu kompleks   atau  algoritma  seperti 
+truk. Ini membuatnya   pilihan yang  lebih baik  dari pada  algoritma  all-pairs shortest  
+mengidentifikasi   rute satu-satunya  yang  paling  efisien untuk  setiap  pengiriman   
+(Hendra  & Riti, 2022).  Ini secara  langsung  menjawab   kebutuhan  PT  “X” untuk  
+efektif dalam  kasus shortest  path  single-source  (menemukan    jalan terbaik)  
+jaringan  dengan  bobot  positif seperti biaya dan jarak,  yang  menjadikannya   sangat  
+terbaiknya  untuk  menemukan   rute terpendek  dari satu  titik ke  titik lain dalam  
+algoritma  Dijkstra  akan  digunakan.  Algoritma  ini dipilih karena  kemampuan   
+komponen   terpenting  dari sistem  yang  diusulkan.  Untuk  mencapai   hal ini, 
+Kemampuan    untuk   mengoptimalkan     rute  pengiriman    merupakan  
+berdasarkan  data. 
+perusahaan   untuk  membuat  keputusan  yang  tidak memakan   waktu  lama  dan 
+dan ampuh,  sistem  terpadu  ini harus dikembangkan.   Ini akan  memungkinkan    
+optimalitas.  Untuk  mengubah   proses  manual  menjadi  solusi  digital yang  inovatif  
+kalkulator  tarif, melainkan  alat strategis yang  dapat meningkatkan   validitas dan 
+----------------Page (2) Break----------------
+Dijkstra. 
+tarif secara  keseluruhan  dan mengoptimalisasi   rute menggunakan   Algoritma  
+sebuah  sistem  berbasis  web  yang  akan  mengotomatisasikan    proses  perhitungan  
+Tujuan dalam  pembuatan  tugas akhir ini yaitu membuat  dan membangun   
+4.   TUJUAN   
+ 
+dan mengoptimalkan    rute untuk  perhitungan  tarif truk  ? 
+“Bagaimana  cara  membantu   PT  ‘X’ dalam  melakukan  manajemen   transportasi  
+Berdasarkan  latar belakang  diatas, maka  rumusan  masalahnya   adalah  
+3.   RUMUSAN    MASALAH    
+ 
+biaya terkait lainnya.  
+yang  akurat  untuk  menghitung   biaya untuk  menghitung   biaya bahan  bakar dan 
+yang  paling  efisien berdasarkan  jarak dan waktu  tempuh.  Ini akan  menjadi  dasar 
+menggunakan   algoritma  ini, sistem  akan  menghitung   dan merekomendasikan    rute 
+yang  dihasilkan  akan  jauh  lebih akurat  daripada  metode  manual.  Dengan  
+pada  optimalisasi  jarak dan waktu  tempuh  standar, rekomendasi  rute terpendek  
+rute terpendek  (shortest path  single-source).  Namun  meskipun   sistem  ini berfokus  
+algoritma  Dijkstra  sangat  sempurna   untuk  memecahkan    masalah  dasar penentuan  
+kemacetan,   penutupan  jalan, atau  kondisi  permukaan  jalan seperti makadam,   
+waktu  tempuh  optimal  dan tidak memperhitungkan    kondisi  real-time  seperti 
+Dijkstra  berbagai  rute yang  dapat dipilih. Dengan  membatasi  bobot  pada  jarak dan 
+----------------Page (3) Break----------------
+ 
+ 
+● Pelayanan  yang  lebih Profesional   
+mengirim   email berulang  kali  
+dan status  pengiriman   tanpa harus menghubungi   atau  
+● Dapat  dengan  mudah  mendapatkan   informasi  tentang  tarif 
+● Meningkatnya   kepercayaan  pelanggan   
+mendapatkan   informasi  harga   
+● Pelanggan  tidak perlu menunggu   waktu  yang  lama  untuk  
+2. Pelanggan   
+atau  jenis truk  dengan  data  yang  terpusat  dengan  akurat  
+● Perusahaan   dapat menghitung   biaya pengiriman   per rute 
+dengan  mudah  oleh  manajemen   
+● Laporan,analisis   tren biaya,dan  audit dapat dilakukan  
+salah hitung  atau  input data   
+● Otomatisasi  mencegah   kesalahan  yang  disebabkan   oleh  
+daya  dapat dilakukan  secara  instan. 
+● Perhitungan  yang  membutuhkan   banyak  waktu  dan sumber  
+1. Perusahaan    
+adalah  : 
+Manfaat  dari sistem  berbasis  web  untuk  otomatisasi  perhitungan  tarif ini 
+5.   MANF  AA T 
+----------------Page (4) Break----------------
+pengiriman   yang  dioptimalkan    
+5. Output  berupa  hasil perhitungan  tarif yang  akurat  dan rincian rute 
+barang,  dan data  komponen   biaya pengiriman.   
+data  spesifikasi kendaraan,  data  pengemudi,   data  pelanggan,  data  
+4. Data  yang  digunakan  meliputi  data  lokasi, data  rute antar lokasi, 
+efisien.  
+pengiriman,  dengan  tujuan  mendapatkan   jalur terpendek  dan paling  
+3. Menggunakan    algoritma   Dijkstra   untuk   optimalisasi   rute 
+terstandarisasi.   
+ini  berfungsi   sebagai   basis  biaya  (baseline   cost)  yang  
+kilometer , biaya supir, dan biaya operasional  lainnya.  Perhitungan  
+kemudian   dikalikan  dengan  konsumsi   BBM  truk  tertentu  per 
+(diperoleh  dari API  Google  Maps  atau  OpenStreetMap),   yang  
+bakar yang  dihitung  dari jarak optimal  dan waktu  tempuh  standar 
+berdasarkan  data  seperti jarak tempuh,  konsumsi   biaya bahan  
+2. Secara  otomatis,  sistem  akan  menghitung   tarif pengiriman   
+perencanaan  pengiriman).   
+(input   formulir   pemesanan,    Pembuatan   surat  jalan,  dan 
+komponen   biaya)  dan fitur pengendalian   transaksi operasional  
+yang  mempunyai   fitur pengelolaan  master  data(armada  truk, 
+1. Sistem  manajemen   transportasi  berbentuk  aplikasi  berbasis  web  
+Adapun   ruang  lingkup  dari sistem  ini: 
+6.   RUANG   LINGKUP   
+----------------Page (5) Break----------------
+2. Analisis  
+truk, serta rute pengiriman.  
+meliputi  komponen   biaya (jarak, upah, BBM),spesifikasi   
+● Data  yang  diperlukan  sebagai  bahan  analisis  dikumpulkan,   
+logistik  dilakukan  melalui  studi literatur 
+Transportasi,  Algoritma  Dijkstra, serta pemodelan  biaya 
+● Pengumpulan   informasi  mengenai   Sistem  Manajemen   
+pada  tahap ini. Apa  yang  harus dipersiapkan  adalah:  
+Sebelum  melakukan  penelitian  dan membuat  program,persiapan   
+1. Persiapan   
+berikut :  
+Rencana  yang  akan  dilakukan  dalam  pengerjaan  tugas akhir ini sebagai  
+7.   RENCANA   KEGIA TAN  
+points  atau  Vehicle  Routing  Problem  (VRP)  yang  lebih kompleks.   
+tujuan  (single-source),  dan tidak menangani  multiple  drop-of f 
+7. Perhitungan  tarif dan rute hanya  mencakup   titik awal  dan titik 
+dinamis  di lapangan.  
+sebagai  basis perhitungan  biaya,  bukan  sebagai  panduan  navigasi  
+Optimalitas  rute yang  dihasilkan  bersifat  teoritis dan terstandarisasi  
+kondisi  permukaan  jalan (misalnya,  jalan makadam   atau  rusak). 
+seperti kemacetan  lalu lintas, penutupan  jalan sementara,  atau  
+6. Sistem  tidak mengakomodasi    faktor -faktor dinamis  real-time  
+----------------Page (6) Break----------------
+keakuratan  Algoritma  Dijkstra  dalam  menemukan   rute optimal.  
+tarif dari sistem  dengan  perhitungan  manual,  serta evaluasi  
+harapan.  Proses  ini melibatkan  perbandingan   hasil perhitungan  
+Uji coba  dilakukan  guna  memastikan   aplikasi  beroperasi  sesuai  
+5. Uji coba  dan evaluasi   
+● Perancangan  antarmuka  pengguna   berbasih  web.  
+untuk  optimalisasi  rute. 
+● Implementasi   Algoritma  Dijkstra  ke  dalam  kode  program  
+● Pengembangan    logika  tarif otomatis  
+dirancang  sebelumnya.Implementasi    difokuskan  pada: 
+Pada  tahap ini, aplikasi  dibangun  berdasarkan  desain  yang  telah 
+4. Implementasi    
+agar  program  mudah  dioperasikan.   
+algoritma.T erakhir, dilakukan  perancangan  antarmuka  pengguna   
+menggambarkan     keterhubungan    antar  komponen,    termasuk  
+data  operasional.  Setelah  itu, disusun  desain  arsitektur  sistem  yang  
+Desain  pertama  yang  dibuat  adalah  database  untuk  menyimpan   
+Pada  Tahap  ini dilakukan  perancangan  berdasarkan  hasil analisis. 
+3. Desain  
+sistem  mampu  memberikan   solusi  terhadap  masalah  yang  ada.  
+Proses  tersebut  mencakup   evaluasi  kebutuhan  perusahaan   agar  
+dibutuhkan   untuk  kemudian   diimplementasikan   ke  dalam  aplikasi. 
+Pada  tahap analisis  ini, dilakukan  identifikasi  terhadap  fitur yang  
+----------------Page (7) Break----------------
+ 
+ringkasan  data  operasional  pengiriman.  
+● Menyediakan    dashboard   utama   yang   menampilkan   
+● Dapat  diakses  oleh  administrator  dan operator  perusahaan.  
+1. Portal  Admin   
+Sistem  Logistik  Pr o terdiri dari beberapa  komponen   utama,  yaitu:  
+sebagai  dasar untuk  perhitungan  tarif yang  adil dan efisien.  
+untuk  optimalisasi  rute adalah  fitur utama  sistem  ini. Algoritma  ini berfungsi  
+transparan  berdasarkan  data  operasional  PT  ‘X’. Penerapan  algoritma  Dijkstra  
+lebih efisien,  sekaligus  menjamin   pelanggan  mendapat   harga  yang  akurat  dan 
+mengatur  perhitungan  tarif, mengoptimalkan    rute, dan mengelola  armada  dengan  
+transportasi  darat PT  ‘X’. Sistem  ini memungkinkan    perusahaan   tersebut  
+dirancang   khusus   untuk   mendukung    dan  mengoptimalkan     manajemen    
+Sistem  ini akan  bernama  Logistik  Pr o, sebuah  platform  berbasis  web  yang  
+8.   GAMBARAN    SISTEM   
+ 
+  
+belakang  hingga  hasil evaluasi  
+rangkaian  proses  penelitian  dan pengembangan,   dimulai  dari latar 
+Tahap  terakhir  adalah  penyusunan   laporan  yang  berisi seluruh  
+6. Penyusunan   laporan   
+sistem. 
+Hasil pengujian  menjadi  dasar penilaian  validitas dan akurasi 
+----------------Page (8) Break----------------
+pengiriman.   
+● Memungkinkan     pelanggan   untuk   memantau    status  
+oleh  pelanggan.   
+● Berisi  informasi  riwayat  pemesanan  yang  telah dilakukan  
+● Dapat  diakses  oleh  pelanggan.   
+2. Portal  Pelanggan   
+evaluasi  dan pengambilan   keputusan  perusahaan.  
+● Menyediakan   laporan  operasional  untuk  membantu   proses  
+● Monitoring   Status  Shipment   
+● Pembuatan  Shipment   
+● Pengelolaan  Detail  Barang  Pengiriman   
+● Pembuatan  Order  Pengiriman   
+● Memiliki  fitur transaksi operasional  yang  meliputi:  
+● Data  Komponen   Biaya  Operasional  
+● Data  Jadwal  Driver  
+● Data  Driver  
+● Data  Armada   Truk 
+● Data  Rute  (Routes)  
+● Data  Lokasi  
+● Data  Barang  
+● Data  Customer   
+● Memiliki  fitur pengelolaan  master  data  yang  meliputi:  
+----------------Page (9) Break----------------
+berdasarkan  metode  Char geable  Weight (CW),  yaitu 
+● Sistem  secara  otomatis  memberikan   rekomendasi  armada  
+dikirim.  
+operasional  perusahaan   serta kapasitas  muatan  yang  akan  
+pengemudi  yang  digunakan  sesuai  dengan  kebutuhan  
+pengiriman.  Modul  ini memastikan   bahwa  kendaraan  dan 
+proses  penugasan  armada  truk  dan driver  pada  setiap  
+● Modul  Manajemen   Armada   berfungsi  untuk  membantu   
+4. Modul  Manajemen   Armada    
+waktu  tempuh  optimal  digunakan  sebagai  variabel  utama.   
+akumulasi  biaya operasional,  dengan  jarak terpendek  dan 
+● Menyusun    perhitungan   tarif  akhir  berdasarkan  total 
+optimal.   
+digunakan  sebagai  dasar untuk  menghitung   waktu  tempuh  
+jarak(km)  antar node. Jarak terpendek  ini kemudian   
+merekomendasikan     rute  paling   efisien  berdasarkan  
+● Menggunakan   Algoritma  Dijkstra  untuk  menghitung   dan 
+oleh  sistem  secara  otomatis  pada  proses  backend.  
+● Tidak  dapat diakses  pengguna,  melainkan  hanya  dijalankan  
+3. Modul  Perhitungan  & Optimalisasi  
+ 
+invoice  dan surat jalan secara  mandiri.  
+● Memiliki  fitur untuk  mengunduh   dokumen  digital seperti 
+----------------Page (10) Break----------------
+tidak sesuai  dengan  muatan.  
+● Menghindari   kesalahan  pemilihan  armada  yang  
+● Mengoptimalkan    pemanfaatan  kapasitas  kendaraan.  
+yang  sesuai  dengan  kebutuhan  pengiriman.  
+● Membantu   operator  dalam  menentukan   armada  
+● Modul  ini bertujuan  untuk:  
+menjalankan  proses  distribusi. 
+tersedia  pada  tanggal  pengiriman   dapat ditugaskan  untuk  
+tersimpan  dalam  sistem. Driver  yang  memiliki  status  
+ketersediaan   driver   berdasarkan   jadwal   kerja  yang  
+● Selain   armada,   sistem   juga   mempertimbangkan     
+sehingga  pemanfaatan  armada  menjadi  lebih efisien.  
+yang  kapasitasnya  terlalu kecil maupun   terlalu besar 
+perusahaan   dapat menghindari  penggunaan   kendaraan  
+mencukupi  dan berstatus tersedia. Dengan  pendekatan   ini, 
+memilih  armada  yang  memiliki  kapasitas  muatan  yang  
+● Berdasarkan  nilai Char geable  Weight tersebut, sistem  akan  
+dibutuhkan.  
+dasar  dalam  menentukan   kapasitas  kendaraan  yang  
+dari kedua  parameter  tersebut  akan  digunakan  sebagai  
+Volumetrik  (VW)  barang  yang  akan  dikirim.  Nilai terbesar  
+dengan  membandingkan    Berat Aktual  (W A)  dan Berat 
+----------------Page (11) Break----------------
+● B ke  C:  5 km  
+● B ke  D:  12  km  
+● A (Gudang)   ke  C:  15  km  
+● A (Gudang)   ke  B:  10  km  
+Misalkan  jaringan  rute berikut:  
+jarak dalam  kilometer  (km). 
+Setiap  sisi memiliki  bobot,  yang  dalam  hal ini diwakili  sebagai  
+node  (simpul)  dan jalan yang  menghubungkannya     sebagai  sisi. 
+graf  dengan  lokasi  (gudang,  kota, atau  persimpangan)   sebagai  
+Jaringan  jalan akan  digambarkan   dalam  sistem  sebagai  
+1. Pemodelan  Rute  sebagai  Graf  
+ke  lokasi  Pelanggan  (T itik F). 
+Dijkstra  untuk  menemukan   rute terpendek  dari "X" di Gudang   PT  
+Contoh   berikut  menunjukkan    penggunaan    Algoritma  
+5. Ilustrasi Perhitungan  Algoritma  Dijkstra  dalam  Sistem  
+mendukung   efisiensi operasional  perusahaan.  
+lebih  cepat,   konsisten,  dan terstandarisasi  sehingga  
+penentuan  kendaraan  dan driver  dapat dilakukan  secara  
+● Dengan  adanya  Modul  Manajemen   Armada,  proses  
+melalui  pemilihan  armada  yang  tepat. 
+● Mendukung   proses  perhitungan  tarif pengiriman   
+berdasarkan  jadwal  yang  tersedia. 
+● Mempermudah      proses    penugasan    driver  
+----------------Page (12) Break----------------
+- Tandai A (sudah  dikunjungi).  
+D(C)=15  
+- Jarak ke  C via A:  0+15=15.   Maka,  
+D(B)=10  
+- Jarak ke  B via A:  0+10=10.   Maka,  
+-  Perbarui  jarak :  
+-  Kunjungi  tetangga  A,B  dan C 
+● Langkah  1 (Dari Titik A)  :  
+-  D(F)=∞   
+-  D(E)=∞    
+-  D(D)=∞    
+-  D(C)=∞   
+-  D(B)=∞   
+-  D(A)  = 0 
+semua  titik lain dianggap  tak terhingga  (∞).  
+● Inisialisasi: Jarak dari A ke  A adalah  0. Jarak ke  
+2. Langkah-langkah   Algoritma  Dijkstra  
+ 
+                        Tujuan : Menemukan   rute terpendek  dari A ke  F 
+● E ke  F (Pelanggan):  7 km  
+● D ke  F (Pelanggan):  10  km  
+● D ke  E: 3 km  
+● C ke  E: 8 km  
+----------------Page (13) Break----------------
+-  Kunjungi  tetangga  D,  E dan F. 
+dan E (23 km).  Pilih D.  
+-  Titik belum  dikunjungi  adalah  D (22 km)  
+● Langkah  4 (Pilih Titik Berikutnya)  :  
+- Tandai C (sudah  dikunjungi).  
+D(E)=23.   
+- Jarak ke  E via C:  15+8=23.   Maka,  
+-  Perbarui  jarak :  
+-  Kunjungi  tetangga  C,E.  
+adalah  C (15 km).  
+-  Titik belum  dikunjungi  dengan  jarak terkecil  
+● Langkah  3 (Pilih Titik Berikutnya)  :  
+-  Tandai B (sudah  dikunjungi).  
+D(D)=22.   
+- Jarak ke  D via B:  10+12=22.  Maka,  
+jadi tidak ada perubahan.  
+sama  dengan  yang  sudah  ada (D(C)=15),   
+- Jarak ke  C via B:  10+5=15.   Jarak ini 
+- Perbarui  jarak :  
+- Kunjungi  tetangga  B,  C dan D.  
+adalah  B (10 km).  
+- Titik belum  dikunjungi  dengan  jarak terkecil  
+● Langkah  2 (Pilih Titik dengan  Jarak Terkecil)  :  
+----------------Page (14) Break----------------
+dengan  total jarak 30  km. 
+menemukan   rute terpendek  adalah  A → C → E → F 
+-  Rute  Optimal  : Dengan  menelusuri  balik,  sistem  
+3. Hasil dan Implementasi   pada  Perhitungan  Tarif 
+terpendek  ke  F adalah  30  km. 
+-  Semua  titik sudah  dikunjungi.  Jarak 
+● Langkah  6 (Selesai) :  
+- Tandai E (sudah  dikunjungi)  
+D(F)=30.  
+kecil dari yang  ada (D(F)=32).  Perbarui  
+- Jarak ke  F via E: 23+7=30.   Jarak ini lebih 
+- Perbarui  jarak :  
+- Kunjungi  tetangga  E,F. 
+dan F (32 km).  Pilih E. 
+- Titik belum  dikunjungi  adalah  E (23 km)  
+● Langkah  5 (Pilih Titik Berikutnya)  :  
+- Tandai D (sudah  dikunjungi).  
+D(F)=32.  
+- Jarak ke  F via D:  22+10=32.  Maka,  
+tidak ada perubahan.  
+besar dari yang  sudah  ada (D(E)=23),   jadi 
+- Jarak ke  E via D:  22+3=25.   Jarak ini lebih 
+-  Perbarui  jarak :  
+----------------Page (15) Break----------------
+operasional  pada  halaman  manajemen.   
+informasi  terkait armada  truk  dan data  biaya 
+● Setelah  berhasil  masuk,  admin  dapat mengelola  
+melalui  halaman  utama  Logistik  Pr o. 
+● Admin  melakukan  registrasi  akun  dan masuk  
+a. Manajemen   Data  & Pemesanan    
+1. Alur  kerja sistem  Admin/Perusahaan    adalah  sebagai  berikut:   
+sistem. 
+bagaimana  admin/perusahaan    berinteraksi  dengan  sistem, serta pelanggan  dan 
+Berikut  adalah  alur kerja dalam  platform  Logistik  Pr o untuk  menunjukkan   
+ 
+km).        
+bukan  rute yang  lebih panjang  dan mahal  seperti A → B → D → F (32 
+ditawarkan  kepada  pelanggan  didasarkan  pada  rute yang  paling  efisien,  
+Dengan  cara  ini, Algoritma  Dijkstra  memastikan   bahwa  tarif yang  
+ada di rute A-C-E-F)   + Biaya  Tetap  Lainnya  
+- Tarif Total = Biaya  BBM  + Biaya  Supir + Biaya  Tol(jika 
+(Tarif Supir per jam)  
+- Biaya  Supir = (Estimasi  Waktu  Tempuh  untuk  30km)  * 
+BBM  per liter) 
+- Biaya  BBM  = 30km  * (konsumsi  BBM  per km)  * (Har ga  
+menjadi  variabel  utama  dalam  formula  tarif otomatis.  
+-  Dasar  Perhitungan  Tarif : Jarak 30  km  ini kemudian   
+----------------Page (16) Break----------------
+b. Proses  Pelacakan  dan Dokumen    
+pesanan(melalui   input yang  dibantu  oleh  admin).  
+layanan  yang  ditawarkan  atau  langsung  membuat  
+● Setelah  masuk,  pelanggan  dapat melihat  daftar  
+sebagai  pelanggan.  
+● Pelanggan  mengakses  Logistik  Pr o dan masuk  
+a. Akses  dan Pemesanan   Layanan   
+2. Alur  kerja sistem  Pelanggan  adalah  sebagai  berikut:   
+ 
+membantu   pengambilan   keputusan  bisnis.  
+digunakan  untuk  membuat  laporan  analitis yang  
+● Data  operasional  (transaksi, biaya,  rute) dapat 
+melalui  dashboard  utama.  
+● Admin  dapat memantau   status  setiap  pengiriman   
+b. Pengawasan   dan Laporan   
+menghitung   tarif pengiriman.  
+memberikan   rekomendasi  truk  yang  optimal  dan 
+● Sistem  secara  otomatis  memproses   data  tersebut, 
+rincian barang  yang  akan  dikirim.  
+dengan  memasukkan    detail pelanggan,  lokasi  dan 
+● Admin  dapat membuat  pesanan  pengiriman   baru  
+----------------Page (17) Break----------------
+ 
+ 
+ 
+ 
+ 
+https://doi.org/10.26740/jinacs.v3n04.p580-599 
+Journal of Informatics and Computer Science (JINACS), 3(04), 580–599. 
+Terdekat Bengkel Motor di Kota Surabaya Menggunakan Algoritma Bellman-Ford. 
+Pratama, V. L., & Dermawan, D. A. (2022). Sistem Informasi Geografis Pencarian Rute 
+JIKA (Jurnal Informatika), 6(3), 297. https://doi.org/10.31000/jika.v6i3.6528 
+Dalam Menentukan Rute Terpendek Stasiun Gubeng Menuju W isata Surabaya. 
+Hendra, H., & Riti, Y. F. (2022). Perbandingan Algoritma Dijkstra Dan Floyd-Warshall 
+https://malaqbipublisher.com/index.php/MAKSI 
+Digital dan Kepercayaan Konsumen di E-Commerce. 2(1). 
+Transparansi Informasi Sebagai Mediator dalam Hubungan Etika Pemasaran 
+Sahabuddin, R., Maulana Arif, H., Lestari, W., Alviolin, E., & Dzaky, M. N. (2024). 
+https://jurnal.poltekpelni.ac.id/index.php/transma 
+Pengaruh Strategi Logistik Terhadap Kinerja Perusahaan (Vol. 1, Issue 1). 
+& Akpelni, P. B. (2025). ISSN xxxx-xxxx Politeknik Bumi Akpelni Semarang 
+Erliyana, S., Pambudi, A. L., Studi, P., Laut, T., Akpelni, B., Pelabuhan, M., Maritim, L., 
+ABSTRAK. Tahun, 6(1). http://http://jurnal.unmer.ac.id/index.php/jtmi 
+I., & Artikel, R. (2020). Jurnal Teknologi dan Manajemen Informatika Info Artikel 
+Algoritma Dijkstra Pada Pencarian Rute Terpendek ke Museum di Jakarta Aldy Cantona, 
+9.   DAFT AR  PUST AKA  
+mandiri,  yang  dihasilkan  otomatis  oleh  sistem  
+invoice dan surat jalan dari portal  mereka  secara  
+● Pelanggan  dapat mengunduh   dokumen  seperti 
+mereka.  
+dapat melihat  status  pengiriman   melalui  portal  
+● Setelah  pesanan  dikonfirmasi  oleh  admin,pelanggan   
+----------------Page (18) Break----------------
+ 
+ 
+ 
+                     
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+  
+ 
+----------------Page (19) Break----------------

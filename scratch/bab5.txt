@@ -1,0 +1,734 @@
+BAB 5 
+IMPLEMENTASI 
+​ Bab ini membahas proses implementasi sistem berdasarkan hasil perancangan. Secara 
+garis besar, implementasi pada bab ini dibagi menjadi dua bagian utama, yaitu Implementasi 
+Basis Data dan Implementasi Program. Implementasi program difokuskan pada: Pengembangan 
+Master Data, Pengembangan Fitur Operasional (input pemesanan, pembuatan surat jalan), 
+Integrasi Logika Perhitungan Tarif, dan Implementasi Algoritma Dijkstra ke dalam kode 
+program untuk menghasilkan rute optimal. 
+5.1​Implementasi Basis Data 
+Pada subbab ini dibahas implementasi basis data yang dibuat berdasarkan ERD pada Bab 
+4. Implementasi basis data Sistem Manajemen Transportasi pada PT "X" dibangun menggunakan 
+MySQL dan phpMyAdmin. Basis data ini terdiri dari 15 tabel, yaitu 9 tabel master dan 6 tabel 
+transaksi. Basis data terdiri atas tabel master dan tabel transaksi yang saling berelasi untuk 
+mendukung proses bisnis sistem. Tabel-tabel tersebut digunakan untuk menyimpan data 
+pengguna, pelanggan, barang, pengemudi, armada truk, lokasi, rute, pesanan, pengiriman, serta 
+data rute hasil optimalisasi menggunakan algoritma Dijkstra dan perhitungan tarif logistik.  
+1.​Tabel Users 
+Tabel users digunakan untuk menyimpan data pengguna yang dapat mengakses sistem 
+manajemen transportasi, seperti admin atau staff operasional. Setiap pengguna memiliki 
+id sebagai primary key yang bersifat unik dan otomatis. Tabel ini menyimpan data 
+autentikasi dan informasi dasar pengguna, seperti nama, alamat email, dan kata sandi 
+yang telah dienkripsi. Tabel users berelasi dengan beberapa tabel lain di dalam sistem
+
+sebagai pencatat data riwayat aktivitas untuk keperluan audit internal. Tabel ini berperan 
+penting dalam proses bisnis aplikasi untuk membatasi dan memberikan hak akses sistem 
+hanya kepada pihak internal PT "X" yang berwenang. Implementasi tabel users dapat 
+dilihat pada Gambar 5.1.  
+ 
+Gambar 5.1 Implementasi Tabel Users 
+2.​Tabel Customers 
+Tabel customers digunakan untuk menyimpan data pelanggan atau perusahaan yang 
+menggunakan jasa logistik pada PT "X". Setiap pelanggan memiliki id sebagai primary 
+key yang bersifat unik dan otomatis. Tabel ini menyimpan informasi profil pelanggan, 
+meliputi nama entitas, alamat lengkap, nomor telepon, dan kontak yang dapat dihubungi. 
+Tabel customers berelasi secara langsung dengan tabel orders untuk mencatat pelanggan 
+yang melakukan pemesanan pengiriman barang. Tabel ini berfungsi dalam proses bisnis 
+untuk mengelola basis data pelanggan dan mempermudah penelusuran riwayat transaksi 
+yang pernah dilakukan oleh pelanggan bersangkutan. Implementasi tabel customers dapat 
+dilihat pada Gambar 5.2.
+
+Gambar 5.2 Implementasi Tabel Customers 
+3.​Tabel Barangs 
+Tabel barangs digunakan untuk menyimpan data referensi jenis muatan yang didukung 
+oleh layanan ekspedisi PT "X". Setiap data barang memiliki id sebagai primary key yang 
+bersifat unik dan otomatis. Tabel ini menyimpan spesifikasi standar barang, seperti nama 
+barang, deskripsi muatan, estimasi berat, dimensi, serta kategori penanganan khusus. 
+Tabel barangs berelasi dengan tabel order_items untuk mendetailkan jenis muatan 
+spesifik yang terdapat dalam sebuah pesanan pelanggan. Tabel ini memiliki peran krusial 
+dalam proses bisnis aplikasi untuk memastikan kelayakan armada truk berdasarkan 
+kesesuaian kapasitas angkut terhadap karakteristik muatan. Implementasi tabel barangs 
+dapat dilihat pada Gambar 5.3.  
+ 
+Gambar 5.3 Implementasi Tabel Barangs
+
+4.​Tabel Drivers 
+Tabel drivers digunakan untuk menyimpan data profil pengemudi truk yang beroperasi di 
+bawah naungan PT "X". Setiap pengemudi memiliki id sebagai primary key yang bersifat 
+unik dan otomatis. Tabel ini menyimpan informasi detail pengemudi seperti nama 
+lengkap, nomor identitas kependudukan, nomor surat izin mengemudi (SIM), status 
+ketersediaan, dan riwayat kontak. Tabel drivers berelasi dengan tabel driver_schedules 
+dan tabel shipments untuk menugaskan pengemudi pada suatu jadwal maupun aktivitas 
+pengiriman tertentu. Dalam proses bisnis sistem, tabel ini berperan untuk memastikan 
+ketersediaan sumber daya manusia dalam mengeksekusi operasi logistik secara aman. 
+Implementasi tabel drivers dapat dilihat pada Gambar 5.4. 
+ 
+Gambar 5.4 Implementasi Tabel Drivers 
+5.​Tabel Trucks 
+Tabel trucks digunakan untuk menyimpan data identitas armada truk yang dimiliki oleh 
+PT "X" untuk memfasilitasi kegiatan distribusi. Setiap data truk memiliki id sebagai 
+primary key yang bersifat unik dan otomatis. Tabel ini menyimpan spesifikasi teknis 
+kendaraan, meliputi nomor polisi, jenis atau model truk, kapasitas berat maksimal 
+muatan, dimensi ruang kargo, serta status operasional armada. Tabel trucks berelasi
+
+dengan tabel shipments untuk mencatat truk mana yang dioperasikan pada saat 
+mengeksekusi sebuah pengiriman. Peran tabel ini dalam proses bisnis adalah untuk 
+memvalidasi alokasi truk yang sesuai dengan total muatan agar kegiatan logistik berjalan 
+secara optimal. Implementasi tabel trucks dapat dilihat pada Gambar 5.6.  
+ 
+Gambar 5.6 Implementasi Tabel Trucks 
+6.​Tabel Komponen Biaya Operasional  
+Tabel komponen_biaya_operasional digunakan untuk menyimpan parameter tarif dasar 
+dari setiap elemen biaya yang mungkin timbul selama proses perjalanan armada. Setiap 
+komponen biaya memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel 
+ini menyimpan referensi berupa nama beban operasional, deskripsi pendukung, dan nilai 
+tarif standar, seperti estimasi biaya bahan bakar, tarif tol per kilometer, atau retribusi 
+khusus. Tabel komponen_biaya_operasional berelasi dengan tabel shipment_costs 
+sebagai basis pembentukan total tagihan pengiriman. Tabel ini berperan untuk 
+mendukung fleksibilitas sistem dalam melakukan perhitungan otomatis ongkos logistik 
+yang dinamis. Implementasi tabel komponen_biaya_operasional dapat dilihat pada 
+Gambar 5.7.
+
+Gambar 5.7 Implementasi Tabel Komponen Biaya Operasional 
+7.​Tabel Locations 
+Tabel locations digunakan untuk menyimpan titik pemetaan spasial yang menjadi simpul 
+dalam jaringan rute distribusi PT "X". Setiap titik lokasi memiliki id sebagai primary key 
+yang bersifat unik dan otomatis. Tabel ini menyimpan detail informasi letak geografis, 
+meliputi nama wilayah, alamat lengkap, kota, provinsi, titik lintang (latitude), dan titik 
+bujur (longitude). Tabel locations berelasi dengan tabel routes sebagai titik penyusun 
+jalur, serta dengan tabel orders sebagai alamat awal atau tujuan pelanggan. Peran tabel ini 
+dalam proses bisnis adalah menjadi dasar pemetaan digital dan perhitungan jarak 
+menggunakan titik koordinat dalam penentuan optimalisasi jalur. Implementasi tabel 
+locations dapat dilihat pada Gambar 5.8. 
+ 
+Gambar 5.8 Implementasi Tabel Locations 
+8.​Tabel Routes 
+Tabel routes digunakan untuk menyimpan data jalur atau ruas koneksi yang 
+menghubungkan antar titik lokasi pada wilayah layanan logistik. Setiap data rute
+
+memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel ini menyimpan 
+properti jalur operasional meliputi titik lokasi keberangkatan, lokasi tujuan, jarak tempuh, 
+perkiraan waktu perjalanan, serta parameter kondisi ruas jalan. Tabel routes berelasi 
+sangat erat dengan tabel locations sebagai graf penyusun jaringan distribusi fisik. Dalam 
+keseluruhan proses bisnis sistem, tabel ini memegang peranan utama sebagai pemasok 
+bobot jarak yang akan dikalkulasi oleh algoritma Dijkstra untuk mendapatkan jalur 
+pengiriman terpendek. Implementasi tabel routes dapat dilihat pada Gambar 5.9. 
+ 
+Gambar 5.9 Implementasi Tabel Routes 
+9.​Tabel Orders 
+Tabel orders digunakan untuk menyimpan pencatatan transaksi awal berupa permintaan 
+pengiriman barang dari pelanggan. Setiap pesanan memiliki id sebagai primary key yang 
+bersifat unik dan otomatis. Tabel ini menyimpan informasi transaksi level atas, mencakup 
+nomor resi unik, tanggal pesanan, lokasi penjemputan awal, lokasi bongkar muat akhir, 
+dan status pemesanan. Tabel orders berelasi dengan tabel customers, tabel locations, tabel 
+order_items, serta tabel shipments sebagai fondasi penugasan armada. Peran tabel ini 
+terhadap proses bisnis aplikasi adalah mendokumentasikan permintaan logistik pelanggan 
+sebelum diubah menjadi rencana perjalanan truk. Implementasi tabel orders dapat dilihat 
+pada Gambar 5.10.
+
+Gambar 5.10 Implementasi Tabel Orders 
+10.​Tabel Order Items 
+Tabel order_items digunakan untuk menyimpan data rincian setiap muatan barang yang 
+diregistrasikan di dalam sebuah pesanan pelanggan. Setiap item barang dalam pesanan 
+memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel ini menyimpan 
+atribut fisik barang seperti kuantitas muatan, bobot aktual dari barang tersebut, dan 
+catatan perlakuan khusus selama proses distribusi. Tabel order_items berelasi dengan 
+tabel orders dan tabel barangs, menjadikannya entitas pendetail jenis barang. Dalam 
+proses bisnis, data kuantitas dan beban dari tabel ini diakumulasi untuk menghitung total 
+kapasitas muatan yang akan memengaruhi rekomendasi truk algoritma. Implementasi 
+tabel order_items dapat dilihat pada Gambar 5.11. 
+ 
+Gambar 5.11 Implementasi Tabel Order Items
+
+11.​Tabel Shipments 
+Tabel shipments digunakan untuk menyimpan data operasional pelaksanaan aktual 
+pengiriman untuk memenuhi satu atau lebih pesanan pelanggan. Setiap data pengiriman 
+memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel ini menyimpan 
+parameter operasional seperti nomor manifes perjalanan, tanggal keberangkatan armada, 
+estimasi waktu tiba, status pengiriman terkini, serta agregat biaya logistik. Tabel 
+shipments berfungsi sebagai pusat relasi yang menghubungkan tabel orders, drivers, 
+trucks, shipment_items, shipment_routes, dan shipment_costs. Peran tabel ini adalah 
+sebagai pusat pencatatan eksekusi logistik di lapangan serta dokumentasi performa 
+pengiriman armada. Implementasi tabel shipments dapat dilihat pada Gambar 5.12. 
+​
+ 
+Gambar 5.12 Implementasi Tabel Shipments 
+12.​Tabel Shipment Items 
+Tabel shipment_items digunakan untuk menyimpan data verifikasi barang yang secara riil 
+dimuat ke dalam armada truk pada sebuah operasi pengiriman. Setiap muatan di dalam
+
+truk memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel ini 
+menyimpan relasi yang mengaitkan eksekusi pengiriman dengan detail pesanan awal, 
+beserta status pengecekan barang pada saat dimuat dan dibongkar. Tabel shipment_items 
+berelasi langsung dengan tabel shipments dan tabel order_items untuk menjaga integritas 
+data kargo logistik. Dalam kerangka kerja operasional, tabel ini memvalidasi kesesuaian 
+fisik muatan yang masuk ke dalam truk terhadap daftar pesanan yang diajukan 
+pelanggan. Implementasi tabel shipment_items dapat dilihat pada Gambar 5.13. 
+ 
+Gambar 5.13 Implementasi Tabel Shipment Items 
+13.​Tabel Shipment Routes 
+Tabel shipment_routes digunakan untuk menyimpan data urutan jalur pemberhentian 
+optimal yang dihasilkan oleh sistem untuk dieksekusi oleh pengemudi. Setiap data rute 
+perjalanan armada memiliki id sebagai primary key yang bersifat unik dan otomatis. 
+Tabel ini menyimpan urutan simpul lokasi yang dilewati truk dari titik pangkal hingga 
+titik bongkar muat akhir, mencakup nomor urut jalan, jarak parsial, dan target waktu antar 
+titik. Tabel shipment_routes berelasi dengan tabel shipments, tabel locations, serta tabel 
+routes. Tabel ini berperan sentral menyimpan luaran hasil pencarian rute terpendek 
+algoritma Dijkstra yang menjadi panduan navigasi aktual di lapangan. Implementasi tabel 
+shipment_routes dapat dilihat pada Gambar 5.14.
+
+Gambar 5.14 Implementasi Tabel Shipment Routes 
+14.​Tabel Shipment Costs 
+Tabel shipment_costs digunakan untuk menyimpan rincian akumulasi kalkulasi biaya 
+operasional yang dibebankan pada suatu aktivitas pengiriman. Setiap entri biaya logistik 
+memiliki id sebagai primary key yang bersifat unik dan otomatis. Tabel ini menyimpan 
+kuantifikasi pembiayaan berdasarkan rute perjalanan armada, volume muatan truk, nilai 
+dari tarif komponen dasar, serta total biaya keseluruhan per item komponen. Tabel 
+shipment_costs berelasi dengan tabel shipments dan tabel komponen_biaya_operasional 
+untuk membentuk perincian akhir faktur perjalanan. Peran tabel ini sangat vital dalam 
+proses bisnis untuk menyediakan transparansi perhitungan tarif pengiriman logistik 
+secara rinci. Implementasi tabel shipment_costs dapat dilihat pada Gambar 5.15. 
+ 
+Gambar 5.15 Implementasi Tabel Shipment Costs
+
+5.2​Implementasi Program 
+Pada subbab ini dibahas implementasi program dari Sistem Manajemen Transportasi PT 
+"X". Sistem dikembangkan menggunakan framework Laravel sebagai aplikasi berbasis web 
+dengan MySQL sebagai basis data. Seluruh proses pengolahan data, implementasi algoritma 
+Dijkstra, perhitungan tarif otomatis, monitoring pengiriman, visualisasi rute, dan pembuatan 
+Surat Jalan dilakukan pada backend Laravel. Selanjutnya akan dijelaskan potongan-potongan 
+kode program yang digunakan dalam mengimplementasikan setiap fungsi utama pada sistem. 
+5.2.1​Implementasi Login dan Hak Akses Pengguna  
+Proses login dan pengaturan hak akses merupakan gerbang utama untuk mengamankan 
+data operasional logistik perusahaan. Sistem membagi pengguna ke dalam tiga tingkatan hak 
+akses, yaitu admin, operator, dan manager. Proses ini bertujuan untuk memastikan bahwa setiap 
+pengguna hanya dapat mengakses fitur dan halaman yang sesuai dengan kewenangannya dalam 
+pengelolaan sistem informasi PT "X".  
+Listing 5.1 Potongan Kode Laravel Memproses Autentikasi dan Hak Akses Pengguna  
+public function login(Request $request) 
+    { 
+ 
+        $credentials = $request->validate([ 
+            'email' => 'required', 
+            'password' => 'required' 
+        ]); 
+ 
+        if (Auth::attempt($credentials)) { 
+ 
+            $request->session()->regenerate(); 
+ 
+            if (Auth::user()->role == 'admin') { 
+ 
+                return redirect('/dashboard'); 
+            } elseif (Auth::user()->role == 'operator') { 
+ 
+                return redirect('/operator/dashboard');
+
+} elseif (Auth::user()->role == 'manager') { 
+ 
+                return redirect() 
+                    ->route('manager.order.report') 
+                    ->with( 
+                        'success', 
+                        'Login Manager Berhasil' 
+                    ); 
+            } 
+        } 
+ 
+        return back()->with('error', 'Login gagal'); 
+    } 
+ 
+ 
+Potongan kode Laravel pada Listing 5.1 merupakan fungsi login yang digunakan untuk 
+memproses autentikasi. Sistem akan memvalidasi email dan password pengguna. Apabila 
+kredensial cocok, fungsi Auth::attempt akan mengembalikan nilai true dan sesi baru akan 
+dibentuk melalui instruksi regenerate. Sistem kemudian mengevaluasi atribut role milik 
+pengguna yang berhasil login. Pengguna dengan role admin diarahkan ke halaman dasbor utama, 
+operator ke dasbor operator, dan manager ke halaman laporan pemesanan. Apabila login gagal, 
+sistem akan mengembalikan pengguna ke halaman awal dengan pesan kesalahan.   
+5.2.2​Implementasi Pengelolaan Master Data 
+Pengelolaan master data armada truk digunakan untuk mencatat dan mengelola seluruh 
+kendaraan operasional yang dimiliki oleh perusahaan. Pencatatan ini sangat krusial karena 
+algoritma pengiriman dan pemrosesan validasi kapasitas muatan sangat bergantung pada 
+spesifikasi teknis truk yang terdaftar secara resmi di dalam sistem, sehingga mencegah insiden 
+beban berlebih saat proses pengiriman di lapangan. 
+Listing 5.2 Potongan Kode Laravel Validasi dan Penyimpanan Master Data Truk 
+public function store(Request $request)
+
+{ 
+        $request->validate([ 
+            'nama_truck' => 'required', 
+            'plat_nomor' => 'required', 
+            'kapasitas_berat' => 'required|numeric', 
+            'konsumsi_bensin' => 'required|numeric', 
+            'tarif_per_km' => 'required|numeric', 
+            'status' => 'required' 
+        ]); 
+ 
+        Truck::create($request->all()); 
+ 
+        return redirect('/truck') 
+            ->with('success', 'Data truck berhasil ditambahkan'); 
+    } 
+ 
+ 
+Potongan kode Laravel pada Listing 5.2 merupakan fungsi store yang menangani proses 
+penambahan armada truk baru. Fungsi ini diawali dengan proses validasi ketat terhadap seluruh 
+atribut yang dikirimkan melalui formulir. Sistem memastikan bahwa spesifikasi teknis truk 
+seperti kapasitas berat, konsumsi bensin, volume ruang angkut, dan parameter dimensi diisi 
+dalam format angka (numeric). Setelah lolos pemeriksaan, sistem akan memanggil fungsi create 
+pada model Truck untuk merekam data ke tabel trucks. Aplikasi lantas mengarahkan antarmuka 
+kembali menuju menu inventaris armada truk. 
+5.2.3​Implementasi Input Pemesanan  
+Input pemesanan merupakan bagian dari alur pembuatan pengiriman terintegrasi 
+(Integrated Creation Flow). Pada tahap ini, rincian pesanan dari pelanggan akan diregistrasikan 
+dan disimpan secara atomik bersamaan dengan penugasan armada truk dan pengemudi pada satu 
+form eksekusi. Konsep integrasi ini bertujuan memberikan efisiensi bagi staf administrasi untuk 
+langsung memverifikasi kelayakan muatan, alokasi jadwal supir, serta rute dalam satu kali 
+tahapan transaksi.
+
+Struktur tabel dibentuk melalui fungsi storeIntegrated yang membungkus keseluruhan 
+proses di dalam Database Transaction (DB::beginTransaction). Hal ini memastikan bahwa jika 
+terjadi kegagalan pada saat pengecekan kapasitas truk atau saat perhitungan rute Dijkstra, maka 
+seluruh pencatatan pesanan (Order) di awal akan otomatis dibatalkan (rollback), sehingga 
+mencegah adanya data pesanan menggantung yang tidak tereksekusi. 
+Listing 5.3 Potongan Kode Laravel Penyimpanan Transaksi Pemesanan Klien 
+ 
+public function storeIntegrated(Request $request, DijkstraService $dijkstra) 
+    { 
+        // Gunakan DB Transaction agar aman jika ada error di tengah jalan 
+        DB::beginTransaction(); 
+        try { 
+             
+            $order = Order::create([ 
+                'tanggal_pesanan' => $request->tanggal_pesanan, 
+                'tanggal_estimasi_kirim' => $request->tanggal_estimasi_kirim, 
+                'estimasi_tiba' => $request->estimasi_tiba,  
+                'status_order' => 'pending', 
+                'customers_id' => $request->customers_id, 
+                'destination_id' => $request->destination_id 
+            ]); 
+ 
+             
+            $totalBerat = 0; 
+            if ($request->has('items')) { 
+                foreach ($request->items as $item) { 
+                    OrderItem::create([ 
+                        'orders_idorders' => $order->idorders, 
+                        'barang_idbarang' => $item['barang_idbarang'], 
+                        'jumlah' => $item['jumlah'] 
+                    ]); 
+ 
+                    $barang = Barang::find($item['barang_idbarang']); 
+                    if ($barang) { 
+                        $totalBerat += ($barang->berat * $item['jumlah']); 
+                    } 
+                }
+
+} 
+ 
+ 
+ 
+Potongan kode Laravel pada Listing 5.3 merupakan tahap awal dari fungsi 
+storeIntegrated yang bertugas mengeksekusi penyimpanan transaksi pemesanan klien sebelum 
+berlanjut ke tahap kalkulasi armada dan rute. 
+5.2.4​Implementasi Algoritma Dijkstra 
+Implementasi Algoritma Dijkstra menjadi fondasi komputasi Sistem Manajemen 
+Transportasi dalam menentukan jalur pengiriman darat paling minimum. Modul rute ini 
+menjelajahi ribuan kemungkinan ruas simpul jalan raya antara gudang logistik pemberangkatan 
+awal dan pergudangan klien akhir. Logika Dijkstra mensubsidi efisiensi biaya, kecepatan 
+perpindahan armada transportasi, serta optimalisasi usia pemakaian operasional armada secara 
+otonom. 
+Potongan kode PHP pada Listing 5.4 merupakan inisialisasi lingkungan pembentukan 
+model graf awal Algoritma Dijkstra. Seluruh data jalan disalin dari basis data routes menuju 
+arsitektur struktur array memori multidimensi $graph. Rancangan matriks tak berarah ini 
+memastikan setiap jarak dari simpul asal diakomodasi sebaliknya secara sama panjang. Array 
+$dist disiapkan untuk merekam perhitungan jarak minimum per simpul dan inisiasi penunjuk 
+jalan dikosongkan menuju array $prev, seraya memastikan indeks simpul penelusuran masuk 
+daftar antrean antarmuka variabel $queue. 
+Listing 5.4 Potongan Kode Laravel Inisialisasi Graf dan Variabel Algoritma Dijkstra 
+ 
+$routes = Route::all();
+
+$graph = []; 
+ 
+        foreach ($routes as $route) { 
+            $graph[$route->source_id][$route->destination_id] 
+                = $route->distance; 
+ 
+            $graph[$route->destination_id][$route->source_id] 
+                = $route->distance; 
+        } 
+ 
+ 
+        if (!isset($graph[$source])) { 
+            return [ 
+                'distance' => 0, 
+                'path' => [] 
+            ]; 
+        } 
+ 
+     
+        $dist = []; 
+        $prev = []; 
+        $queue = []; 
+ 
+        foreach ($graph as $node => $edges) { 
+            $dist[$node] = INF; 
+            $prev[$node] = null; 
+            $queue[$node] = true; 
+        } 
+ 
+        $dist[$source] = 0; 
+ 
+ 
+Potongan kode PHP pada Listing 5.5 merupakan eksekusi tahap iterasi komputasi 
+Dijkstra. Sepanjang tumpukan elemen matriks antrean masih melimpah, sistem memeriksa letak 
+simpul persinggahan aktif $u yang mendekati titik terpendek. Proses dilewati apabila titik jarak 
+berangsur bernilai tidak berujung (INF). Setelah dihapus dalam riwayat pemantauan, fungsi 
+menelusuri rentang keseluruhan tetangga $v yang merelasi koneksi titik aktif $u. Logika 
+kondisional menguji jarak rute jalan putar ($alt); dan bilamana ditemukan lintasan bernilai
+
+agregat lebih kecil, maka nilai pembaruan disematkan menjadi acuan definitif perpindahan 
+kendaraan logistik. 
+Listing 5.5 Potongan Kode Laravel Iterasi Pencarian Rute Terpendek Dijkstra  
+while (!empty($queue)) { 
+            $available = 
+                array_intersect_key( 
+                    $dist, 
+                    $queue 
+                ); 
+ 
+            if (empty($available)) { 
+                break; 
+            } 
+ 
+            $u = array_search( 
+                min($available), 
+                $available 
+            ); 
+ 
+            if ($u === false) { 
+                break; 
+            } 
+ 
+Listing 5.5 Potongan Kode Laravel Iterasi Pencarian Rute Terpendek Dijkstra (Lanjutan) 
+if ($dist[$u] == INF) { 
+                break; 
+            } 
+ 
+            unset($queue[$u]); 
+ 
+            if ($u == $destination) { 
+                break; 
+            } 
+ 
+            if (!isset($graph[$u])) { 
+                continue; 
+            } 
+ 
+            foreach ($graph[$u] as $v => $cost) { 
+                $alt = $dist[$u] + $cost;
+
+if ($alt < $dist[$v]) { 
+                    $dist[$v] = $alt; 
+                    $prev[$v] = $u; 
+                } 
+            } 
+        } 
+ 
+ 
+Potongan kode PHP pada Listing 5.6 merupakan proses validasi konklusi rute akhir dan 
+restrukturisasi untaian perjalanan. Sistem mengecek temuan jalan minimum menuju indeks 
+variabel alamat akhir ($destination). Sekuens penulusuran mundur ditugaskan mengaitkan 
+kembali rantai penunjuk histori ($prev) untuk mendesak alamat simpul riil dipanggil secara 
+linear (unshift array element). Pada bagian pengujung metode, kelas service akan mengirimkan 
+struktur luaran kembalian berformat parameter jarak parsial dan urutan titik lintas navigasi 
+real-time. 
+ 
+ 
+Listing 5.6 Potongan Kode Laravel Pembangunan Rekonstruksi Jalur Algoritma Dijkstra  
+ 
+if ( 
+            !isset($dist[$destination]) 
+            || 
+            $dist[$destination] == INF 
+        ) { 
+            return [ 
+                'distance' => 0, 
+                'path' => [] 
+            ]; 
+        } 
+ 
+        $path = []; 
+ 
+        $u = $destination;
+
+while ($u !== null) { 
+            array_unshift( 
+                $path, 
+                $u 
+            ); 
+ 
+            $u = $prev[$u]; 
+        } 
+ 
+        return [ 
+            'distance' => $dist[$destination], 
+            'path' => $path 
+        ]; 
+ 
+5.2.5​Implementasi Perhitungan Tarif Otomatis 
+Perhitungan tarif logistik dilaksanakan seiring proses verifikasi pembentukan rute jalur 
+dari dalam antarmuka pembuatan shipment. Dalam proses bisnisnya, penetapan tarif tidak 
+dipatok berdasarkan kesepakatan konvensional, melainkan mengkalkulasikan parameter variabel 
+beban dinamis algoritma jarak jalan aktual dikalikan kebutuhan spesifikasi kelas kendaraan. Fitur 
+meminimalisir manipulasi pelaporan mark-up oknum lapangan dan membentuk keadilan tarif 
+antar perjalanan konsumen. 
+ 
+Potongan kode Laravel pada Listing 5.7 mengilustrasikan logika inti pencetakan tarif rute 
+secara absolut. Skrip menarik rekapitulasi data statis model instansi KomponenBiayaOperasional 
+guna menghitung agregat wajib dengan operasi fungsi Collection Laravel sum. Luaran variabel 
+jalan Dijkstra ($jarak) dikalikan bobot nominal per kilometer armada ($truck->tarif_per_km). 
+Selanjutnya, variabel gaji supir dan kompensasi fasilitas terakumulasi untuk dibentuk menjadi 
+tarif utuh nilai pesanan yang ditagihkan.
+
+Listing 5.7 Potongan Kode Laravel Agregasi dan Perhitungan Ongkos Pengiriman 
+$komponenBiaya = 
+            KomponenBiayaOperasional::all(); 
+ 
+        $totalKomponen = 
+            $komponenBiaya->sum( 
+                'cost_value' 
+            ); 
+ 
+        $totalBiaya = 
+            ($jarak * $truck->tarif_per_km) 
+            + $driver->tarif_harian 
+            + $totalKomponen; 
+ 
+ 
+5.2.6​Implementasi Pembuatan Shipment 
+Pembuatan pengiriman atau Shipment merupakan fusi penggabungan fisik sumber daya 
+instansi. Penciptaan dokumen tersebut menandakan penyesuaian penyatuan beban kapasitas 
+order, pengecekan kelayakan performa batas kapasitas sasis mesin truk yang diikutsertakan, serta 
+persetujuan alokasi waktu SDM pengemudi. Fitur ini secara definitif menutup peluang 
+double-booking penugasan dari pihak sumber daya. 
+ 
+Potongan kode Laravel pada Listing 5.8 menunjukkan fase stabilisasi penyimpanan 
+manifes database secara hierarkis. Entitas parent disimpan merekam ikatan foreign key order 
+pesanan, jarak, biaya, serta inisialisasi status tunggu jalan. Sistem lalu memanfaatkan perulangan 
+atas luaran hasil matriks Dijkstra ke arah registrasi record detail baris ShipmentRoute untuk 
+menata urutan laju persinggahan. Transaksi diakhiri dengan kloning spesifikasi keranjang order 
+pelanggan pada entitas muatan jalan relasi tabel bawaan keranjang manifes truk logistik.
+
+Listing 5.8 Potongan Kode Laravel Perekaman Hierarkis Transaksi Induk dan Replikasi 
+Manifes 
+$shipment = Shipment::create([ 
+ 
+            'orders_idorders' 
+            => $order->idorders, 
+ 
+            'truck_idtruck' 
+            => $truck->idtruck, 
+ 
+            'driver_iddrivers' 
+            => $driver->iddrivers, 
+ 
+            'jarak_km' 
+            => $jarak, 
+ 
+            'total_berat' 
+            => $totalBerat, 
+ 
+            'total_biaya' 
+            => $totalBiaya, 
+ 
+            'tanggal_kirim' 
+            => $request->tanggal_kirim, 
+ 
+            'estimasi_tiba' 
+            => $order->estimasi_tiba, 
+ 
+            'status_pengiriman' 
+            => 'menunggu' 
+        ]); 
+ 
+ 
+ 
+ 
+Listing 5.8 Potongan Kode Laravel Perekaman Hierarkis Transaksi Induk dan Replikasi 
+Manifes (Lanjutan)
+
+foreach ($path as $index => $locationId) { 
+            ShipmentRoute::create([ 
+ 
+                'urutan' 
+                => $index + 1, 
+ 
+                'shipments_idshipments' 
+                => $shipment->idshipment, 
+ 
+                'locations_idlocations' 
+                => $locationId 
+            ]); 
+        } 
+ 
+        foreach ($order->orderItems as $item) { 
+            ShipmentItem::create([ 
+ 
+                'shipments_idshipments' 
+                => $shipment->idshipment, 
+ 
+                'barang_idbarang' 
+                => $item->barang_idbarang, 
+ 
+                'jumlah' 
+                => $item->jumlah 
+            ]); 
+        } 
+ 
+ 
+5.2.7​Implementasi Monitoring Pengiriman  
+Monitoring pengiriman difungsikan pada modifikasi berkala ketercapaian lalu lintas 
+logistik. Operator internal harus memiliki wewenang menegaskan perubahan sirkulasi 
+penyerahan logistik dari status keberangkatan hingga penyelesaian penugasan. Alur mutasi status 
+eksekusi ini memberikan konfirmasi nyata pembebasan izin kendaraan inventaris truk maupun 
+ketersediaan kehadiran supir di depo pusat logistik.
+
+Potongan kode Laravel pada Listing 5.9 menampilkan alur fungsional instruksional 
+perbaikan baris Shipment. Pengelompokan status diekstraksi ke baris database penugasan 
+bersangkutan. Bilamana laporan pengantaran komoditas dinilai mutlak terpenuhi alias berstatus 
+'selesai', skrip PHP sigap mengarahkan modifikasi status kunci tamu milik armada dan 
+pengemudi menuju wujud pendaftaran parameter 'tersedia'. Mekanika pemutusan penguncian 
+SDM dan SDA memuluskan rute alokasi order sistem hari kerja mendatang. 
+Listing 5.9 Potongan Kode Laravel Pengendalian Status Lintas dan Realokasi Inventaris 
+Truk Supir 
+public function update( 
+        Request $request, 
+        $id 
+    ) { 
+        $shipment = Shipment::findOrFail($id); 
+ 
+        $shipment->update([ 
+            'status_pengiriman' 
+            => $request->status_pengiriman 
+        ]); 
+ 
+        if ( 
+            $request->status_pengiriman 
+            == 'selesai' 
+        ) { 
+            $shipment->truck->update([ 
+                'status' => 'tersedia' 
+            ]); 
+ 
+            $shipment->driver->update([ 
+                'status' => 'tersedia' 
+            ]); 
+        } 
+ 
+        return redirect() 
+            ->route('shipments.index'); 
+    }
+
+5.2.8​Implementasi Visualisasi Rute 
+Visualisasi spasial adalah wujud rendering rute rekomendasi Dijkstra ke kerangka dasar 
+pemetaan kanvas internet. Skema peta spasial yang dihadirkan di sisi layar memudahkan 
+penafsiran pengemudi dalam menanggapi kompleksitas jalur angka titik lokasi mentah (longitude 
+& latitude). Proses penyajian peta dinamis memastikan keselarasan navigasi fisik jalur jalan 
+pengiriman dengan kalkulasi tarif sistem ekspedisi. 
+Potongan kode JavaScript integrasi antarmuka Blade pada Listing 5.10 menunjukkan 
+prosedur penampungan elemen peta OpenStreetMap. Penanda wilayah letak (marker) dan 
+referensi tulisan peringatan (popup label) dibangun merujuk basis koleksi nilai hasil pencarian 
+API Dijkstra lokal yang difilter oleh perulangan server Laravel (@foreach). Titik lokasi tersebut 
+disusun dan dipadukan dalam simpul vektor penghubung geometri (L.polyline), dengan 
+pengaturan zoom map bergeser secara halus melingkupi cakupan garis rute yang tertanam secara 
+proporsional di peramban monitor. 
+Listing 5.10 Potongan Kode JavaScript-Blade Pembentukan Grafis Simpul Vektor Jalur 
+Leaflet 
+var map = L.map('map').setView( 
+            [-7.2575, 112.7521], 
+            8 
+        ); 
+ 
+        L.tileLayer( 
+            'https://tile.openstreetmap.org/{z}/{x}/{y}.png', { 
+                maxZoom: 19 
+            } 
+        ).addTo(map); 
+ 
+        var points = []; 
+ 
+        @if (isset($pathLocations)) 
+ 
+            @foreach ($pathLocations as $location)
+
+Listing 5.10 Potongan Kode JavaScript-Blade Pembentukan Grafis Simpul Vektor Jalur 
+Leaflet (Lanjutan) 
+L.marker([ 
+                        {{ $location->lintang }}, 
+                        {{ $location->bujur }} 
+                    ]) 
+                    .addTo(map) 
+                    .bindPopup( 
+                        "{{ $location->name }}" 
+                    ); 
+ 
+                points.push([ 
+                    {{ $location->lintang }}, 
+                    {{ $location->bujur }} 
+                ]); 
+            @endforeach 
+ 
+            if (points.length > 1) { 
+                var polyline = 
+                    L.polyline( 
+                        points, { 
+                            weight: 6 
+                        } 
+                    ).addTo(map); 
+ 
+                map.fitBounds( 
+                    polyline.getBounds() 
+                ); 
+            } 
+        @endif 
+ 
+ 
+5.2.9​Implementasi Surat Jalan PDF 
+ 
+Penerbitan Surat Jalan PDF merepresentasikan otomatisasi penerbitan draf instruksi tugas 
+lapangan berwujud berkas digital tak tersetujui. Dokumen tersebut memberikan proteksi 
+perizinan jalan berwujud sah dan menguatkan serah terima identifikasi jenis komoditas logistik
+
+antara pihak operasional dan aparat instansi hukum luar di saat pemberhentian arus lalu lintas 
+distribusi perjalanan. 
+Potongan kode Laravel pada Listing 5.11 memperlihatkan sinkronisasi layanan pustaka 
+eksternal Barryvdh DomPDF Facade. Konstruksi himpunan tabel dengan strategi relasi Eager 
+Loading ORM memastikan minimasi panggilan basis data atas identitas nomor pelanggan, seri 
+truk operasional, lisensi supir, serta record rute koordinat pendaratan. Parameter relasional 
+digabung secara utuh (compact variable) di dalam halaman statis HTML (shipments.surat_jalan). 
+Komando streaming konversi lalu diresmikan menghasilkan ekstensi PDF langsung terunduh 
+menyertakan nomor unik registrasi Shipment. 
+ 
+Listing 5.11 Potongan Kode Laravel Transmutasi HTML menuju Dokumen Cetak Surat 
+Jalan PDF 
+public function suratJalan($id) 
+    { 
+        $shipment = Shipment::with([ 
+            'order.customer', 
+            'truck', 
+            'driver', 
+            'shipmentRoutes.location' 
+        ])->findOrFail($id); 
+ 
+        $pdf = Pdf::loadView( 
+            'shipments.surat_jalan', 
+            compact('shipment') 
+        ); 
+ 
+        return $pdf->download( 
+            'surat_jalan_' . $shipment->idshipment . '.pdf' 
+        ); 
+    }

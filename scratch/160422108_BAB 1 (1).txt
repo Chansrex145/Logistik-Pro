@@ -1,0 +1,225 @@
+manajemen  transportasi  yang  bisa mengotomatisasi  seluruh proses  logistik. Sistem  
+Untuk  mengatasi  masalah  ini secara  efektif memerlukan   sebuah  sistem  
+(Sahabuddin  et al., 2024).  
+berkurangnya   rasa kepercayaan  pelanggan  karena  tidak adanya  transparansi  biaya  
+untuk menemukan   tren biaya atau  rute yang  paling  optimal.  Pada  akhirnya  
+terpadu  menyulitkan  manajemen  dalam  menganalisis  data  riwayat  pengiriman  
+tarif yang  menguntungkan   namun  tetap terjangkau.  Selain  itu, proses  yang  tidak 
+didapatkan  tidak konsisten.  Kondisi  ini menghalangi  PT  ‘X’ untuk menawarkan   
+penting.  Tidak  adanya  standarisasi  untuk perhitungan  tarif membuat  hasil yang  
+Keterbatasan  sistem  manual  tersebut  menyebabkan   beberapa  masalah  
+(Prastyo  & Irawan,  2024).  
+terbukti  tidak efektif, memakan  banyak  waktu,  rawan  kesalahan  dan beresiko  
+BBM,  gaji supir, biaya e-toll, dan komponen   lainnya dari operasi.  Metode  manual  
+perhitungan  kompleks  dari berbagai  elemen  biaya,  seperti jarak tempuh,  konsumsi  
+menggunakan   metode  perhitungan  tarif manual  tradisional,yang  melibatkan  
+armada  truk, adalah  salah satu pemain  dalam  industri  logistik. PT  ‘X’ masih  
+sebuah  perusahaan  pengiriman  barang  yang  operasinya  sangat  bergantung  pada  
+merupakan  komponen   penting  dari rantai pasokan   (Erliyana  et al., 2025).  PT  ‘X’, 
+keunggulan  kompetitif  yang  berkelanjutan.  Untuk  mencapai  tujuan  ini, logistik  
+Perkembangan   ekonomi  global  mengharuskan   perusahaan  memiliki  
+ 
+1.1 LATAR BELAKANG 
+ 
+rute untuk perhitungan  tarif truk. 
+penyusunan  dan pengembangan   sistem  manajemen  transportasi  dan optimalisasi  
+manfaat,  ruang lingkup,  dan metodologi  penelitian  yang  menjadi  dasar 
+Bab ini menyajikan  latar belakang  masalah,  perumusan  masalah,  tujuan, 
+PENDAHULUAN
+  
+BAB 1 
+----------------Page (0) Break----------------
+menggunakan   algoritma  ini, sistem  akan  menghitung  dan merekomendasikan    rute 
+yang  dihasilkan  akan  jauh  lebih akurat  daripada  metode  manual.  Dengan  
+pada  optimalisasi  jarak dan waktu  tempuh  standar, rekomendasi  rute terpendek  
+rute terpendek  (shortest path  single-source).  Namun  meskipun  sistem  ini berfokus  
+algoritma  Dijkstra  sangat  sempurna  untuk memecahkan   masalah  dasar penentuan  
+kemacetan,  penutupan  jalan, atau  kondisi permukaan  jalan seperti makadam,   
+waktu  tempuh  optimal  dan tidak memperhitungkan   kondisi real-time seperti 
+Dijkstra  berbagai  rute yang  dapat dipilih. Dengan  membatasi  bobot pada  jarak dan 
+Google   Maps  atau  OpenStreetMap.   Model  jaringan  ini akan  memberi  algoritma  
+konektivitas  jalan yang  dikumpulkan  dari platform  peta  digital, seperti API 
+akan  bekerja pada  model  jaringan  yang  berasal dari data  koordinat  geografis  dan 
+rute tunggal  terpendek  yang  dibutuhkan  d(Cantona  et al., 2020)  Algoritma  ini 
+single-source  shortest  menjadikannya  metode  yang  sempurna  untuk menentukan   
+berlaku   dalam   perhitungan   logistik.  Fokus   algoritma   Dijkstra   sebagai  
+mempunyai  bobot negatif (Pratama  & Dermawan,  2022),  namun  kondisi ini tidak 
+Bellman-Ford.    Algoritma  Bellman-Ford   hanya  relevan untuk digunakan  jika 
+seperti Floyd-W arshall yang  cenderung  lebih kompleks  ataupun  algoritma  seperti 
+truk. Algoritma  ini lebih diutamakan  dari pada  algoritma  all-pairs shortest  path  
+mengidentifikasi  rute satu-satunya  yang  paling  efisien untuk setiap  pengiriman  
+(Hendra  & Riti, 2022).  Ini secara  langsung  menjawab  kebutuhan  PT  “X” untuk 
+efektif dalam  kasus shortest  path  single-source  (menemukan   jalan terbaik)  
+jaringan  dengan  bobot positif seperti biaya dan jarak, yang  menjadikannya  sangat  
+terbaiknya  untuk menemukan   rute terpendek  dari satu titik ke titik lain dalam  
+algoritma  Dijkstra  akan  digunakan.  Algoritma  ini dipilih karena  kemampuan   
+komponen   terpenting  dari sistem  yang  diusulkan.  Untuk  mencapai  hal ini, 
+Kemampuan    untuk  mengoptimalkan    rute  pengiriman   merupakan  
+lama  dan berdasarkan  data. 
+memungkinkan   perusahaan  untuk membuat  keputusan  yang  tidak memakan  waktu  
+yang  inovatif  dan ampuh,  sistem  terpadu  ini harus dikembangkan.   Ini akan  
+validitas dan optimalitas.  Untuk  mengubah   proses  manual  menjadi  solusi  digital 
+ini tidak hanya  kalkulator  tarif, melainkan  alat strategis yang  dapat meningkatkan   
+----------------Page (1) Break----------------
+informasi  harga  
+● Pelanggan  tidak perlu menunggu   waktu  yang  lama  untuk mendapatkan  
+2. Pelanggan   
+dengan  data  yang  terpusat  dengan  akurat  
+● Perusahaan  dapat menghitung  biaya pengiriman  per rute atau  jenis truk 
+manajemen  
+● Laporan,analisis  tren biaya,dan  audit dapat dilakukan  dengan  mudah  oleh  
+input data   
+● Otomatisasi  mencegah  kesalahan  yang  disebabkan  oleh  salah hitung  atau  
+dilakukan  secara  instan. 
+● Perhitungan  yang  membutuhkan   banyak  waktu  dan sumber  daya  dapat 
+1. Perusahaan   
+adalah  : 
+Manfaat  dari sistem  berbasis  web  untuk otomatisasi  perhitungan  tarif ini 
+1.4 MANFAAT 
+ 
+Dijkstra. 
+tarif secara  keseluruhan  dan mengoptimalisasi   rute menggunakan   Algoritma  
+sebuah  sistem  berbasis  web  yang  akan  mengotomatisasikan   proses  perhitungan  
+Tujuan dalam  pembuatan  tugas akhir ini yaitu membuat  dan membangun   
+1.3 TUJUAN 
+ 
+dan mengoptimalkan   rute untuk perhitungan  tarif truk ? 
+“Bagaimana  cara  membantu   PT  ‘X’ dalam  melakukan  manajemen  transportasi  
+Berdasarkan  latar belakang  diatas, maka  rumusan  masalahnya  adalah  
+1.2 RUMUSAN MASALAH 
+ 
+biaya terkait lainnya.  
+yang  akurat  untuk menghitung  biaya untuk menghitung  biaya bahan  bakar dan 
+yang  paling  efisien berdasarkan  jarak dan waktu  tempuh.  Ini akan  menjadi  dasar 
+----------------Page (2) Break----------------
+perhitungan  biaya,  bukan  sebagai  panduan  navigasi  dinamis  di lapangan.  
+yang  dihasilkan  bersifat  teoritis dan terstandarisasi  sebagai  basis 
+permukaan  jalan (misalnya,  jalan makadam  atau  rusak). Optimalitas  rute 
+kemacetan  lalu lintas, penutupan  jalan sementara,  atau  kondisi 
+6. Sistem  tidak mengakomodasi   faktor -faktor dinamis  real-time seperti 
+pengiriman  yang  dioptimalkan   
+5. Output  berupa  hasil perhitungan  tarif yang  akurat  dan rincian rute 
+dan data  komponen   biaya pengiriman   
+4. Data  yang  digunakan  meliputi  data  lokasi, data  spesifikasi kendaraan,  
+dengan  tujuan  mendapatkan  jalur terpendek  dan paling  efisien. 
+3. Menggunakan   algoritma  Dijkstra  untuk optimalisasi  rute pengiriman,  
+yang  terstandarisasi.   
+lainnya.  Perhitungan  ini berfungsi  sebagai  basis biaya (baseline cost) 
+BBM  truk tertentu  per kilometer , biaya supir, dan biaya operasional  
+Maps  atau  OpenStreetMap),   yang  kemudian  dikalikan  dengan  konsumsi  
+dari jarak optimal  dan waktu  tempuh  standar (diperoleh  dari API Google  
+data  seperti jarak tempuh,  konsumsi  biaya bahan  bakar yang  dihitung  
+2. Secara  otomatis,  sistem  akan  menghitung  tarif pengiriman  berdasarkan  
+Pembuatan  surat jalan, dan perencanaan  pengiriman).   
+dan fitur pengendalian  transaksi operasional  (input  formulir  pemesanan,  
+mempunyai  fitur pengelolaan  master  data(armada  truk, komponen   biaya)  
+1. Sistem  manajemen  transportasi  berbentuk  aplikasi  berbasis  web  yang  
+Adapun  ruang lingkup  dari sistem  ini: 
+1.5 RUANG LINGKUP  
+ 
+● Pelayanan  yang  lebih Profesional   
+pengiriman  tanpa harus menghubungi   atau  mengirim  email berulang  kali  
+● Dapat  dengan  mudah  mendapatkan  informasi  tentang tarif dan status 
+● Meningkatnya   kepercayaan  pelanggan   
+----------------Page (3) Break----------------
+● Pengembangan   logika  tarif otomatis  
+sebelumnya.Implementasi    difokuskan  pada: 
+      Pada  tahap ini, aplikasi  dibangun  berdasarkan  desain  yang  telah dirancang  
+4. Implementasi   
+perancangan  antarmuka  pengguna  agar  program  mudah  dioperasikan.   
+keterhubungan  antar komponen,  termasuk  algoritma.T erakhir, dilakukan  
+Setelah itu, disusun  desain  arsitektur  sistem  yang  menggambarkan   
+pertama  yang  dibuat  adalah  database  untuk menyimpan  data  operasional.  
+     Pada  tahap ini dilakukan  perancangan  berdasarkan  hasil analisis. Desain  
+3. Desain  
+memberikan   solusi  terhadap  masalah  yang  ada.  
+tersebut  mencakup  evaluasi  kebutuhan  perusahaan  agar  sistem  mampu  
+dibutuhkan  untuk kemudian  diimplementasikan   ke dalam  aplikasi. Proses  
+       Pada  tahap analisis  ini, dilakukan  identifikasi  terhadap  fitur yang  
+2. Analisis  
+pengiriman.  
+komponen   biaya (jarak, upah, BBM),spesifikasi   truk, serta rute 
+● Data  yang  diperlukan  sebagai  bahan  analisis  dikumpulkan,   meliputi  
+studi literatur 
+Algoritma  Dijkstra, serta pemodelan  biaya logistik  dilakukan  melalui  
+● Pengumpulan   informasi  mengenai  Sistem  Manajemen  Transportasi,  
+tahap ini. Apa  yang  harus dipersiapkan  adalah:  
+      Sebelum  melakukan  penelitian  dan membuat  program,persiapan   pada  
+1. Persiapan   
+sebagai  berikut :  
+Langkah-langkah   yang  akan  dilakukan  dalam  pengerjaan  tugas akhir ini 
+1.6 METODOLOGI PENELITIAN 
+ 
+Vehicle  Routing  Problem  (VRP)  yang  lebih kompleks.   
+(single-source),  dan tidak menangani  multiple  drop-of f points  atau  
+7. Perhitungan  tarif dan rute hanya  mencakup  titik awal  dan titik tujuan  
+----------------Page (4) Break----------------
+BAB  3 : ANALISIS   SISTEM   
+ 
+teknologi  yang  digunakan  untuk mengembangkan   sistem  berbasis  web.  
+logistik, Algoritma  Dijkstra, pemodelan  jaringan  (juga dikenal sebagai  graf), dan 
+penelitian,mencakup   penjelasan  tentang manajemen  transportasi, konsep  tarif 
+Bab  ini  menguraikan   teori-teori  dasar  yang   relevan  dengan  
+BAB  2 : LANDASAN    TEORI  
+ 
+sebagai  dasar penyusunan  tugas akhir. 
+tujuan, manfaat,  ruang lingkup,  metodologi  penelitian, serta sistematika  penulisan  
+Bab ini membahas   tentang latar belakang  masalah,  rumusan  masalah,  
+BAB  1 : PENDAHULUAN     
+berikut:  
+Tugas  akhir ini terdiri dari tujuh bab dengan  sistematika  penulisan  sebagai  
+1.7 SISTEMATIKA PENULISAN 
+ 
+ 
+ 
+hasil evaluasi  
+proses  penelitian  dan pengembangan,   dimulai  dari latar belakang  hingga  
+     Tahap  terakhir  adalah  penyusunan  laporan  yang  berisi seluruh rangkaian  
+6. Penyusunan   laporan   
+validitas dan akurasi sistem. 
+dalam  mendapatkan  rute optimal.  Hasil pengujian  menjadi  dasar penilaian  
+dengan  perhitungan  manual,  serta evaluasi  keakuratan  Algoritma  Dijkstra  
+Proses  ini melibatkan  perbandingan  hasil perhitungan  tarif dari sistem  
+     Uji coba  dilakukan  guna  memastikan   aplikasi  beroperasi  sesuai  harapan.  
+5. Uji coba  dan evaluasi   
+● Perancangan  antarmuka  pengguna  berbasih  web.  
+optimalisasi  rute. 
+● Implementasi  Algoritma  Dijkstra  ke dalam  kode  program  untuk 
+----------------Page (5) Break----------------
+ 
+ 
+ 
+pengiriman  secara  tepat.  
+untuk memastikan   sistem  mampu  menghasilkan   rute optimal  dan perhitungan  tarif 
+dilakukan  menggunakan   Black  Box  Testing  dan pengujian  implementasi  algoritma  
+Algoritma  Dijkstra  berjalan  sesuai  dengan  kebutuhan  PT  "X".  Pengujian  
+validasi  pengguna  untuk memastikan   seluruh fungsi  aplikasi  serta implementasi  
+Bab ini membahas   hasil pengujian  sistem  melalui  verifikasi  teknis  dan 
+BAB  6 : UJI COBA   DAN  EV ALUASI   
+ 
+dalam  kode  program  untuk menghasilkan   rute optimal.  
+Integrasi Logika  Perhitungan  Tarif, dan Implementasi  Algoritma  Dijkstra  ke 
+Pengembangan   Fitur Operasional  (input  pemesanan,  pembuatan  surat jalan), 
+perancangan.  Implementasi  difokuskan  pada: Pengembangan   Master  Data , 
+Bab ini membahas   proses  implementasi  sistem  berdasarkan  hasil 
+BAB  5 : IMPLEMENT   ASI SISTEM   
+ 
+Tarif Otomatis,  dan Desain  Antarmuka  Pengguna  (UI)  pada  aplikasi  berbasis  web.  
+Jaringan  untuk implementasi  Algoritma  Dijkstra, Rancangan  Logika  Perhitungan  
+Database  , Arsitektur  Sistem  (misalnya,  arsitektur  three-tier), Desain  Model  
+Bab ini membahas   tentang rancangan  sistem  yang  mencakup  Desain  
+BAB  4 : DESAIN   SISTEM   
+ 
+yang  digunakan.  
+perhitungan  tarif, guna  memperoleh   gambaran  dan justifikasi terhadap  pendekatan  
+terhadap  penelitian  sebelumnya  yang  berkaitan  dengan  optimasi  rute dan 
+digunakan  (data lokasi, spesifikasi truk, komponen   biaya), serta studi literatur 
+Kebutuhan  Fungsional  dan Non-Fungsional,  identifikasi  karakteristik  data  yang  
+Bab ini menjelaskan  analisis  kebutuhan  sistem, meliputi  Analisis  
+----------------Page (6) Break----------------
+ 
+manajemen  transportasi  dan optimalisasi  rute untuk perhitungan  tarif. 
+serta memberikan   saran untuk pengembangan   lebih lanjut dalam  penerapan  sistem  
+Bab ini berisi kesimpulan  dari hasil penelitian  dan pengembangan   sistem, 
+BAB  7 : KESIMPULAN    DAN  SARAN  
+----------------Page (7) Break----------------

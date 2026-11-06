@@ -1,0 +1,932 @@
+BAB 4 
+DESAIN SISTEM 
+Bab ini menjelaskan rancangan sistem yang disusun berdasarkan hasil analisis kebutuhan 
+yang telah dibahas pada bab sebelumnya. Pembahasan pada bab ini meliputi desain basis data, 
+desain proses bisnis, serta desain antarmuka pengguna pada Sistem Manajemen Transportasi 
+yang dikembangkan untuk mendukung optimalisasi rute pengiriman dan perhitungan tarif truk 
+menggunakan algoritma Dijkstra pada PT "X".  
+4.1.​Desain Basis Data 
+Desain basis data merupakan tahapan krusial dalam pengembangan Sistem Manajemen 
+Transportasi pada PT 'X' guna memastikan seluruh data operasional yang meliputi manajemen 
+master data, transaksi pemesanan, hingga penugasan armada dapat tersimpan secara terstruktur 
+dan terintegrasi. Perancangan basis data ini bertujuan untuk mendukung penerapan Algoritma 
+Dijkstra dalam mengkalkulasi rute terpendek secara dinamis, sekaligus menjaga integritas 
+relasional antara elemen biaya operasional dan tarif akhir pengiriman. Model relasi antar entitas 
+yang dibangun direpresentasikan melalui Entity Relationship Diagram (ERD). 
+Pemodelan ERD yang diterapkan dalam sistem ini mencerminkan alur proses bisnis 
+transportasi logistik yang berfokus pada integrasi data secara terpusat. Detail mengenai kerangka 
+konseptual serta hubungan kardinalitas dari setiap entitas yang menyusun basis data sistem ini 
+diilustrasikan pada Gambar 4.1.
+
+Gambar 4.1 Desain Entity Relationship Diagram
+
+1.​Tabel users 
+Tabel ini berfungsi untuk menyimpan data pengguna dalam sistem. Atribut yang dicatat 
+yaitu id sebagai primary key, name, email, password, created_at, updated_at, dan role. 
+Penjelasan nilai dari atribut bertipe ENUM tersebut dijelaskan pada Tabel 4.1. 
+​ Tabel 4.1 Data Dictionary Tabel users  
+Atribut Tipe Data Keterangan 
+role ENUM Menunjukkan hak akses 
+pengguna seperti Admin, 
+Operator, atau Manajer.  
+ 
+2.​Tabel cutomers 
+Tabel ini berfungsi untuk menyimpan data pelanggan yang melakukan pemesanan 
+pengiriman barang. Atribut yang dicatat meliputi id sebagai primary key, nama, alamat, 
+nomor telepon, created_at, dan updated_at. 
+4.1.1​Entity Relationship Diagram Bagian Pertama 
+ERD bagian pertama merupakan visualisasi dari penjelasan tabel yang telah diuraikan 
+sebelumnya, sebagaimana ditampilkan pada Gambar 4.2. Diagram ini memperlihatkan 
+keterkaitan antara entitas pengguna sistem dengan klien secara terstruktur. Hubungan tersebut 
+menjadi dasar dalam pengelolaan hak akses pengguna serta data pelanggan yang nantinya 
+digunakan pada proses transaksi pengiriman. Pada bagian ini, tabel users berfungsi mengatur autentikasi dan otorisasi pengguna 
+berdasarkan peran Admin, Operator, dan Manager, sedangkan tabel customers menyimpan 
+informasi pelanggan yang melakukan pemesanan jasa pengiriman. Kedua entitas tersebut
+
+menjadi fondasi awal sistem karena seluruh aktivitas operasional diawali oleh pengguna yang 
+memiliki hak akses tertentu dan berkaitan dengan data pelanggan yang dilayani oleh perusahaan. 
+  
+ 
+ Gambar 4.2 Desain ERD Bagian Pertama 
+3.​Tabel locations 
+Tabel ini berfungsi untuk menyimpan data titik-titik lokasi penting (gudang/depo) untuk 
+pemetaan algoritma Dijkstra. Atribut yang dicatat yaitu idlocations sebagai primary key, 
+name, alamat_lengkap, latitude, longitude, created_at, dan updated_at. 
+4.​Tabel routes 
+Tabel ini berfungsi untuk menyimpan data jarak absolut antar dua lokasi. Atribut yang 
+dicatat yaitu idroutes sebagai primary key, distance_km, serta source_id dan 
+destination_id sebagai foreign key dari tabel locations.
+
+5.​Tabel trucks  
+Tabel ini berfungsi untuk menyimpan data armada pengiriman yang tersedia beserta tarif 
+dasarnya. Atribut yang dicatat yaitu idtruck sebagai primary key, plat_nomor, 
+nama_truck, kapasitas_berat, tarif_per_km, status, created_at, dan updated_at. Penjelasan 
+nilai dari atribut bertipe ENUM tersebut dijelaskan pada Tabel 4.2.  Tabel 4.2 Data Dictionary Tabel trucks 
+Atribut Tipe Data Keterangan 
+status ENUM Atribut ini digunakan 
+untuk menunjukkan status 
+armada seperti 'tersedia', 
+'perbaikan', dan 
+'beroperasi'.   
+6.​Tabel drivers 
+Tabel ini berfungsi untuk menyimpan data pengemudi yang bertugas. Atribut yang dicatat 
+yaitu iddrivers sebagai primary key, nama, nomor_telepon, tarif_harian, status, 
+created_at, dan updated_at. 
+4.1.2​Entity Relationship Diagram Bagian Kedua 
+ERD bagian kedua merupakan visualisasi dari penjelasan tabel yang telah diuraikan 
+sebelumnya, sebagaimana ditampilkan pada Gambar 4.3. Diagram ini memperlihatkan pemetaan 
+entitas sumber daya fisik yang digunakan dalam proses distribusi barang, yaitu data lokasi, rute, 
+armada truk, dan pengemudi. 
+Hubungan antar entitas tersebut memungkinkan sistem mengelola informasi jaringan 
+distribusi secara terintegrasi. Data lokasi dan rute dimanfaatkan sebagai representasi graf yang
+
+akan diproses menggunakan Algoritma Dijkstra untuk memperoleh rute terpendek, sedangkan 
+data armada dan pengemudi digunakan dalam proses penugasan pengiriman sehingga setiap 
+distribusi dapat dilakukan menggunakan sumber daya yang tersedia. 
+  
+ 
+Gambar 4.3 Desain ERD Bagian Kedua
+
+7.​Tabel barangs 
+Tabel ini berfungsi untuk menyimpan daftar spesifikasi muatan logistik. Atribut yang 
+dicatat yaitu idbarang sebagai primary key, nama_barang, berat, harga, created_at, dan 
+updated_at.  
+8.​Tabel orders 
+Tabel ini berfungsi untuk merekam pesanan awal dari pelanggan. Atribut yang dicatat 
+yaitu idorders sebagai primary key, tanggal_pesanan, tanggal_estimasi_kirim, 
+estimasi_tiba, status_order, serta customers_id dan destination_id sebagai foreign key. 
+Penjelasan nilai atribut ENUM dijelaskan pada Tabel 4.3.  
+Tabel 4.2 Data Dictionary Tabel orders 
+Atribut Tipe Data Keterangan 
+status ENUM Atribut ini memuat status 
+persetujuan pesanan seperti 
+'pending', 'approved', 
+'rejected', dan 'completed'.   
+ 
+9.​Tabel order_items 
+Tabel ini berfungsi sebagai detail rincian barang dalam suatu pesanan. Atribut yang 
+dicatat yaitu id sebagai primary key, jumlah, serta orders_idorders dan barang_idbarang 
+sebagai foreign key.  
+4.1.3​Entity Relationship Diagram Bagian Ketiga 
+ERD bagian ketiga merupakan visualisasi dari penjelasan tabel pesanan, sebagaimana 
+ditampilkan pada Gambar 4.4. Diagram ini memperlihatkan keterkaitan antara data pesanan
+
+dengan rincian barang yang akan dikirim sehingga setiap transaksi dapat terdokumentasi secara 
+lengkap. 
+Melalui relasi antara tabel orders, order_items, dan barangs, sistem dapat menyimpan 
+informasi mengenai pelanggan, tujuan pengiriman, serta daftar barang yang dipesan beserta 
+jumlahnya. Struktur relasi ini memudahkan proses pencatatan transaksi sekaligus menjadi dasar 
+bagi sistem untuk menentukan total berat muatan yang nantinya digunakan pada proses 
+penjadwalan armada dan perhitungan biaya pengiriman.
+
+Gambar 4.4 Desain ERD Bagian Ketiga 
+ 
+10.​Tabel komponen_biaya_operasional 
+Tabel ini berfungsi menyimpan referensi biaya opsional (seperti Tol/Parkir). Atribut yang 
+dicatat yaitu idkomponen_biaya_operasional sebagai primary key, nama_komponen, 
+keterangan, dan cost_value.   
+11.​Tabel shipments 
+Tabel ini berfungsi sebagai rekaman keberangkatan operasional fisik. Atribut yang dicatat 
+yaitu idshipment sebagai primary key, jarak_km, total_berat, total_biaya, 
+status_pengiriman, serta kunci tamu (orders_idorders, truck_idtruck, driver_iddrivers). 
+Penjelasan nilai atribut ENUM dijelaskan pada Tabel 4.4.  Tabel 4.4 Data Dictionary Tabel shipments.  
+Atribut Tipe Data Keterangan 
+status_pengiriman  ENUM Atribut pelacakan status 
+kargo seperti 'menunggu', 
+'dalam_perjalanan', 
+'selesai', 'retur', dan 'batal'   
+ 
+12.​Tabel shipment_items 
+Tabel ini berfungsi untuk menyimpan rincian daftar barang dan muatan logistik yang 
+diangkut pada suatu pengiriman (kargo). Atribut yang dicatat yaitu idshipment_items 
+sebagai primary key, jumlah barang, created_at, updated_at, serta shipments_idshipments 
+dan barang_idbarang sebagai foreign key.  13.​Tabel shipment_routes
+
+Tabel ini berfungsi untuk mendokumentasikan urutan spesifik titik-titik lokasi (rute) yang 
+harus dilewati oleh armada truk, yang merupakan hasil kalkulasi komputasi dari 
+algoritma Dijkstra. Atribut yang dicatat yaitu idshipments_route sebagai primary key, 
+urutan jalan, created_at, updated_at, serta shipments_idshipments dan 
+locations_idlocations sebagai foreign key. 
+14.​Tabel shpment_costs 
+Tabel ini berfungsi untuk merekam komponen-komponen biaya operasional tambahan 
+(opsional) yang secara spesifik dibebankan pada satu proses pengiriman tertentu. Atribut 
+yang dicatat yaitu id sebagai primary key, cost_value yang menunjukkan besaran nominal 
+yang disetujui, created_at, updated_at, serta shipment_id dan komponen_id sebagai 
+foreign key.  
+4.1.4​Entity Relationship Diagram Bagian Keempat 
+ERD bagian keempat merupakan visualisasi dari eksekusi akhir, sebagaimana 
+ditampilkan pada Gambar 4.5. Diagram ini memperlihatkan pusat operasional sistem, yaitu 
+proses pengiriman yang menghubungkan data pesanan, armada, pengemudi, rute, serta 
+komponen biaya operasional ke dalam satu transaksi pengiriman. 
+Relasi antar tabel pada bagian ini memungkinkan sistem mencatat seluruh aktivitas 
+pengiriman secara lengkap, mulai dari rute yang dilalui, barang yang diangkut, hingga rincian 
+biaya operasional yang dikeluarkan. Dengan struktur tersebut, informasi pengiriman dapat 
+ditelusuri kembali untuk keperluan monitoring, evaluasi operasional, maupun penyusunan 
+laporan biaya secara lebih akurat.
+
+Gambar 4.5 Desain ERD Bagian Keempat 
+ 
+ 
+ 
+4.2.​Rancangan Logika Perhitungan Tarif Otomatis 
+Pada subbab ini dijelaskan rancangan logika perhitungan tarif otomatis yang digunakan 
+pada Sistem Manajemen Transportasi. Perhitungan tarif dilakukan berdasarkan hasil optimasi
+
+rute yang diperoleh dari algoritma Dijkstra serta komponen biaya operasional yang telah 
+ditentukan perusahaan. 
+Rancangan logika ini bertujuan untuk menghasilkan proses perhitungan tarif yang 
+konsisten, transparan, dan dapat dilakukan secara otomatis oleh sistem. Dengan memanfaatkan 
+hasil perhitungan jarak terpendek dan data biaya operasional yang tersimpan pada basis data, 
+sistem mampu mengurangi kesalahan perhitungan secara manual serta mempercepat proses 
+penentuan biaya pengiriman kepada pelanggan.  
+4.2.1.​Komponen Perhitungan Tarif 
+Perhitungan tarif pengiriman menggunakan beberapa komponen biaya yang terdiri atas 
+biaya bahan bakar kendaraan, biaya pengemudi, dan biaya operasional lainnya. Seluruh 
+komponen biaya tersebut disimpan pada tabel komponen_biaya_operasional dan digunakan 
+sebagai dasar dalam proses perhitungan tarif pengiriman. Komponen biaya yang digunakan 
+dalam sistem ditunjukkan pada Tabel 4.xx. 
+ 
+No  Nama Komponen Keterangan  Nilai Biaya (Rp) 
+1 Biaya Bahan Bakar Biaya konsumsi 
+bahan bakar 
+kendaraan per 
+kilometer  
+2.500
+
+2 Biaya Driver Biaya jasa pengemudi 
+untuk satu kali 
+pengiriman  
+150.000  
+3 Biaya Tol Biaya penggunaan 
+jalan tol selama 
+perjalanan  
+100.000  
+4 Biaya Bongkar Muat Biaya proses bongkar 
+dan muat barang  
+75.000  
+5 Biaya Operasional 
+Lain 
+Biaya tambahan yang 
+mendukung kegiatan 
+pengiriman  
+50.000  
+Tabel 4.xx. 
+Setiap komponen biaya memiliki fungsi yang berbeda dalam membentuk total tarif 
+pengiriman. Biaya bahan bakar dihitung berdasarkan jarak tempuh hasil optimasi rute, biaya 
+pengemudi merupakan kompensasi atas jasa pengiriman, sedangkan biaya operasional lainnya 
+meliputi pengeluaran tambahan seperti biaya tol, bongkar muat, maupun biaya operasional 
+pendukung lainnya. Pengelompokan komponen biaya ini memudahkan sistem dalam melakukan 
+perhitungan secara terstruktur serta menghasilkan rincian biaya yang lebih informatif bagi 
+perusahaan.
+
+4.2.2.​Logika Perhitungan Biaya Bahan Bakar 
+Biaya bahan bakar dihitung berdasarkan total jarak hasil optimasi rute dan konsumsi 
+bahan bakar kendaraan yang digunakan. Sistem akan mengambil data jarak tempuh dari hasil 
+algoritma Dijkstra kemudian mengombinasikannya dengan data konsumsi bahan bakar yang 
+tersimpan pada tabel trucks.Perhitungan biaya bahan bakar dilakukan menggunakan persamaan 
+berikut: 
+Biaya Bahan Bakar=Jarak Tempuh×Konsumsi Bahan Bakar per Kilometer  
+Persamaan tersebut digunakan untuk memperoleh estimasi biaya bahan bakar selama proses 
+pengiriman berlangsung. 
+ 
+ 
+ 
+ 
+4.2.3.​Logika Perhitungan Tarif Pengiriman 
+Setelah seluruh komponen biaya diperoleh, sistem akan menghitung total tarif 
+pengiriman dengan menjumlahkan seluruh biaya yang terkait dengan proses distribusi barang. 
+Perhitungan tarif dilakukan menggunakan persamaan berikut: 
+ 
+Total Tarif = Biaya Bahan Bakar + Biaya Pengemudi + Biaya Operasional Lainnya 
+Hasil perhitungan tersebut menjadi nilai tarif yang dibebankan kepada pelanggan untuk 
+setiap pengiriman yang dilakukan.
+
+4.2.4.​Penyimpanan Detail Biaya Pengiriman 
+Setelah tarif berhasil dihitung, sistem akan menyimpan rincian biaya ke dalam tabel 
+shipment_costs. Tabel ini digunakan untuk mencatat setiap komponen biaya yang berkontribusi 
+terhadap total tarif pengiriman. Penyimpanan rincian biaya dilakukan agar proses perhitungan 
+tarif menjadi lebih transparan, mudah ditelusuri, serta memudahkan proses pelaporan biaya 
+operasional perusahaan. Struktur penyimpanan detail biaya pengiriman ditunjukkan pada 
+Gambar 4.xx. 
+ 
+Gambar 4.xx 
+Selain digunakan sebagai arsip transaksi, penyimpanan setiap komponen biaya secara 
+terpisah juga memudahkan perusahaan dalam melakukan evaluasi terhadap pengeluaran 
+operasional pada setiap pengiriman. Dengan demikian, sistem tidak hanya menyimpan nilai total 
+biaya, tetapi juga menyediakan informasi rinci mengenai asal setiap komponen biaya sehingga 
+proses audit, analisis biaya, maupun penyusunan laporan keuangan dapat dilakukan dengan lebih 
+akurat.
+
+4.3.​Desain Proses 
+Pada subbab ini dijelaskan perancangan alur proses yang terdapat pada Sistem 
+Manajemen Transportasi. Proses yang dirancang mencakup pengelolaan data master, pemesanan 
+pengiriman, optimasi rute menggunakan algoritma Dijkstra, perhitungan tarif pengiriman, serta 
+monitoring pengiriman barang hingga tujuan akhir. 
+Perancangan proses dilakukan untuk memastikan seluruh aktivitas operasional pada 
+sistem berjalan secara terstruktur dan saling terintegrasi. Setiap proses dirancang berdasarkan 
+kebutuhan pengguna pada tahap analisis sehingga aliran data, interaksi antar pengguna, serta 
+proses bisnis yang terjadi dapat berjalan secara konsisten mulai dari pencatatan data hingga 
+penyelesaian proses pengiriman barang.   
+4.3.1​Proses Pengelolaan Data Master  
+Proses pengelolaan data master dimulai ketika administrator melakukan login ke dalam 
+sistem. Setelah berhasil masuk ke sistem, administrator dapat mengakses menu data master yang 
+terdiri atas data pelanggan, data barang, data lokasi, data armada truk, data pengemudi, dan 
+komponen biaya operasional. 
+Administrator dapat melakukan proses tambah, ubah, maupun hapus data sesuai 
+kebutuhan operasional perusahaan. Setiap data yang berhasil diinput akan divalidasi oleh sistem 
+sebelum disimpan ke dalam basis data. Setelah data tersimpan, informasi tersebut dapat 
+digunakan sebagai fondasi referensi pada proses eksekusi pengiriman dan perhitungan tarif
+
+selanjutnya. Seluruh tahapan dan alur dari proses pengelolaan data master ini dapat dilihat lebih 
+jelas sebagaimana ditunjukkan pada Gambar 4.6. 
+Gambar 4.6 Proses Pengelolaan Data Master 
+ 
+4.3.2​Proses Terintegrasi Pemesanan dan Perencanaan Pengiriman   
+Berbeda dengan sistem konvensional, sistem ini mengimplementasikan alur terintegrasi 
+(Integrated Creation Flow) di mana pencatatan pesanan dari pelanggan dan alokasi armada 
+dilakukan secara bersamaan dalam satu pintu transaksi untuk mempercepat SLA (Service Level 
+Agreement) operasional. 
+Proses ini dimulai ketika operator membuka menu Shipment dan memilih fitur 
+pembuatan pengiriman baru terintegrasi. Operator akan menginput rincian pesanan dasar (seperti 
+memilih pelanggan, lokasi tujuan, dan muatan barang), dan di halaman yang sama, operator 
+langsung memilih armada truk beserta pengemudi yang akan dialokasikan.
+
+Sebelum data disimpan, sistem secara otomatis akan mengeksekusi dua lapis validasi. 
+Pertama, sistem memastikan kapasitas armada yang dipilih mencukupi total berat muatan yang 
+diinputkan. Kedua, sistem memvalidasi ketersediaan jadwal pengemudi dan armada truk dengan 
+memeriksa irisan tanggal keberangkatan pada riwayat basis data. Apabila armada tidak muat 
+secara tonase atau sedang bertugas pada tanggal tersebut, sistem akan menolak perintah dan 
+menampilkan peringatan agar operator memilih armada alternatif. Jika lolos validasi, sistem akan 
+langsung membuat rekaman data pesanan pada tabel orders sekaligus data penugasan fisik pada 
+tabel shipments secara atomik (real-time). Rincian alur proses penyatuan pesanan dan penugasan 
+armada ini divisualisasikan secara lengkap sebagaimana ditunjukkan pada Gambar 4.7. 
+Gambar 4.7 Proses Terintegrasi Pemesanan dan Perencanaan Pengiriman
+
+4.3.3​Proses Perhitungan Tarif Pengiriman  
+Proses perhitungan tarif pengiriman berjalan berkesinambungan dengan hasil optimasi 
+rute. Setelah rute terpendek ditemukan, sistem akan menarik informasi total jarak tempuh 
+(kilometer) tersebut, serta memuat profil tarif dasar dari armada truk dan pengemudi yang 
+dialokasikan. 
+Sistem melakukan kalkulasi otomatis dengan mengalikan total jarak rute dengan Tarif 
+Dasar per Kilometer milik armada truk. Hasil tersebut kemudian diakumulasikan dengan tarif 
+harian pengemudi dan komponen biaya operasional tambahan (seperti biaya tol atau biaya 
+bongkar muat) yang diinputkan oleh operator pada pengiriman spesifik tersebut. Seluruh nominal 
+biaya tambahan ini akan dirinci ke dalam tabel perantara shipment_costs. Akumulasi akhirnya 
+akan disajikan sebagai Harga Total (Grand Total) dan memperbarui kolom total_biaya pada tabel 
+shipments. Diagram alir yang mendasari proses kalkulasi tarif terotomatisasi ini dapat dipahami 
+lebih detail sebagaimana ditunjukkan pada Gambar 4.9.
+
+Gambar 4.9 Proses Perhitungan Tarif Pengiriman  
+ 
+4.3.4​Proses Monitoring Pengiriman  
+Proses monitoring pengiriman dimulai ketika operator membuka menu monitoring 
+shipment pada sistem. Menu ini bertindak sebagai panel kontrol (dashboard) operasional yang 
+menampilkan seluruh pergerakan pengiriman, baik yang masih menunggu (pending), sedang 
+dalam perjalanan (in transit), batal, maupun yang telah selesai. 
+Operator berwenang memperbarui status pengiriman secara manual berdasarkan update 
+komunikasi lapangan dari pengemudi. Setiap perubahan status akan segera disimpan ke dalam 
+basis data. Apabila pengiriman telah sepenuhnya selesai dan status diubah menjadi Selesai, 
+sistem akan mengunci data tersebut. Data historis pesanan ini pada akhirnya dimanfaatkan oleh 
+pihak manajerial (Manajer) sebagai bahan laporan (reporting) serta audit operasional. Tahapan
+
+pemantauan dan pembaruan status logistik ini diilustrasikan secara menyeluruh sebagaimana 
+ditunjukkan pada Gambar 4.10. 
+ 
+Gambar 4.11 Proses Monitoring Pengiriman  
+ 
+4.4.​Desain Tampilan Antar Muka 
+Pada subbab ini dijelaskan rancangan tampilan antarmuka yang digunakan pada Sistem 
+Manajemen Transportasi. Perancangan antarmuka dilakukan untuk memberikan gambaran 
+mengenai tampilan sistem yang akan digunakan oleh pengguna sesuai dengan hak akses yang 
+dimiliki. Sistem ini memiliki tiga jenis pengguna yaitu Admin, Operator, dan Manager. Setiap 
+pengguna memiliki akses terhadap fitur yang berbeda sesuai dengan tugas dan tanggung 
+jawabnya dalam proses pengelolaan transportasi dan distribusi barang.
+
+Rancangan antarmuka disusun dengan mengutamakan kemudahan penggunaan 
+(usability) sehingga setiap pengguna dapat menjalankan tugasnya secara efektif tanpa mengalami 
+kesulitan dalam mengoperasikan sistem. Selain mempertimbangkan aspek fungsional, desain 
+antarmuka juga dibuat konsisten pada setiap halaman melalui penggunaan tata letak, navigasi, 
+dan elemen visual yang seragam agar pengalaman pengguna menjadi lebih nyaman serta 
+mendukung kelancaran proses operasional perusahaan. 
+4.4.1​Desain Halaman Login  
+Halaman login difungsikan sebagai mekanisme pertahanan awal sekaligus gerbang 
+masuk tunggal bagi setiap pengguna sebelum dapat mengakses sistem manajemen transportasi 
+logistik PT Sunan Group. Kegunaan esensial dari halaman ini adalah untuk memverifikasi 
+keabsahan identitas staf demi melindungi kerahasiaan data operasional perusahaan, sekaligus 
+mengontrol rute hak akses berdasarkan peran masing-masing pengguna, yakni administrator, 
+operator, maupun manajer. Sebagaimana diilustrasikan pada Gambar 4.1, halaman ini 
+mengadopsi tata letak dua lajur visual (split screen), di mana sisi kiri menampilkan identitas 
+sistem beserta dokumentasi armada perusahaan, sementara sisi kanan memusatkan fokus pada 
+formulir masuk berlatar gelap yang elegan. Halaman tersebut menyajikan elemen fundamental 
+berupa dua kolom isian, yakni surel (email) dan kata sandi (password), lengkap dengan ikon 
+pendukung serta tombol aksi "Login" yang dirancang mencolok.
+
+Gambar 4.1 Halaman Login 
+ 
+ 
+ 
+Gambar 4.2 Login Gagal
+
+Proses autentikasi diawali dengan interaksi pengguna mengetikkan alamat surel terdaftar 
+beserta kombinasi kata sandi rahasia pada kolom yang disediakan, yang selanjutnya dikirimkan 
+ke peladen (server) sesaat setelah tombol "Login" ditekan. Aplikasi Laravel secara instan 
+merespons permintaan HTTP POST tersebut dengan mencocokkan input kredensial terhadap 
+rekam data pada tabel users, sembari menjalankan validasi awal untuk memastikan kedua kolom 
+di halaman tersebut tidak dibiarkan kosong. Apabila verifikasi identitas dan peran (role) 
+dinyatakan sah, individu secara otomatis diarahkan menuju halaman dasbor yang berkesesuaian 
+dengan otoritasnya. Sebaliknya, kegagalan pencocokan kredensial akan memicu pengembalian 
+ke halaman semula beserta kemunculan kotak pesan kesalahan bertuliskan "Login gagal" tepat di 
+atas form pengisian, seperti yang ditunjukkan pada Gambar 4.2. 
+4.4.2​Desain Halaman Dashboard Admin 
+Halaman Dasbor Admin difungsikan sebagai pusat kendali strategis yang memberikan 
+gambaran menyeluruh mengenai status operasional logistik perusahaan. Kegunaan utama dari 
+halaman ini adalah memungkinkan administrator untuk memonitor ketersediaan armada, 
+melacak jumlah entitas pelanggan, serta meninjau aktivitas perubahan master data secara instan 
+tanpa perlu membuka sub-modul satu per satu. Sebagaimana diperlihatkan pada Gambar 4.3, 
+antarmuka layar menampilkan navigasi sidebar di sisi kiri serta delapan panel kartu statistik di 
+area utama, yang kemudian disusul oleh sebuah tabel "Aktivitas Master Data Terbaru" sebagai 
+instrumen log audit rekam jejak.
+
+Gambar 4.3 Halaman Dashboard Admin 
+Administrator memulai rutinitas pemantauannya dengan menelaah fluktuasi angka pada 
+kartu metrik dan membaca tabel log seketika setelah masuk ke dalam sistem, guna memastikan 
+tidak ada anomali operasional sebelum mengambil tindakan manajerial melalui panel sidebar. 
+Secara komputasi, setiap kali halaman dasbor ini dimuat, sistem Laravel menginstruksikan 
+Controller untuk menarik kalkulasi agregasi secara presisi dari tabel-tabel utama pangkalan data 
+menggunakan fasilitas Eloquent ORM. Kondisi eksekusi yang berhasil akan segera menyusun 
+seluruh komponen antarmuka beserta rentetan angka riwayat terbaru di layar, sementara lapisan 
+keamanan middleware terus bersiaga di latar belakang untuk memblokir secara mutlak masuknya 
+pengguna di luar otorisasi administrator. 
+4.4.3​Desain Halaman Customer 
+Modul pengelolaan data pelanggan difungsikan sebagai instrumen administratif untuk 
+mencatat dan memelihara profil entitas klien yang menggunakan layanan jasa pengiriman
+
+logistik perusahaan. Sebagaimana disajikan pada Gambar 4.4 (Tampilan Utama), antarmuka 
+halaman ini didominasi oleh sebuah matriks tabel data yang memuat atribut identitas pelanggan 
+secara terstruktur, meliputi urutan penomoran, nama pelanggan atau perusahaan, alamat 
+korespondensi, serta nomor kontak seluler (No HP). Guna menunjang kemudahan pengarsipan 
+interaktif, layar ini dilengkapi dengan sebuah tombol pemicu "+ Tambah Customer" berwarna 
+biru di sudut kiri atas sebelum tabel, serta sematan tombol aksi fungsional berupa "Edit" 
+(kuning) dan "Hapus" (merah) yang melekat secara independen pada setiap baris pelanggan di 
+kolom Aksi. 
+ 
+ 
+Gambar 4.4
+
+Gambar 4.5 
+ 
+Gambar 4.6 
+ 
+Administrator mengoperasikan fasilitas ini dengan menekan tombol tambah untuk 
+memunculkan kotak dialog (modal) formulir isian identitas klien baru seperti yang diperlihatkan 
+pada Gambar 4.5, atau menekan tombol aksi pada tabel guna memodifikasi maupun
+
+memusnahkan rekaman lama melalui kemunculan dialog konfirmasi. Setiap kali tombol 
+persetujuan "Simpan" ditekan pada formulir pengisian, sistem antarmuka akan melakukan 
+validasi seketika di sisi peramban (front-end) untuk mencegah pengiriman perintah apabila 
+masih terdapat kolom isian yang dibiarkan kosong, yang ditandai dengan munculnya peringatan 
+wajib isi atau "Please fill out this field" (Gambar 4.6). Setelah seluruh form tervalidasi dengan 
+lengkap, sistem Laravel baru akan meneruskan instruksi penyimpanan ke dalam tabel customers 
+di pangkalan data, dan transaksi yang berhasil dieksekusi akan segera menyegarkan tampilan 
+matriks utama. 
+4.4.4​Desain Halaman Barang  
+Halaman manajemen data barang berperan sebagai pangkalan referensi utama untuk 
+menstandarisasi spesifikasi komoditas muatan, sehingga operator tidak perlu mengetik ulang 
+karakteristik barang pada saat pencatatan pesanan logistik di kemudian hari. Tata letak 
+antarmuka utama yang diperlihatkan pada Gambar 4.7 dirancang menggunakan struktur matriks 
+tabel yang menyoroti komponen informasi krusial, meliputi urutan penomoran, nama barang 
+(misalnya "Beton"), entitas pelanggan (customer) pemilik barang, satuan berat muatan (dalam 
+Kg), serta kolom fungsionalitas aksi. Antarmuka ini memberikan keluwesan manipulasi 
+inventaris melalui penempatan tombol "+ Tambah Barang" berwarna biru di area atas tabel, 
+beserta opsi pintasan "Edit" (kuning) dan "Hapus" (merah) yang tersemat pada ujung setiap baris 
+data untuk memudahkan proses pembaruan rekam jejak.
+
+Gambar 4.7 
+ 
+Gambar 4.8
+
+Gambar 4.9 
+Pengelolaan inventaris dimulai saat administrator menekan tombol tambah untuk 
+memunculkan kotak dialog (modal) pengisian data yang menampung kolom teks nama barang, 
+atribut angka berat muatan, serta menu tarik-turun (dropdown) untuk menautkan kepemilikan 
+barang dengan identitas pelanggan yang sudah ada (Gambar 4.8). Interaksi penekanan tombol 
+"Simpan" pada formulir akan memicu sistem untuk melakukan pencegatan validasi di sisi 
+peramban (front-end) guna memastikan tidak ada parameter wajib yang terlewat, yang akan 
+langsung direspons dengan peringatan "Please fill out this field" apabila terdeteksi kekosongan 
+masukan (Gambar 4.9). Apabila seluruh kelengkapan formulir telah terpenuhi, sistem Laravel di 
+belakang layar akan segera memproses penambahan entitas tersebut ke dalam tabel barang dan 
+menyegarkan matriks layar utama secara seketika untuk menampilkan tambahan baris komoditas 
+terbaru.
+
+4.4.5​Desain Halaman Driver  
+Fasilitas kelolaan pengemudi diimplementasikan untuk mendokumentasikan 
+profil individu yang bertanggung jawab memegang kemudi armada perusahaan. Seperti 
+yang disajikan pada Gambar 4.10 (Tampilan Utama), antarmuka menyuguhkan informasi 
+struktural melalui tabel data yang secara rapi mengurutkan ID, Nama Driver, Nomor 
+Telepon, Tarif Harian, serta Status ketersediaan (yang ditandai secara menonjol dengan 
+label visual hijau bertuliskan "Tersedia"). Berbeda dengan modul master sebelumnya 
+yang menggunakan kotak dialog (modal), navigasi halaman ini dirancang lebih leluasa; 
+penekanan pada tombol "Tambah Driver" maupun tombol aksi "Edit" di ujung tabel akan 
+mengarahkan pengguna ke halaman formulir terpisah yang didedikasikan penuh untuk 
+perekaman data profil. 
+ 
+Gambar 4.10
+
+Gambar 4.11 
+ 
+Gambar 4.12 
+ 
+Gambar 4.13
+
+Kegiatan administratif dijalankan dengan meramban tabel utama, kemudian 
+berpindah ke halaman formulir "Tambah Driver" (Gambar 4.11) atau "Edit Driver" 
+(Gambar 4.12) guna melengkapi rincian seperti nama, kontak, dan takaran nominal tarif 
+harian. Ketika administrator menekan tombol "Simpan" atau "Update" (berwarna hijau), 
+peramban seketika memicu pencegatan validasi front-end yang menerbitkan peringatan 
+"Please fill out this field" apabila terdeteksi kekosongan masukan pada kolom wajib 
+(Gambar 4.13). Setelah seluruh parameter masukan dipastikan utuh, sistem Laravel di 
+belakang layar akan memproses instruksi penyimpanan ke dalam tabel drivers di 
+pangkalan data, lalu secara otomatis mengembalikan (redirect) tampilan layar ke matriks 
+utama yang kini telah menyajikan rekam profil pengemudi terbaru. 
+4.4.6​Desain Halaman Truck  
+Modul inventaris armada merupakan pusat manajemen visual yang mendata 
+kapabilitas teknis seluruh unit angkutan guna mencegah terjadinya kesalahan rasio 
+muatan (overload) saat operasional. Presentasi data yang tergambar pada Gambar 4.14 
+(Tampilan Utama) dikemas dalam wujud tabel matriks yang menyoroti atribut teknis 
+kendaraan, meliputi urutan, nama identitas truk (seperti Truk Fuso Andalan), pelat nomor 
+registrasi polisi, batasan kapasitas muatan, serta elemen status ketersediaan armada. 
+Navigasi penambahan aset diakomodasi melalui penekanan tombol biru "Tambah Truck" 
+yang akan mengarahkan administrator ke halaman formulir terpisah yang sangat 
+komprehensif (Gambar 4.15), di mana formulir ini tidak hanya menanyakan identitas 
+dasar, melainkan juga menuntut rincian spesifikasi teknis mendalam seperti rasio 
+konsumsi bensin, tarif per KM, hingga dimensi fisik panjang, lebar, dan tinggi kendaraan.
+
+Gambar 4.14 
+ 
+Gambar 4.15 
+ 
+Gambar 4.16
+
+Prosedur pencatatan aset dimulai saat administrator mengisi serangkaian variabel 
+teknis pada halaman formulir "Tambah Truck", atau mengoreksi angka spesifikasi 
+karoseri truk lama melalui tombol aksi kuning "Edit" pada matriks tabel. Setiap instruksi 
+pengiriman data ("Simpan") akan memicu sistem Laravel untuk mengirimkan permintaan 
+ke peladen guna menjalani proses validasi di sisi backend. Jika administrator tidak 
+sengaja melewati kolom wajib, alih-alih menampilkan tooltip browser, sistem akan 
+merender ulang halaman dan mencetak kotak peringatan merah (alert danger) di bagian 
+atas formulir yang merinci seluruh kesalahan, seperti "The plat nomor field is required" 
+(Gambar 4.16). Transaksi penyimpanan hanya akan disetujui untuk dieksekusi ke dalam 
+tabel trucks apabila seluruh parameter teknis angka maupun teks telah lolos validasi 
+sempurna. 
+ 
+4.4.7​Desain Halaman Lokasi  
+Modul pengelolaan data lokasi difungsikan sebagai sistem informasi geografis 
+(Geographic Information System) dasar untuk memetakan secara presisi seluruh titik 
+pergudangan dan cabang operasional logistik perusahaan. Seperti yang diilustrasikan 
+pada Gambar 4.17 (Tampilan Utama), antarmuka halaman ini menyajikan matriks tabel 
+yang merangkum rincian identitas fasilitas, meliputi nama lokasi (seperti "Gudang 
+Surabaya"), alamat lengkap, serta titik koordinat spesifik (latitude dan longitude). Daya 
+tarik fungsional utama dari modul ini terletak pada halaman "Tambah Lokasi" maupun 
+"Edit Lokasi" (Gambar 4.18 dan Gambar 4.19) yang mengintegrasikan sebuah kanvas 
+peta digital interaktif berukuran besar, memungkinkan administrator untuk menentukan
+
+letak presisi gudang secara visual tanpa perlu mengetikkan angka garis lintang dan bujur 
+secara manual. 
+ 
+Gambar 4.17 
+ 
+Gambar 4.18
+
+Gambar 4.19 
+ 
+Gambar 4.20 
+Administrator mengoperasikan fasilitas ini dengan membuka formulir lokasi, 
+kemudian menempatkan pin penanda pada peta digital yang secara otomatis akan mengisi 
+(auto-fill) masukan pada kolom Latitude, Longitude, beserta rincian teks Alamat Lengkap 
+di bawahnya. Saat administrator menekan tuas "Simpan" (biru) atau "Update" (kuning), 
+antarmuka akan menjalankan pencegatan validasi di sisi peramban (front-end) guna 
+mencegah pengiriman formulir apabila kotak "Nama Lokasi" terlewatkan, yang ditandai 
+dengan kemunculan peringatan "Please fill out this field" (Gambar 4.20). Setelah seluruh 
+variabel dipastikan terisi penuh, pangkalan data Laravel di belakang layar akan
+
+merampungkan instruksi penulisan ke dalam tabel locations dan menyegarkan layar 
+kembali menuju matriks utama yang kini telah mencatat titik geografis terbaru. 
+4.4.8​Desain Halaman Routes  
+Halaman antarmuka manajemen Rute (Routes) berperan sebagai pusat 
+perancangan relasi antar-lokasi yang nantinya akan menjadi matriks fondasi (simpul 
+jaringan) bagi eksekusi pencarian jalur terpendek menggunakan algoritma Dijkstra. 
+Tatanan antarmuka utama yang terpotret pada Gambar 4.21 memberikan gambaran visual 
+atas struktur jaringan distribusi tersebut, merangkum urutan penomoran, titik 
+keberangkatan (Asal), titik kedatangan (Tujuan), serta kalkulasi bentang fisik (Jarak 
+dalam satuan KM). Agar modifikasi topologi pengiriman dapat dilakukan secara dinamis, 
+halaman ini turut dilengkapi dengan tombol biru "Tambah Route" di sisi atas matriks, 
+beriringan dengan sepasang pintasan fungsional "Edit" (kuning) dan "Hapus" (merah) 
+yang disisipkan pada masing-masing baris koneksi. 
+ 
+Gambar 4.21
+
+Gambar 4.22 
+ 
+Gambar 4.23 
+Pendekatan rancang bangun pada antarmuka penambahan (Gambar 4.22) dan 
+modifikasi rute (Gambar 4.23) dibuat sangat praktis dan otomatis; administrator hanya 
+diwajibkan untuk memilih relasi antara "Lokasi Asal" dan "Lokasi Tujuan" melalui menu 
+tarik-turun (dropdown) yang datanya ditarik langsung (berelasi) dari tabel master lokasi. 
+Mengingat tidak adanya kolom pengisian jarak manual pada layar antarmuka ini, ketika
+
+tombol penyetujuan ("Simpan" atau "Update") ditekan, sistem di sisi peladen akan secara 
+cerdas mengambil titik koordinat geografis dari kedua tempat tersebut dan mengalkulasi 
+jarak absolutnya secara matematis. Setelah angka jarak berhasil dihasilkan dan 
+tervalidasi, algoritma baru akan merekam simpul koneksi tersebut ke dalam tabel routes 
+lalu menyegarkan matriks layar untuk memunculkan lintasan baru. 
+4.4.9​Desain Halaman Komponen Biaya  
+Modul Komponen Biaya Operasional dirancang sebagai pangkalan referensi 
+parameter finansial yang memungkinkan sistem untuk mengalkulasi total beban 
+pengeluaran logistik di luar tarif dasar rute dan kapasitas truk. Berdasarkan Gambar 4.24 
+(Tampilan Utama), antarmuka modul ini disajikan melalui matriks tabel yang mendaftar 
+berbagai variabel pengeluaran tambahan secara terstruktur, seperti Biaya Tol (Rp 
+500.000), Retribusi Parkir, hingga Asuransi Barang. Matriks tabel ini dilengkapi dengan 
+indikator urutan, Nama Komponen, takaran Nilai finansial, Keterangan deskriptif, serta 
+sepasang tombol aksi fungsional (ikon "Edit" berwarna kuning dan "Hapus" berwarna 
+merah) di kolom ujung kanan. Untuk mengakomodasi dinamika pembiayaan operasional 
+lapangan yang kerap berubah, administrator dapat mengakses tombol biru "Tambah Data" 
+di bagian kiri atas layar tabel.
+
+Gambar 4.24 
+ 
+Gambar 4.25 
+ 
+Gambar 4.26
+
+Gambar 4.27 
+Proses penambahan atau pembaruan matriks pembiayaan dilakukan melalui 
+halaman formulir "Tambah Komponen Biaya" (Gambar 4.25) maupun "Edit Komponen 
+Biaya" (Gambar 4.26) yang mewajibkan administrator untuk mendefinisikan nama 
+pengeluaran, angka nominal numerik (Nilai Biaya), beserta deskripsi kegunaannya. Guna 
+menjaga integritas kalkulasi matematis di dalam sistem, formulir ini dibekali dengan 
+instrumen validasi front-end dari peramban (browser) yang menolak pengiriman perintah 
+apabila kotak isian masukan dibiarkan kosong, yang ditandai dengan interupsi visual 
+berupa tooltip "Please fill out this field" (Gambar 4.27). Setelah semua prasyarat 
+parameter terisi utuh dan tombol "Simpan" ditekan, arsitektur Laravel akan merekam data 
+tersebut ke pangkalan data, yang nantinya akan ditarik secara otomatis oleh algoritma 
+sistem ketika mengalkulasi rekapitulasi total pembiayaan pada modul pengiriman 
+(Shipment). 
+4.4.10​Desain Halaman Dashboard Operator  
+Dasbor Operator (Operator Dashboard) dirancang secara eksklusif sebagai pusat 
+komando operasional harian, terpisah dari hak akses administrator (super-admin). 
+Sebagaimana diperlihatkan pada Gambar 4.28, antarmuka ini menanggalkan menu 
+pengelolaan data master (pelanggan, barang, dll.) pada bilah sisi (sidebar) dan
+
+sepenuhnya menggantinya dengan fitur fungsional operasional logistik, seperti Shipment, 
+Monitoring, Visualized Map, hingga fitur Perhitungan Dijkstra. Halaman utama 
+menyajikan visualisasi analitik data real-time melalui enam kartu metrik (summary cards) 
+yang memantau status pesanan harian (mulai dari Shipment Pending, Sedang Berjalan, 
+hingga Selesai) beserta kartu ketersediaan sumber daya (Truck dan Driver Tersedia). 
+Susunan hierarki visual ini didesain secara khusus untuk membantu operator mengambil 
+keputusan penyaluran distribusi secara cepat, tepat, dan terarah. 
+ 
+Gambar 4.28 
+Sebagai pusat kendali aksi, dasbor ini tidak hanya menampilkan rangkuman 
+numerik statis, melainkan dilengkapi dengan panel peringatan interaktif bertajuk 
+"Shipment Butuh Tindakan (Pending)" di bagian tengah layar. Setiap kali terdapat 
+pesanan masuk yang belum tertangani, sistem Laravel secara otomatis akan merender 
+peringatan ke dalam tabel tersebut dengan keterangan mendesak seperti "Menunggu 
+penugasan Armada & Driver". Selain itu, bagian bawah dasbor turut memuat matriks 
+pengawasan dinamis "Jadwal Pengiriman Hari Ini" yang akan langsung terbarui oleh 
+pangkalan data seiring berjalannya pembaruan status logistik dari Pending hingga barang
+
+diterima (Selesai), memastikan adanya transparansi dan visibilitas penuh terhadap seluruh 
+alur operasional per hari. 
+4.4.11​Desain Halaman Shipment 
+Modul Shipment merupakan antarmuka operasional puncak yang 
+mengintegrasikan penciptaan pesanan (Order) dan penugasan armada logistik ke dalam 
+satu alur kerja terpadu. Berdasarkan Gambar 4.29 pada layar utama "Data Shipment", 
+matriks logistik merangkum secara komprehensif riwayat ID pengiriman, armada yang 
+ditugaskan, total jarak tempuh, hingga rekapitulasi biaya. Ketika operator menekan tuas 
+"Buat Order & Shipment Terintegrasi", antarmuka akan menavigasikan pengguna ke 
+formulir terstruktur (Gambar 4.30) yang memandu proses administratif secara kronologis 
+mulai dari pemilihan pelanggan, penentuan titik lokasi tujuan, hingga pencatatan item 
+barang muatan. Inovasi logis utama pada formulir ini terletak pada mekanisme proteksi 
+jadwal; operator diwajibkan untuk menentukan "Tanggal Estimasi Kirim" (misalnya pada 
+05/07/2026) lalu menekan tombol pemantik AJAX "Cek Ketersediaan Armada". Sistem 
+peladen (server) akan segera memvalidasi pangkalan data, memunculkan indikator status 
+berwarna hijau (seperti: "3 Truk Tersedia, 2 Driver Tersedia..."), dan secara dinamis 
+mengaktifkan akses dropdown untuk pemilihan armada yang sedang luang (Gambar 
+4.31).
+
+Gambar 4.29 
+ 
+Gambar 4.30 
+ Gambar 4.31
+
+Gambar 4.32 
+Keunggulan akademis paling mencolok dari formulir terintegrasi ini adalah 
+berjalannya kalkulasi spasial yang tereksekusi secara real-time sebelum perintah 
+penyimpanan dilakukan. Begitu tujuan ditetapkan, mesin algoritma Dijkstra langsung 
+memproyeksikan panel "Rincian Rute & Biaya (Dijkstra)" (Gambar 4.32). Panel ini 
+secara komprehensif membedah perbandingan jarak terpendek rute utama (contoh: rute 
+menuju Gudang Bandung sejauh 680 km) berbanding dengan rute alternatif yang dibuang 
+karena memakan jarak lebih jauh (730 km dan 840 km). Keputusan spasial tersebut turut 
+dikalkulasikan dengan rincian biaya yang terinci otomatis hingga menghasilkan total 
+estimasi sebesar Rp 2.110.000 (bersumber dari matriks tarif dasar jarak, tarif supir, dan 
+biaya tol). Tidak sebatas angka tekstual, antarmuka ini langsung merender kanvas peta 
+Leaflet interaktif yang memvisualisasikan rute optimasi tersebut menjadi garis lintasan 
+berwarna melintasi pulau Jawa. Integrasi canggih ini secara nyata mentransformasi
+
+formulir pendaftaran biasa menjadi sebuah Sistem Pendukung Keputusan (SPK) logistik 
+yang berpresisi tinggi. 
+4.4.12​Desain Halaman Order 
+Halaman Data Order dirancang sebagai antarmuka rekapitulasi arsip yang berfokus pada 
+pencatatan entitas pesanan dari pelanggan (customer) dalam ekosistem rantai pasok. 
+Sebagaimana diperlihatkan pada Gambar 4.33, antarmuka ini menyajikan matriks tabel tabular 
+yang lugas dan informatif, memuat variabel krusial seperti identitas Customer, titik lokasi Tujuan 
+(misalnya: Hub Garut), Tanggal Pesan, indikator Status pesanan (seperti pending), serta kolom 
+Aksi. Sesuai dengan arsitektur sistem operasional logistik yang telah dioptimasi, halaman ini 
+secara sengaja dirancang tanpa menyertakan tombol penambahan data baru (Add Order). 
+Keputusan desain ini dilandasi oleh fakta bahwa proses inisiasi pesanan kini telah dilebur secara 
+efisien ke dalam satu pintu alur kerja terpusat, yakni melalui formulir terintegrasi pada modul 
+Shipment. 
+ Gambar 4.33
+
+Fungsi utama antarmuka ini telah bertransformasi dari sekadar modul input (pendaftaran) 
+menjadi panel pengawasan rekam jejak pangkalan data (database monitoring). Ketika operator 
+mengeksekusi prosedur pembuatan pengiriman terintegrasi pada modul Shipment, framework 
+Laravel di sisi peladen (server) secara otomatis memecah aliran data (database transaction) dan 
+menyuntikkan entitas profil pesanannya ke dalam tabel Data Order ini secara real-time. 
+Meskipun berfungsi sebagai arsip pasif, sistem tetap mengakomodasi skenario pembatalan 
+pesanan atau perbaikan administratif lapangan dengan memberikan otoritas kepada operator 
+melalui penyediaan tombol eksekusi "Hapus" berwarna merah. Pendekatan desain antarmuka 
+yang tersentralisasi ini terbukti secara signifikan memangkas redundansi (pengulangan) entri 
+data oleh pengguna, sekaligus menjaga agar pangkalan data logistik tetap terstruktur dan 
+konsisten. 
+4.4.13​Desain Halaman Monitoring Shipment  
+Halaman Monitoring Shipment dirancang secara eksklusif sebagai layar dasbor 
+pengawasan waktu nyata (real-time dashboard) bagi operator untuk melacak progres 
+pergerakan distribusi armada logistik yang sedang bertugas. Berdasarkan Gambar 4.44, 
+antarmuka ini menyajikan matriks informasi operasional yang padat namun mudah 
+diinterpretasikan secara cepat (glanceable). Tabel pemantauan tersebut memuat parameter 
+krusial seperti ID pengiriman, nama pelanggan (Customer), lokasi Tujuan pengiriman, 
+serta identitas sumber daya penggerak yang ditugaskan (Driver dan Truck). Titik fokus 
+visual utama pada halaman ini terletak pada kolom Status di ujung kanan tabel, yang 
+mengimplementasikan lencana indikator berbasis warna (color-coded badges)—seperti 
+warna hijau terang untuk penugasan "Selesai" dan kuning untuk status
+
+"Menunggu"—guna memfasilitasi operator dalam mengidentifikasi kondisi lapangan 
+secara instan tanpa perlu membaca detail teks. 
+ 
+Gambar 4.44 
+ 
+Berbeda dengan halaman pengelolaan data (CRUD) lainnya di dalam sistem, 
+Monitoring Shipment secara arsitektural dibangun sebagai antarmuka pengawasan pasif 
+bersifaf read-only (hanya-baca). Oleh karena itu, sistem secara sengaja menghilangkan 
+kolom kontrol fungsional (seperti tombol Edit atau Hapus) dari antarmuka ini. Data yang 
+dirender pada layar merupakan proyeksi mutlak dari status pangkalan data tabel 
+shipments yang secara terus-menerus diperbarui seiring dengan berjalannya pembaruan 
+status distribusi. Pendekatan desain antarmuka yang terisolasi dari intervensi modifikasi 
+data ini sangat krusial untuk menjaga integritas pengawasan operasional, mencegah 
+manipulasi data yang tidak disengaja oleh staf pemantau, serta menjadikan halaman ini 
+sangat ideal untuk ditampilkan secara permanen (always-on display) di layar pusat 
+kendali (control room) manajemen logistik.
+
+4.4.14​Desain Halaman Visualisasi Map  
+Halaman Visualisasi Jalur Dijkstra dirancang sebagai laboratorium spasial interaktif yang 
+secara khusus didedikasikan untuk mendemonstrasikan kapabilitas matematis algoritma 
+pencarian rute yang tertanam di dalam sistem. Berdasarkan Gambar 4.45, antarmuka ini 
+menyajikan kanvas peta pulau Jawa beresolusi tinggi (didukung oleh pustaka Leaflet) yang 
+mendominasi layar, dilengkapi dengan panel parameter simulasi di bagian atas. Panel tersebut 
+memungkinkan pengguna untuk melakukan uji coba dinamis dengan menentukan kombinasi 
+"Lokasi Asal" dan "Lokasi Tujuan" secara bebas. Berbeda dengan modul Shipment yang terikat 
+erat pada validasi transaksi bisnis operasional, halaman visualisasi ini secara independen 
+berfungsi murni sebagai instrumen simulasi (testing tool). Tujuannya adalah untuk memvalidasi 
+akurasi logika pembentukan graph, pemetaan simpul (node), dan pembobotan jarak antargudang 
+sebelum algoritma tersebut dieksekusi untuk penugasan armada di dunia nyata. 
+ 
+Gambar 4.45
+
+Nilai akademis dan teknis tertinggi dari antarmuka ini terletak pada representasi grafis 
+transparan (white-box testing) dari hasil komputasi backend. Segera setelah tombol "Tampilkan" 
+dieksekusi, arsitektur graph spasial yang rumit akan dirender langsung ke atas layar. Lintasan 
+optimal (shortest path) yang berhasil dikalkulasikan oleh algoritma Dijkstra direpresentasikan 
+secara tegas melalui garis tebal berwarna biru utuh yang menghubungkan pin marker lokasi 
+persinggahan. Secara bersamaan, kanvas juga memproyeksikan jaringan garis putus-putus 
+berwarna merah (red dashed lines) yang menyebar ke berbagai titik wilayah. Garis-garis merah 
+tersebut adalah representasi visual dari rute-rute alternatif atau edges berbobot lebih besar yang 
+sempat dieksplorasi oleh algoritma, namun pada akhirnya digugurkan karena terbukti tidak 
+efisien secara matematis. Visualisasi perbandingan (contrast) semacam ini memberikan 
+justifikasi absolut bahwa keputusan rute yang diambil oleh sistem didasarkan pada perhitungan 
+komputasi yang presisi, bukan probabilitas acak. 
+4.4.15​Desain Halaman Dashboard Manager  
+Halaman Dashboard Manager dirancang secara khusus sebagai pusat komando 
+eksekutif (executive command center) yang menyediakan ringkasan analitik tingkat 
+tinggi (high-level analytics) bagi pemangku kepentingan strategis. Berdasarkan Gambar 
+4.46, antarmuka visual ini didominasi oleh deretan metrik Key Performance Indicator 
+(KPI) yang diekstraksi secara real-time dari pangkalan data pusat. Kartu indikator 
+tersebut secara komprehensif mengukur volume operasional (pengiriman harian dan 
+bulanan), tingkat keberhasilan distribusi, hingga mengimplementasikan sistem peringatan 
+dini (early warning system) melalui indikator merah untuk pengiriman yang terlambat 
+(warning). Lebih jauh lagi, dasbor ini memiliki kapabilitas kalkulasi finansial otomatis 
+yang menyandingkan agregasi "Total Pendapatan" dengan "Total Biaya Operasional"
+
+bulanan. Konfigurasi metrik ini memungkinkan manajer untuk memantau rasio 
+profitabilitas (profitability ratio) secara instan tanpa perlu menunggu siklus pembukuan 
+akuntansi akhir bulan, menjadikannya fondasi esensial dalam pengambilan keputusan 
+bisnis (strategic decision-making). 
+ 
+Gambar 4.46 
+Selain komputasi metrik tunggal, arsitektur Dashboard Manager juga 
+mengeksekusi teknik agregasi basis data relasional (relational database aggregation) 
+untuk menyajikan matriks utilitas aset perusahaan. Pada kompartemen tengah antarmuka, 
+sistem merender tabel komparatif "Top 5 Driver Teraktif" dan "Top 5 Truck Terbanyak 
+Digunakan" yang berfungsi sebagai instrumen evaluasi performa sumber daya manusia 
+sekaligus manajemen keausan aset fisik (asset wear and tear). Rangkaian pengawasan 
+komprehensif ini ditutup dengan riwayat linimasa aktivitas pengiriman terbaru di bagian 
+paling bawah antarmuka. Keunggulan teknis dari halaman ini kemudian disempurnakan 
+dengan kehadiran fitur ekstraksi "Export Laporan Manajemen PDF". Tombol fungsional 
+ini memicu library generator di sisi peladen (server) untuk mengompilasi seluruh 
+visualisasi data metrik tersebut ke dalam format dokumen cetak resmi, memfasilitasi
+
+kebutuhan rapat evaluasi (management review meeting) dengan jaminan keakuratan data 
+terpusat (Single Source of Truth). 
+4.4.16​Desain Halaman Laporan Order  
+Halaman Laporan Order merupakan antarmuka analitik arsip yang dirancang 
+secara khusus untuk memenuhi kebutuhan audit dan evaluasi kinerja komersial pada level 
+manajerial. Sebagaimana direpresentasikan pada Gambar 4.47, halaman ini menyajikan 
+rekapitulasi data pesanan masuk (incoming orders) dalam format tabular yang bersih dari 
+elemen operasional yang tidak relevan bagi pihak eksekutif. Matriks tabel laporan 
+mengekstraksi variabel data yang esensial dari pangkalan data, meliputi ID Order, 
+identitas Customer, titik muat Tujuan, Tanggal Pesan, Estimasi Tiba (yang dikalkulasi 
+dari proyeksi durasi sistem Dijkstra), serta metrik Status pesanan (seperti pending). 
+Penyajian data holistik ini bertujuan untuk menyuplai manajer dengan visibilitas 
+menyeluruh (end-to-end visibility) terhadap tumpukan pesanan (order backlog), 
+memfasilitasi pemantauan rasio permintaan (demand flow) klien secara transparan. 
+ 
+Gambar 4.48 
+Dari perspektif arsitektur keamanan sistem, signifikansi akademis tertinggi pada 
+halaman ini adalah implementasi protokol Role-Based Access Control (RBAC) yang 
+sangat ketat. Kontras dengan antarmuka Data Order milik level operator yang masih
+
+mengakomodasi tindakan modifikasi (kolom Aksi), halaman Laporan Order pada dasbor 
+manajer dikonfigurasi secara absolut sebagai antarmuka read-only (hanya-baca). 
+Ketiadaan tombol manipulasi CRUD (Create, Read, Update, Delete) pada layar 
+manajerial merupakan manifestasi dari prinsip pemisahan wewenang (Separation of 
+Duties) guna mencegah alterasi data operasional lapangan secara sengaja maupun tidak 
+sengaja. Pendekatan protektif ini memberikan justifikasi teknis bahwa rekapitulasi data 
+yang diaudit oleh manajer adalah cerminan murni (Single Source of Truth) dari aktivitas 
+nyata, sehingga validitas dan kredibilitas sistem pelaporan perusahaan tetap terjaga pada 
+standar pengujian yang tinggi. 
+4.4.17​Desain Halaman Laporan Shipment  
+Halaman Laporan Shipment berfungsi sebagai instrumen lanjutan dalam siklus 
+pengawasan manajerial, yang berfokus pada evaluasi akhir eksekusi operasional dan 
+komputasi finansial distribusi. Berdasarkan Gambar 4.48, antarmuka ini 
+direpresentasikan melalui format tabular komprehensif yang secara dinamis 
+mengonsolidasikan data dari berbagai entitas relasional di pangkalan data (database 
+relational mapping). Tabel pelaporan ini membedah parameter performansi secara 
+spesifik, mencakup ID Shipment, referensi silang nomor Order, identitas aset Truck dan 
+Driver, hasil kalkulasi Jarak (KM) dari algoritma spasial Dijkstra, akumulasi Total Berat 
+muatan, hingga agregasi Total Biaya operasional secara keseluruhan. Penyatuan 
+visualisasi metrik logistik spasial dan finansial ke dalam satu matriks tunggal ini 
+memberikan presisi bagi manajer untuk melakukan audit silang (cross-auditing) terhadap 
+rasio efisiensi setiap penugasan armada yang telah dirilis.
+
+Gambar 4.48 
+Mempertahankan filosofi keamanan sistem yang konsisten, antarmuka Laporan 
+Shipment ini juga terikat secara mutlak pada arsitektur Role-Based Access Control 
+(RBAC) tingkat eksekutif. Sistem secara arsitektural menggugurkan seluruh elemen 
+kontrol modifikasi (CRUD actions) dari layar manajer, menjadikannya halaman 
+pemantauan read-only (hanya-baca) yang sepenuhnya pasif secara transaksional. Desain 
+isolasi hak akses ini diimplementasikan untuk mengamankan jejak audit finansial 
+(financial audit trail), khususnya untuk mencegah manipulasi pada kolom sentral seperti 
+"Total Biaya" dan "Status", setelah komputasi otomatis disahkan oleh sistem backend. 
+Pendekatan antarmuka yang restriktif ini memberikan jaminan bahwa rekam jejak historis 
+operasional yang dianalisis oleh manajer bersifat valid (Single Source of Truth), sehingga 
+sangat reliabel untuk dijadikan landasan evaluasi pembukuan finansial perusahaan 
+(corporate ledger) di akhir kuartal. 
+4.4.18​Desain Halaman Laporan Biaya  
+Halaman Laporan Biaya dirancang secara spesifik sebagai instrumen audit 
+finansial (financial audit tool) yang memfokuskan orientasi antarmukanya pada 
+pengolahan data agregasi pengeluaran operasional. Berdasarkan Gambar 4.49, arsitektur 
+visual halaman ini memprioritaskan penyajian metrik statistik (statistical metrics) tingkat 
+makro di bagian atas melalui empat kartu indikator utama (KPI cards). Sistem pangkalan
+
+data secara real-time mengeksekusi kueri agregasi matematika untuk menghasilkan 
+perhitungan absolut, mencakup akumulasi frekuensi distribusi (Total Shipment), 
+komputasi pengeluaran keseluruhan (Total Biaya), hingga fungsi turunan statistik berupa 
+Rata-rata Biaya dan pencarian nilai Biaya Tertinggi. Kehadiran panel indikator statistik 
+ini memungkinkan pemangku kepentingan (stakeholders) manajerial untuk mendeteksi 
+tren pengeluaran dan anomali lonjakan biaya operasional (cost spikes) secara instan, 
+mengeliminasi ketergantungan pada kalkulasi manual menggunakan piranti lunak 
+spreadsheet eksternal. 
+ 
+Gambar 4.49 
+Sebagai fungsi pelengkap dari ringkasan data makro, antarmuka ini menyediakan 
+kompartemen "Detail Biaya Shipment" berformat tabular di bagian bawah yang bertindak 
+sebagai panel penelusuran data granular (micro-data drill-down). Tabel ini mendedah 
+rincian pengeluaran secara spesifik per transaksi pengiriman, yang secara sistematis 
+diikat dengan entitas penyerap anggaran (cost centers) utama, yakni armada truk dan 
+identitas pengemudi (Driver). Pendekatan desain UI/UX yang menyandingkan visualisasi 
+agregasi top-level dengan data rincian (bottom-level) ini menciptakan ekosistem 
+pengawasan finansial yang sangat transparan dan akuntabel. Dari perspektif manajemen 
+tingkat eksekutif, halaman ini bertransformasi dari sekadar fitur rekapitulasi pembukuan 
+biasa menjadi sebuah subsistem pelaporan cerdas yang esensial untuk mengevaluasi
+
+efisiensi alokasi anggaran dan merumuskan kebijakan efisiensi perusahaan pada kuartal 
+mendatang. 
+4.4.19​Desain Halaman Driver Performance 
+Halaman Driver Performance dirancang sebagai antarmuka analitik Sumber Daya 
+Manusia (SDM) yang didedikasikan untuk mengukur tingkat produktivitas pengemudi 
+lapangan secara objektif dan berbasis data (data-driven evaluation). Sebagaimana 
+direpresentasikan pada Gambar 4.50, dasbor tingkat manajerial ini memproyeksikan 
+klasemen kinerja (performance leaderboard) dalam format tabular yang terstruktur. 
+Signifikansi komputasi pada halaman ini terletak pada eksekusi fungsi agregasi 
+pangkalan data di sisi backend—mengombinasikan klausa Group By dan Order By 
+Descending—untuk secara otomatis mengakumulasikan frekuensi penyelesaian tugas 
+distribusi (Total Shipment) yang terikat pada masing-masing entitas pengemudi. Hasil 
+kalkulasi relasional tersebut kemudian diekstraksi ke antarmuka dalam bentuk kolom 
+Ranking (peringkat), menyajikan analisis komparatif instan terhadap beban kerja nyata 
+(actual workload) antar-pengemudi (contoh: Peringkat 1 untuk Driver A dengan 2 
+penugasan). 
+ 
+Gambar 4.50
+
+Dari sudut pandang tata kelola operasional perusahaan (corporate governance), 
+visualisasi metrik performa berformat klasemen ini berfungsi untuk mengeliminasi bias 
+subjektivitas dalam peninjauan kinerja staf lapangan. Pihak manajemen dapat 
+mengadopsi matriks pemeringkatan ini sebagai landasan mutlak (Single Source of Truth) 
+dalam merumuskan kebijakan alokasi insentif (reward system) atau pembagian 
+(dispatching) tugas yang berkeadilan. Layaknya desain antarmuka eksekutif lainnya pada 
+sistem ini, ketiadaan fungsi manipulasi data manual (read-only architecture) menegaskan 
+bahwa kalkulasi ranking murni dihasilkan oleh algoritma berdasarkan riwayat transaksi 
+yang tervalidasi. Pendekatan analitik transparan ini secara efektif menjembatani antara 
+rekam jejak operasional teknis dengan kebutuhan pengambilan kebijakan strategis 
+(strategic policy) oleh departemen personalia logistik. 
+ 
+4.4.20​Desain Halaman Truck Usage  
+Melengkapi kapabilitas analitik pada dasbor manajerial, halaman Truck Usage 
+dirancang secara komprehensif sebagai antarmuka pengawasan utilitas aset fisik 
+(physical asset utilization) perusahaan. Sejalan dengan mekanisme komputasi pada 
+evaluasi sumber daya manusia, antarmuka yang tersaji pada Gambar 4.51 ini 
+menampilkan matriks klasemen (leaderboard) yang mengalkulasi frekuensi penggunaan 
+operasional dari setiap inventaris armada. Logika pangkalan data di sisi peladen 
+mengeksekusi fungsi relasional tingkat lanjut untuk mengelompokkan riwayat 
+pengiriman (Group By) berdasarkan entitas truk, untuk kemudian diurutkan secara 
+menurun (Order By Descending) berdasarkan volume penugasan (Total Shipment). Hasil 
+ekstraksi komputasi ini dirender ke dalam tabel read-only yang memuat variabel
+
+identifikasi aset—seperti Nama Truck dan Plat Nomor—yang disandingkan dengan 
+metrik Ranking guna memvisualisasikan rasio keaktifan armada secara hierarkis dan 
+real-time (misalnya: Truk Tronton Hino memuncaki peringkat pertama dengan 2 
+penugasan operasional). 
+ Gambar 4.51 
+Keberadaan metrik utilitas (utilization rate) armada ini memiliki implikasi operasional 
+dan finansial yang sangat krusial bagi kelangsungan bisnis logistik. Dari kacamata 
+akademis dan manajerial, matriks pemeringkatan ini melampaui fungsi pelaporan statis 
+dan bertindak sebagai parameter fundamental dalam implementasi Sistem Manajemen 
+Aset (Asset Management System). Eksekutif operasional dapat memanfaatkan rasio Total 
+Shipment ini sebagai indikator kuantitatif primer untuk merencanakan jadwal 
+pemeliharaan preventif (preventive maintenance); di mana armada pada peringkat teratas 
+secara logis memiliki probabilitas tingkat keausan mekanis (wear and tear) yang lebih 
+tinggi. Sebaliknya, armada yang berada di dasar klasemen merepresentasikan aset yang 
+kurang optimal dimanfaatkan (underutilized). Data presisi ini memberdayakan manajer 
+untuk merestrukturisasi strategi alokasi penugasan (dispatching routing), 
+mendistribusikan beban kerja mekanis secara merata, dan pada akhirnya memperpanjang 
+umur ekonomis seluruh armada logistik perusahaan.

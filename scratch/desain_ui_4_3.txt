@@ -1,0 +1,268 @@
+ 
+login dapat dilihat pada  Gambar   4.12.  
+mengarahkan   pengguna   ke  dashboard  sesuai  dengan  hak akses yang  dimiliki. Desain  halaman  
+sandi yang  telah terdaftar pada  sistem. Setelah  proses  autentikasi  berhasil  dilakukan,  sistem  akan  
+mengakses   sistem. Pada  halaman  ini pengguna   diwajibkan   memasukkan    alamat  email  dan kata  
+Halaman  login merupakan   halaman  awal  yang  digunakan  oleh  pengguna   untuk  
+Desain  Halaman   Login   
+4.6.1 
+jawabnya   dalam  proses  pengelolaan  transportasi  dan distribusi  barang.    
+pengguna   memiliki  akses terhadap  fitur yang  berbeda  sesuai  dengan  tugas dan tanggung   
+dimiliki. Sistem  ini memiliki  tiga jenis pengguna   yaitu Admin,   Operator , dan Manager . Setiap  
+mengenai   tampilan  sistem  yang  akan  digunakan  oleh  pengguna   sesuai  dengan  hak akses yang  
+Manajemen   Transportasi.  Perancangan   antarmuka  dilakukan  untuk  memberikan   gambaran   
+Pada  subbab  ini dijelaskan  rancangan  tampilan  antarmuka  yang  digunakan  pada  Sistem  
+Desain  Tampilan  Antar  Muka   
+4.2. 
+----------------Page (0) Break----------------
+Desain  halaman  dashboard  admin  dapat dilihat pada  Gambar   4.13. 
+membantu   administrator  memantau   kondisi  data  yang  tersimpan  dalam  sistem  secara  cepat.  
+jumlah  pengemudi,   jumlah  lokasi, dan jumlah  rute  yang  tersedia. Dashboard  ini berfungsi  untuk  
+master  yang  terdapat  pada  sistem, seperti jumlah  pelanggan,   jumlah  barang,  jumlah  armada  truk, 
+berhasil  masuk  ke  dalam  sistem. Halaman  ini menampilkan   ringkasan  informasi  terkait data  
+Dashboard  Admin  merupakan   halaman  utama  yang  ditampilkan  setelah administrator  
+Desain  Halaman   Dashboard   Admin  
+4.6.2 
+ 
+Gambar 4.12 Halaman Login 
+ 
+ 
+----------------Page (1) Break----------------
+menghapus   data  tersebut. Informasi  yang  disajikan  mencakup   nama  pelanggan,   alamat,  nomor  
+pemesanan   pengiriman   barang,  di mana  pengguna   dapat menambahkan,    mengubah,   melihat,  dan 
+Halaman  customer  digunakan  untuk  mengelola  data  pelanggan  yang  melakukan   
+Desain  Halaman   Customer    
+4.6.3 
+ 
+ 
+Gambar 4.12 Halaman Dashboard Admin 
+ 
+----------------Page (2) Break----------------
+Desain  Halaman   Barang    
+4.6.4 
+ 
+ 
+Gambar 4.14 Halaman Customer  
+ 
+visualisasi desain  halaman  yang  dapat dilihat pada  Gambar   4.14.   
+telepon,  serta informasi  pendukung   lainnya  yang  diperlukan  dalam  proses  pengiriman,  dengan  
+----------------Page (3) Break----------------
+ 
+Gambar 4.15 Halaman Barang  
+ 
+Desain  halaman  barang  dapat dilihat pada  Gambar   4.15.  
+Informasi  yang  ditampilkan  meliputi  nama  barang,  berat barang,  dan pelanggan  pemilik  barang.  
+Data  barang  yang  tersimpan  akan  digunakan  dalam  proses  pemesanan   dan pengiriman   barang.  
+Halaman  barang  digunakan  untuk  mengelola  data  barang  yang  dimiliki  oleh  pelanggan.   
+----------------Page (4) Break----------------
+ 
+ 
+ 
+Gambar 4.16 Halaman Driver  
+ 
+4.16.   
+nomor  telepon,  dan tarif harian  pengemudi.   Desain  halaman  driver  dapat dilihat pada  Gambar   
+tambah,  ubah, lihat, dan hapus  data. Informasi  yang  ditampilkan  meliputi  nama  pengemudi,   
+pengiriman   barang.  Administrator  dapat melakukan   pengelolaan  data  pengemudi   melalui  fungsi  
+Halaman  driver  digunakan  untuk  mengelola  data  pengemudi   yang  bertugas  melakukan   
+Desain  Halaman   Driver   
+4.6.5 
+----------------Page (5) Break----------------
+Desain  Halaman   Lokasi   
+4.6.7 
+ 
+Gambar 4.17 Halaman Truck  
+ 
+dimensi  kendaraan.   Desain  halaman  truck dapat dilihat pada  Gambar   4.17.  
+nomor  polisi  kendaraan,   kapasitas  muatan,  konsumsi   bahan  bakar, tarif per kilometer , serta 
+memperbarui   informasi  armada  yang  tersedia. Informasi  yang  ditampilkan  meliputi  nama  truk, 
+kegiatan  pengiriman   barang.  Pada  halaman  ini administrator  dapat menambahkan    dan 
+Halaman  truck digunakan  untuk  mengelola  data  armada  truk  yang  digunakan  dalam  
+Desain  Halaman   Truck   
+4.6.6 
+----------------Page (6) Break----------------
+Desain  Halaman   Routes   
+4.6.8 
+ 
+Gambar 4.18 Halaman Lokasi  
+ 
+Gambar   4.18.  
+pencarian  rute  menggunakan   algoritma  Dijkstra. Desain  halaman  lokasi  dapat dilihat pada  
+lintang,  dan koordinat  bujur. Data  ini akan  digunakan  sebagai  simpul  (node)  dalam  proses  
+maupun   tujuan  pengiriman.  Data  lokasi  yang  tersimpan  terdiri atas  nama  lokasi, koordinat  
+Halaman  lokasi  digunakan  untuk  mengelola  data  lokasi  yang  digunakan  sebagai  titik asal  
+----------------Page (7) Break----------------
+Desain  Halaman   Driver  Schedule    
+4.6.9 
+ 
+ 
+Gambar 4.19  Halaman Routes 
+ 
+menentukan   rute  terpendek.  Desain  halaman  routes  dapat dilihat pada  Gambar   4.19.  
+digunakan  sebagai  sisi (edge)  pada  graf  yang  akan  diproses  oleh  algoritma  Dijkstra  untuk  
+sistem. Data  yang  disimpan  meliputi  lokasi  asal, lokasi  tujuan, dan jarak antar lokasi. Data  routes  
+Halaman  routes  digunakan  untuk  mengelola  hubungan   antar lokasi  yang  tersedia  pada  
+----------------Page (8) Break----------------
+4.6.10 Desain  Halaman   Komponen    Biaya   
+ 
+ 
+Gambar 4.20 Halaman Driver Schedule 
+ 
+Gambar   4.20. 
+sebelum  proses  pengiriman   dilakukan.  Desain  halaman  driver  schedule  dapat dilihat pada  
+pengemudi.   Halaman  ini membantu   perusahaan   dalam  mengatur   ketersediaan  pengemudi   
+tersedia  pada  perusahaan.  Administrator  dapat menentukan   tanggal  penugasan  serta status  jadwal  
+Halaman  driver  schedule  digunakan  untuk  mengatur   jadwal  kerja pengemudi   yang  
+----------------Page (9) Break----------------
+ 
+ 
+Gambar 4.21 Halaman  Komponen    Biaya  
+ 
+Gambar   4.21. 
+dalam  proses  perhitungan  tarif pengiriman.  Desain  halaman  komponen   biaya dapat dilihat pada  
+komponen   biaya,  nilai biaya,  dan keterangan   biaya.  Data  tersebut  akan  digunakan  oleh  sistem  
+yang  digunakan  dalam  perhitungan  tarif pengiriman.  Informasi  yang  ditampilkan  meliputi  nama  
+Halaman  komponen   biaya digunakan  untuk  mengelola  data  komponen   biaya operasional  
+----------------Page (10) Break----------------
+ 
+ 
+Gambar 4.22 Halaman Driver Schedule 
+ 
+ 
+aktivitas distribusi  barang.  Desain  halaman  dashboard  operator  dapat dilihat pada  Gambar   4.22  
+Dashboard  juga  menampilkan   informasi  pengiriman   terbaru untuk  membantu   operator  memantau   
+jumlah  shipment,  pengiriman   yang  sedang  berlangsung,   serta pengiriman   yang  telah selesai.  
+memantau   aktivitas operasional  pengiriman.  Halaman  ini menampilkan   informasi  jumlah  order, 
+Dashboard  Operator  merupakan   halaman  utama  yang  digunakan  operator  untuk  
+4.6.11 Desain  Halaman   Dashboard   Operator    
+ 
+----------------Page (11) Break----------------
+4.6.13 Desain  Halaman   Shipment    
+ 
+ 
+Gambar   23  Halaman  Order  
+ 
+ 
+pengiriman.  Desain  halaman  order dapat dilihat pada  Gambar   4.23. 
+barang  yang  akan  dikirim.  Data  order yang  tersimpan  akan  digunakan  pada  tahap perencanaan  
+pelanggan.   Operator  dapat memilih  pelanggan,   menentukan   lokasi  tujuan, serta menambahkan    
+Halaman  order digunakan  untuk  melakukan   pencatatan  pemesanan   pengiriman   dari  
+4.6.12 Desain  Halaman   Order  
+----------------Page (12) Break----------------
+4.6.14 Desain  Halaman   Monitoring   Shipment    
+ 
+ 
+ 
+ 
+Gambar   23  Halaman  Shipment   
+ 
+halaman  shipment  dapat dilihat pada  Gambar   4.24. 
+armada  truk, pengemudi,   jadwal  pengiriman,  serta estimasi  waktu  kedatangan   barang.  Desain  
+berdasarkan  order yang  telah dibuat  sebelumnya.   Pada  halaman  ini operator  dapat menentukan   
+Halaman   shipment   digunakan   untuk  membuat   dan mengelola  data  pengiriman   
+----------------Page (13) Break----------------
+ 
+ 
+ 
+ Gambar   4.25  Halaman  Monitoring   Shipment   
+ 
+shipment  dapat dilihat pada  Gambar   4.25. 
+pengemudi,   armada  yang  digunakan,   dan status  pengiriman.  Desain  halaman  monitoring   
+di lapangan.  Informasi  yang  ditampilkan  meliputi  nomor  shipment,  tujuan  pengiriman,  
+yang  sedang  berlangsung.   Operator  dapat memperbarui   status  pengiriman   sesuai  kondisi  aktual  
+Halaman  monitoring   shipment  digunakan  untuk  memantau   status  pengiriman   barang  
+----------------Page (14) Break----------------
+ 
+ 
+ 
+Gambar   4.26  Halaman  Visualisasi  Map  
+ 
+4.26. 
+memahami    rute  yang  akan  dilalui. Desain  halaman  visualisasi map  dapat dilihat pada  Gambar   
+memberikan   gambaran   jalur pengiriman   secara  visual  sehingga  memudahkan    pengguna   dalam  
+peta  digital. Halaman  ini memanfaatkan    data  lokasi  dan rute  yang  tersimpan  pada  sistem  untuk  
+Halaman  visualisasi map  digunakan  untuk  menampilkan   rute  pengiriman   dalam  bentuk  
+4.6.15 Desain  Halaman   Visualisasi  Map   
+----------------Page (15) Break----------------
+ 
+ 
+ 
+Gambar   4.27  Halaman  Perhitungan  Dijkstra  
+ 
+perhitungan  Dijkstra  dapat dilihat pada  Gambar   4.27. 
+beserta total jarak yang  diperoleh  berdasarkan  perhitungan  algoritma  Dijkstra. Desain  halaman  
+digunakan  dalam  proses  pencarian  rute. Sistem  kemudian   akan  menampilkan   jalur terpendek  
+barang.  Pada  halaman  ini operator  dapat memilih  lokasi  asal  dan lokasi  tujuan  yang  akan  
+Halaman  perhitungan  Dijkstra  digunakan  untuk  melakukan   optimasi  rute  pengiriman   
+4.6.16 Desain  Halaman   Perhitungan   Dijkstra   
+----------------Page (16) Break----------------
+4.6.18 Desain  Halaman   Laporan   Order   
+ 
+ 
+ 
+ 
+Gambar 4.28 Halaman Dashboard M anager 
+ 
+halaman  dashboard  manager  dapat dilihat pada  Gambar   4.28. 
+membantu   manager  dalam  melakukan   pengawasan   terhadap  operasional  perusahaan.  Desain  
+shipment,  total biaya pengiriman,  performa  pengemudi,   serta penggunaan   armada.  Halaman  ini 
+aktivitas operasional  perusahaan.  Informasi  yang  ditampilkan  meliputi  jumlah  order, jumlah  
+Dashboard  Manager  merupakan   halaman  utama  yang  digunakan  untuk  melihat  ringkasan  
+4.6.17 Desain  Halaman   Dashboard   Manager    
+----------------Page (17) Break----------------
+4.6.19 Desain  Halaman   Laporan   Shipment    
+ 
+ 
+ 
+ 
+Gambar   4.29  Halaman  Laporan  Order  
+ 
+dapat dilihat pada  Gambar   4.29. 
+memantau   aktivitas pemesanan   yang  terjadi pada  perusahaan.  Desain  halaman  laporan  order 
+yang  telah dilakukan  pelanggan  dalam  periode  tertentu. Laporan  ini membantu   manager  dalam  
+Halaman  laporan  order digunakan  untuk  menampilkan   informasi  seluruh  pemesanan   
+----------------Page (18) Break----------------
+4.6.20 Desain  Halaman   Laporan   Biaya   
+ 
+ 
+ 
+ 
+Gambar   4.30  Halaman  Laporan  Shipment   
+ 
+shipment  dapat dilihat pada  Gambar   4.30. 
+pengiriman,  armada  yang  digunakan,   pengemudi,   dan status  pengiriman.  Desain  halaman  laporan  
+telah dilakukan  perusahaan.  Informasi  yang  ditampilkan  meliputi  nomor  shipment,  tujuan  
+Halaman  laporan  shipment  digunakan  untuk  menampilkan   informasi  pengiriman   yang  
+----------------Page (19) Break----------------
+ 
+ 
+ 
+ 
+ 
+Gambar   4.31  Halaman  Laporan  Biaya  
+ 
+pada  Gambar   4.31. 
+biaya dan pengendalian   pengeluaran  perusahaan.  Desain  halaman  laporan  biaya dapat dilihat 
+dikeluarkan  pada  setiap  pengiriman.  Laporan  ini membantu   manager  dalam  melakukan   evaluasi  
+Halaman  laporan  biaya digunakan  untuk  menampilkan   informasi  biaya operasional  yang  
+----------------Page (20) Break----------------
+4.6.22 Desain  Halaman   Truck  Usage   
+ 
+ 
+ 
+Gambar   4.32  Halaman   Driver  Performance   
+ 
+perusahaan.  Desain  halaman  driver  performance   dapat dilihat pada  Gambar   4.32. 
+digunakan  sebagai  bahan  evaluasi  kinerja pengemudi   dalam  mendukung   kegiatan  operasional  
+pengemudi   berdasarkan  aktivitas pengiriman   yang  telah dilakukan.  Informasi  ini dapat 
+Halaman  driver  performance   digunakan  untuk  menampilkan   informasi  performa  
+4.6.21 Desain  Halaman   Driver  Performance    
+----------------Page (21) Break----------------
+ 
+Gambar   4.33  Halaman  Truck  Usage  
+ 
+usage  dapat dilihat pada  Gambar   4.33. 
+kendaraan  dan aktivitas pengiriman   yang  dilakukan  oleh  setiap  armada.  Desain  halaman  truck 
+dalam  kegiatan  pengiriman.  Informasi  yang  ditampilkan  meliputi  frekuensi  penggunaan   
+Halaman  truck usage  digunakan  untuk  menampilkan   informasi  penggunaan   armada  truk  
+----------------Page (22) Break----------------

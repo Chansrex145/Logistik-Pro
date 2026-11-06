@@ -1,0 +1,1272 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Manual - Logistik App (Universitas Surabaya)</title>
+    <style>
+        @page {
+            size: A4;
+            margin: 25mm 20mm 20mm 20mm;
+            @top-left {
+                content: "Manual Penggunaan Logistik App";
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 9pt;
+                color: #555555;
+            }
+            @top-right {
+                content: "Halaman " counter(page);
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 9pt;
+                color: #555555;
+            }
+        }
+
+        *, *::before, *::after {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: "Times New Roman", Times, serif;
+            font-size: 11pt;
+            line-height: 1.5;
+            color: #1a1a1a;
+            margin: 0;
+            padding: 0;
+            background-color: #ffffff;
+            text-align: justify;
+        }
+
+        .page-break {
+            page-break-before: always;
+            break-before: page;
+        }
+
+        .avoid-break {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        /* Running Header / Footer for Web View & Screen */
+        .doc-header-screen, .doc-footer-screen {
+            display: flex;
+            justify-content: space-between;
+            font-size: 9pt;
+            color: #666;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 5px;
+        }
+
+        @media print {
+            .doc-header-screen {
+                display: none;
+            }
+        }
+
+        /* COVER PAGE */
+        .cover-page {
+            min-height: 90vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            align-items: center;
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .cover-title {
+            font-size: 13pt;
+            font-weight: bold;
+            line-height: 1.4;
+            text-transform: uppercase;
+            max-width: 90%;
+            margin-bottom: 35px;
+            letter-spacing: 0.5px;
+        }
+
+        .cover-subtitle {
+            font-size: 16pt;
+            font-weight: bold;
+            letter-spacing: 2px;
+            margin-bottom: 50px;
+        }
+
+        .cover-logo {
+            margin: 20px 0 40px 0;
+            text-align: center;
+        }
+
+        .cover-logo svg {
+            width: 135px;
+            height: auto;
+        }
+
+        .cover-author {
+            font-size: 11pt;
+            line-height: 1.5;
+            margin-bottom: 60px;
+        }
+
+        .cover-author .name {
+            font-weight: bold;
+            text-decoration: underline;
+        }
+
+        .cover-affiliation {
+            font-size: 11.5pt;
+            font-weight: bold;
+            line-height: 1.4;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* SECTION HEADINGS */
+        h1.section-title {
+            font-size: 13pt;
+            font-weight: bold;
+            text-transform: uppercase;
+            margin-top: 15px;
+            margin-bottom: 12px;
+            border-bottom: 1.5px solid #000;
+            padding-bottom: 4px;
+            letter-spacing: 0.5px;
+        }
+
+        h2.subsection-title {
+            font-size: 11.5pt;
+            font-weight: bold;
+            margin-top: 18px;
+            margin-bottom: 8px;
+        }
+
+        h3.subsubsection-title {
+            font-size: 11pt;
+            font-weight: bold;
+            font-style: italic;
+            margin-top: 14px;
+            margin-bottom: 6px;
+        }
+
+        p {
+            margin: 0 0 10px 0;
+            text-indent: 0;
+        }
+
+        /* TABLES */
+        table.doc-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 12px 0 16px 0;
+            font-size: 10pt;
+        }
+
+        table.doc-table th, table.doc-table td {
+            border: 1px solid #777777;
+            padding: 6px 10px;
+            vertical-align: top;
+            text-align: left;
+        }
+
+        table.doc-table th {
+            background-color: #f1f3f5;
+            font-weight: bold;
+            color: #212529;
+        }
+
+        /* TERMINAL COMMAND BOXES */
+        .terminal-box {
+            background-color: #1a1d20;
+            color: #79c0ff;
+            font-family: "Consolas", "Courier New", monospace;
+            font-size: 9.5pt;
+            padding: 10px 14px;
+            border-radius: 4px;
+            margin: 10px 0;
+            line-height: 1.4;
+            white-space: pre-wrap;
+            border-left: 4px solid #388bfd;
+        }
+
+        .terminal-box .cmd {
+            color: #56d364;
+            font-weight: 600;
+        }
+
+        /* CALLOUT BOXES */
+        .callout-box {
+            background-color: #f6f8fa;
+            border-left: 4px solid #0969da;
+            padding: 10px 14px;
+            margin: 14px 0;
+            font-size: 10pt;
+            line-height: 1.45;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .callout-box.warning {
+            border-left-color: #d29922;
+            background-color: #fff8c5;
+        }
+
+        .callout-box strong {
+            color: #0969da;
+        }
+
+        .callout-box.warning strong {
+            color: #9a6700;
+        }
+
+        /* SCREENSHOT MOCKUPS / FIGURES */
+        .figure-container {
+            margin: 16px auto;
+            text-align: center;
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
+
+        .figure-box {
+            border: 1px solid #cbd5e1;
+            background: #f8fafc;
+            border-radius: 6px;
+            padding: 12px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.06);
+            display: inline-block;
+            max-width: 95%;
+            width: 100%;
+            text-align: left;
+        }
+
+        .figure-box-header {
+            background: #0f172a;
+            color: #ffffff;
+            padding: 6px 12px;
+            border-radius: 4px 4px 0 0;
+            font-family: "Consolas", monospace;
+            font-size: 8.5pt;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .figure-box-header .circle {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            display: inline-block;
+        }
+        .figure-box-header .red { background: #ef4444; }
+        .figure-box-header .yellow { background: #f59e0b; }
+        .figure-box-header .green { background: #10b981; }
+
+        .figure-box-body {
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-top: none;
+            padding: 16px;
+            border-radius: 0 0 4px 4px;
+            font-family: Arial, sans-serif;
+            font-size: 9pt;
+            color: #334155;
+        }
+
+        .figure-caption {
+            font-size: 9.5pt;
+            font-weight: bold;
+            margin-top: 7px;
+            color: #1e293b;
+            text-align: center;
+        }
+
+        /* LISTS */
+        ol, ul {
+            margin: 0 0 10px 0;
+            padding-left: 22px;
+        }
+
+        li {
+            margin-bottom: 4px;
+        }
+
+        /* BADGES */
+        .badge {
+            display: inline-block;
+            padding: 2px 7px;
+            border-radius: 3px;
+            font-size: 8pt;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+        .badge-success { background: #dcfce7; color: #166534; }
+        .badge-warning { background: #fef3c7; color: #92400e; }
+        .badge-primary { background: #e0f2fe; color: #075985; }
+        .badge-danger { background: #fee2e2; color: #991b1b; }
+
+        /* TOC */
+        .toc-list {
+            list-style: none;
+            padding-left: 0;
+            margin: 15px 0;
+            font-size: 10.5pt;
+            line-height: 1.6;
+        }
+        .toc-list li {
+            margin-bottom: 3px;
+        }
+        .toc-main {
+            font-weight: bold;
+            margin-top: 8px;
+        }
+        .toc-sub {
+            padding-left: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- ==================== HALAMAN 1: COVER ==================== -->
+    <div class="cover-page">
+        <div>
+            <div class="cover-title">
+                PENGEMBANGAN SISTEM MANAJEMEN TRANSPORTASI UNTUK OPTIMALISASI RUTE DAN PERHITUNGAN TARIF TRUK DENGAN ALGORITMA DIJKSTRA PADA PT ‘X’
+            </div>
+            <div class="cover-subtitle">
+                USER MANUAL
+            </div>
+        </div>
+
+        <div class="cover-logo">
+            <!-- Lambang Resmi Universitas Surabaya (UBAYA) -->
+            <svg viewBox="0 0 200 240" width="130" height="156" xmlns="http://www.w3.org/2000/svg">
+                <!-- Outer shield and flame emblem -->
+                <path d="M100 10 C125 40 160 55 175 95 C190 135 170 185 135 210 C115 225 100 230 100 230 C100 230 85 225 65 210 C30 185 10 135 25 95 C40 55 75 40 100 10 Z" fill="#990000" stroke="#d4af37" stroke-width="4"/>
+                <path d="M100 25 C120 50 148 65 160 98 C172 131 155 170 128 192 C112 205 100 210 100 210 C100 210 88 205 72 192 C45 170 28 131 40 98 C52 65 80 50 100 25 Z" fill="#ffffff"/>
+                <!-- Flame Torch Shape Gold & Red -->
+                <path d="M100 45 C112 65 132 80 135 105 C138 128 122 148 102 152 C98 140 105 125 102 112 C95 125 82 135 85 152 C65 146 52 125 58 102 C62 82 85 62 100 45 Z" fill="#d4af37"/>
+                <path d="M100 70 C108 85 118 98 116 115 C114 128 104 135 98 136 C96 128 102 120 98 110 C92 120 84 126 86 136 C74 132 68 118 72 105 C76 92 90 80 100 70 Z" fill="#990000"/>
+                <!-- Text UBAYA -->
+                <text x="100" y="175" font-family="'Times New Roman', serif" font-size="20" font-weight="bold" fill="#990000" text-anchor="middle" letter-spacing="2">UBAYA</text>
+                <text x="100" y="195" font-family="'Times New Roman', serif" font-size="9" font-weight="bold" fill="#222222" text-anchor="middle" letter-spacing="1">UNIVERSITAS SURABAYA</text>
+            </svg>
+        </div>
+
+        <div>
+            <div class="cover-author">
+                Disusun Oleh :<br>
+                <span class="name">Chandra Pratama Setya Putra</span><br>
+                NRP : 160422108
+            </div>
+
+            <div class="cover-affiliation">
+                PROGRAM STUDI TEKNIK INFORMATIKA<br>
+                PROGRAM INFORMATION MANAGEMENT &amp; ENTERPRISE SYSTEM<br>
+                FAKULTAS TEKNIK UNIVERSITAS SURABAYA<br>
+                SURABAYA<br>
+                2026
+            </div>
+        </div>
+    </div>
+
+    <!-- ==================== HALAMAN 2: DAFTAR ISI ==================== -->
+    <div class="page-break"></div>
+    
+    <h1 class="section-title">DAFTAR ISI</h1>
+    
+    <ul class="toc-list">
+        <li class="toc-main">A. Kebutuhan Sistem</li>
+        <li class="toc-sub">A.1 Kebutuhan Perangkat Keras (Hardware)</li>
+        <li class="toc-sub">A.2 Kebutuhan Perangkat Lunak (Software)</li>
+
+        <li class="toc-main">B. Cara Instalasi</li>
+        <li class="toc-sub">B.1 Memasang Perangkat Pendukung</li>
+        <li class="toc-sub">B.2 Menyiapkan Basis Data</li>
+        <li class="toc-sub">B.3 Menyalin Source Code</li>
+        <li class="toc-sub">B.4 Konfigurasi Berkas .env</li>
+        <li class="toc-sub">B.5 Memasang Dependensi &amp; Membangun Aset</li>
+        <li class="toc-sub">B.6 Membuat Tabel dan Data Awal (Migrasi &amp; Seeder)</li>
+        <li class="toc-sub">B.7 Menjalankan Aplikasi</li>
+
+        <li class="toc-main">C. Cara Penggunaan</li>
+        <li class="toc-sub">C.1 Mengakses Aplikasi dan Login</li>
+        <li class="toc-sub">C.2 Dashboard Administrator</li>
+        <li class="toc-sub">C.3 Dashboard Operator</li>
+        <li class="toc-sub">C.4 Dashboard Manager</li>
+        <li class="toc-sub">C.5 Master Data Pelanggan (Customer)</li>
+        <li class="toc-sub">C.6 Master Data Barang (Katalog Muatan)</li>
+        <li class="toc-sub">C.7 Master Data Lokasi (Simpul / Nodes Distribusi)</li>
+        <li class="toc-sub">C.8 Master Data Rute Antar Titik (Edges Graph &amp; Jarak Km)</li>
+        <li class="toc-sub">C.9 Master Data Truk (Armada &amp; Kapasitas Muat)</li>
+        <li class="toc-sub">C.10 Master Data Supir (Driver &amp; Lisensi SIM)</li>
+        <li class="toc-sub">C.11 Master Data Komponen Biaya Operasional</li>
+        <li class="toc-sub">C.12 Pembuatan Order &amp; Pengiriman Terintegrasi (Integrated Shipment Wizard)</li>
+        <li class="toc-sub">C.13 Visualisasi Algoritma Dijkstra &amp; Perhitungan Estimasi Tiba (ETA)</li>
+        <li class="toc-sub">C.14 Manajemen Daftar Pengiriman &amp; Pembaruan Status Real-Time</li>
+        <li class="toc-sub">C.15 Penerbitan &amp; Cetak Surat Jalan Resmi (PDF)</li>
+        <li class="toc-sub">C.16 Monitoring Pengiriman &amp; Pelacakan Armada Lintas Kota</li>
+        <li class="toc-sub">C.17 Visualisasi Peta Rute Interaktif (GIS Leaflet Map)</li>
+        <li class="toc-sub">C.18 Laporan Pemesanan (Order Report)</li>
+        <li class="toc-sub">C.19 Laporan Pengiriman &amp; Ketepatan Waktu (Shipment Report)</li>
+        <li class="toc-sub">C.20 Laporan Biaya Operasional (Biaya Report)</li>
+        <li class="toc-sub">C.21 Evaluasi Kinerja Supir (Driver Performance)</li>
+        <li class="toc-sub">C.22 Utilisasi Armada Truk (Truck Usage)</li>
+        <li class="toc-sub">C.23 Cetak Dokumen Laporan Manajemen Eksekutif (PDF)</li>
+    </ul>
+
+    <!-- ==================== HALAMAN 3: BAGIAN A ==================== -->
+    <div class="page-break"></div>
+
+    <h1 class="section-title">A. KEBUTUHAN SISTEM</h1>
+    
+    <p>
+        <strong>Logistik App</strong> adalah sistem informasi manajemen transportasi dan distribusi pengiriman logistik berbasis web yang dibangun dengan framework <strong>Laravel 12</strong> dan basis data <strong>MySQL / MariaDB</strong>. Aplikasi ini dilengkapi dengan algoritma <em>Dijkstra Single-Source Shortest Path</em> untuk kalkulasi rute terpendek, visualisasi peta geografis interaktif (<em>GIS Leaflet OpenStreetMap</em>), engine kalkulasi tarif biaya operasional otomatis, serta modul pelaporan manajerial eksekutif dalam format PDF (<em>DomPDF</em>).
+    </p>
+    <p>
+        Aplikasi dijalankan pada komputer server (atau web server lokal saat tahap pengembangan), kemudian diakses oleh pengguna melalui peramban web (<em>browser</em>) dari komputer desktop, laptop, maupun perangkat mobile. Oleh karena itu, kebutuhan sistem dibagi menjadi dua sisi, yaitu kebutuhan pada sisi server dan kebutuhan pada sisi pengguna.
+    </p>
+
+    <h2 class="subsection-title">A.1 Kebutuhan Perangkat Keras (Hardware)</h2>
+    <p>Kebutuhan perangkat keras pada sisi server tercantum pada tabel berikut.</p>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Komponen</th>
+                <th style="width: 35%;">Minimum</th>
+                <th style="width: 40%;">Direkomendasikan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Prosesor</strong></td>
+                <td>Intel Core i3 / AMD setara (2 inti)</td>
+                <td>Intel Core i5 / AMD Ryzen 5 ke atas (4 inti / 8 thread)</td>
+            </tr>
+            <tr>
+                <td><strong>Memori (RAM)</strong></td>
+                <td>4 GB</td>
+                <td>8 GB atau lebih</td>
+            </tr>
+            <tr>
+                <td><strong>Penyimpanan</strong></td>
+                <td>2 GB ruang kosong</td>
+                <td>10 GB (SSD NVMe) untuk basis data &amp; arsip surat jalan PDF</td>
+            </tr>
+            <tr>
+                <td><strong>Jaringan</strong></td>
+                <td>Koneksi jaringan lokal (LAN) / Internet</td>
+                <td>Koneksi internet broadband stabil &ge; 20 Mbps untuk tiles peta GIS Leaflet</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>Kebutuhan perangkat keras pada sisi pengguna (client) tercantum pada tabel berikut.</p>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Komponen</th>
+                <th style="width: 75%;">Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Perangkat</strong></td>
+                <td>Komputer desktop, laptop, tablet, atau smartphone</td>
+            </tr>
+            <tr>
+                <td><strong>Memori (RAM)</strong></td>
+                <td>Minimum 2 GB (direkomendasikan 4 GB untuk rendering peta interaktif GIS)</td>
+            </tr>
+            <tr>
+                <td><strong>Layar</strong></td>
+                <td>Resolusi minimum 1024 &times; 768 piksel; antarmuka menggunakan tata letak responsif Bootstrap SB Admin 2</td>
+            </tr>
+            <tr>
+                <td><strong>Jaringan</strong></td>
+                <td>Koneksi ke jaringan server lokal atau koneksi internet untuk mengunduh layer peta OpenStreetMap</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <!-- ==================== HALAMAN 4: BAGIAN A.2 ==================== -->
+    <h2 class="subsection-title">A.2 Kebutuhan Perangkat Lunak (Software)</h2>
+    <p>
+        Perangkat lunak berikut harus terpasang pada komputer server agar sistem dapat beroperasi dengan baik. Versi yang tertera merupakan versi acuan pengembangan dan pengujian aplikasi.
+    </p>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th style="width: 25%;">Perangkat Lunak</th>
+                <th style="width: 25%;">Versi Acuan</th>
+                <th style="width: 50%;">Kegunaan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Sistem Operasi</strong></td>
+                <td>Windows 10 / 11, Linux Ubuntu 22.04 LTS, atau macOS</td>
+                <td>Lingkungan utama untuk menjalankan layanan server web dan database</td>
+            </tr>
+            <tr>
+                <td><strong>XAMPP</strong></td>
+                <td>XAMPP v3.3.0 (PHP 8.2 &amp; MariaDB 10.4)</td>
+                <td>Paket komplit Apache HTTP Server dan basis data MySQL/MariaDB</td>
+            </tr>
+            <tr>
+                <td><strong>PHP</strong></td>
+                <td>PHP 8.2.12 (minimum PHP 8.2)</td>
+                <td>Menjalankan kode program backend berbasis Laravel 12</td>
+            </tr>
+            <tr>
+                <td><strong>MySQL / MariaDB</strong></td>
+                <td>MariaDB 10.4.32 / MySQL 8.0</td>
+                <td>Menyimpan seluruh master data, graf rute, pesanan, pengiriman, dan biaya</td>
+            </tr>
+            <tr>
+                <td><strong>Composer</strong></td>
+                <td>Composer 2.8+ / 2.9+</td>
+                <td>Pengelola paket dependensi pustaka PHP (Laravel framework, DomPDF, Tinker)</td>
+            </tr>
+            <tr>
+                <td><strong>Node.js &amp; npm</strong></td>
+                <td>Node.js 20+ / 22+ &amp; npm 10+</td>
+                <td>Membangun dan mengompilasi aset tampilan frontend (CSS, JS via Vite)</td>
+            </tr>
+            <tr>
+                <td><strong>Laravel Framework</strong></td>
+                <td>Laravel 12.0+</td>
+                <td>Kerangka kerja utama arsitektur Model-View-Controller (MVC)</td>
+            </tr>
+            <tr>
+                <td><strong>Peramban (Browser)</strong></td>
+                <td>Google Chrome, Microsoft Edge, atau Mozilla Firefox terbaru</td>
+                <td>Mengakses antarmuka sistem dari komputer pengguna</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <strong>Ekstensi PHP yang wajib aktif:</strong> <code>pdo_mysql</code>, <code>mbstring</code>, <code>openssl</code>, <code>tokenizer</code>, <code>xml</code>, <code>ctype</code>, <code>json</code>, <code>bcmath</code>, <code>fileinfo</code>, <code>curl</code>, dan <code>gd</code>. Seluruh ekstensi ini telah aktif secara baku pada paket instalasi XAMPP.
+    </p>
+
+    <div class="callout-box">
+        <strong>Catatan.</strong> Logistik App menggunakan sebuah basis data relasional bernama <code>tugasakhir</code> (atau sesuai nama yang ditentukan pada konfigurasi berkas <code>.env</code>) yang menyimpan tabel relasi simpul rute, alokasi armada truk, serta riwayat operasional pengiriman.
+    </div>
+
+    <!-- ==================== HALAMAN 5: BAGIAN B ==================== -->
+    <div class="page-break"></div>
+
+    <h1 class="section-title">B. CARA INSTALASI</h1>
+    <p>
+        Bagian ini menjabarkan panduan lengkap pemasangan aplikasi dari kode sumber (<em>source code</em>) hingga siap diakses di peramban web. Seluruh instruksi baris perintah dijalankan melalui <strong>Command Prompt / PowerShell</strong> (Windows) atau <strong>Terminal</strong> (Linux/macOS) pada direktori proyek.
+    </p>
+
+    <h2 class="subsection-title">B.1 Memasang Perangkat Pendukung</h2>
+    <ol>
+        <li>Pasang <strong>XAMPP</strong> (versi dengan PHP 8.2 ke atas) dari laman resmi <a href="https://www.apachefriends.org">apachefriends.org</a>.</li>
+        <li>Pasang <strong>Composer</strong> dari laman <a href="https://getcomposer.org">getcomposer.org</a>, lalu arahkan lokasi file executable ke <code>C:\xampp\php\php.exe</code>.</li>
+        <li>Pasang <strong>Node.js</strong> versi LTS dari <a href="https://nodejs.org">nodejs.org</a> (npm akan otomatis terpasang bersamaan).</li>
+        <li>Pastikan seluruh perangkat pendukung telah terpasang dengan mengecek versi masing-masing pada terminal:</li>
+    </ol>
+
+    <div class="terminal-box"><span class="cmd">php</span> -v
+<span class="cmd">composer</span> --version
+<span class="cmd">node</span> -v &amp;&amp; <span class="cmd">npm</span> -v</div>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Command Prompt</span>
+            </div>
+            <div class="figure-box-body" style="background:#0c1017; color:#38bdf8; font-family:Consolas, monospace;">
+                C:\xampp\htdocs\logistikapp&gt; php -v<br>
+                PHP 8.2.12 (cli) (built: Oct 24 2023 21:15:15) (ZTS Visual C++ 2019 x64)<br>
+                C:\xampp\htdocs\logistikapp&gt; composer --version<br>
+                Composer version 2.8.2 2024-10-20 16:11:45<br>
+                C:\xampp\htdocs\logistikapp&gt; node -v &amp;&amp; npm -v<br>
+                v22.16.0<br>
+                10.9.2
+            </div>
+        </div>
+        <div class="figure-caption">Gambar B.1 Pemeriksaan versi PHP, Composer, dan Node.js pada Command Prompt</div>
+    </div>
+
+    <h2 class="subsection-title">B.2 Menyiapkan Basis Data</h2>
+    <ol>
+        <li>Buka aplikasi <strong>XAMPP Control Panel</strong> pada komputer server.</li>
+        <li>Klik tombol <strong>Start</strong> pada modul <strong>Apache</strong> dan modul <strong>MySQL</strong> hingga indikator status berwarna hijau.</li>
+        <li>Buka peramban dan akses alamat <code>http://localhost/phpmyadmin</code>, lalu buat basis data baru bernama <code>tugasakhir</code>. Pembuatan juga dapat dilakukan langsung melalui Command Prompt:</li>
+    </ol>
+
+    <div class="terminal-box"><span class="cmd">mysql</span> -u root -e "CREATE DATABASE IF NOT EXISTS tugasakhir;"</div>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>XAMPP Control Panel v3.3.0</span>
+            </div>
+            <div class="figure-box-body" style="background:#f1f5f9; text-align:center; padding:15px;">
+                <table style="width:100%; border:1px solid #cbd5e1; background:#fff; text-align:left; font-size:9pt;">
+                    <tr style="background:#e2e8f0;"><th>Module</th><th>PID(s)</th><th>Port(s)</th><th>Actions</th></tr>
+                    <tr><td><strong>Apache</strong></td><td>19816</td><td>80, 443</td><td><span class="badge badge-success">Running</span></td></tr>
+                    <tr><td><strong>MySQL</strong></td><td>23464</td><td>3306</td><td><span class="badge badge-success">Running</span></td></tr>
+                </table>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar B.2 Modul Apache dan MySQL telah aktif pada XAMPP Control Panel</div>
+    </div>
+
+    <!-- ==================== HALAMAN 6: BAGIAN B.3 - B.5 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">B.3 Menyalin Source Code</h2>
+    <ol>
+        <li>Ekstrak atau salin folder proyek Logistik App ke dalam direktori web server XAMPP, yaitu pada: <code>C:\xampp\htdocs\logistikapp</code>.</li>
+        <li>Buka Command Prompt atau Terminal, kemudian arahkan ke folder proyek tersebut:</li>
+    </ol>
+
+    <div class="terminal-box"><span class="cmd">cd</span> C:\xampp\htdocs\logistikapp</div>
+
+    <h2 class="subsection-title">B.4 Konfigurasi Berkas .env</h2>
+    <p>
+        Salin berkas konfigurasi template <code>.env.example</code> menjadi berkas <code>.env</code>, kemudian sesuaikan parameter koneksi basis data sesuai dengan lingkungan server lokal Anda:
+    </p>
+
+    <div class="terminal-box"><span class="cmd">copy</span> .env.example .env</div>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th style="width: 35%;">Parameter Konfigurasi</th>
+                <th style="width: 30%;">Nilai Baku</th>
+                <th style="width: 35%;">Keterangan</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><code>APP_NAME</code></td>
+                <td>LogistikApp</td>
+                <td>Nama aplikasi pada judul dokumen &amp; kop surat jalan</td>
+            </tr>
+            <tr>
+                <td><code>APP_ENV</code></td>
+                <td>local</td>
+                <td>Lingkungan sistem (local untuk pengembangan)</td>
+            </tr>
+            <tr>
+                <td><code>APP_URL</code></td>
+                <td>http://localhost/logistikapp/public</td>
+                <td>URL dasar akses peramban web</td>
+            </tr>
+            <tr>
+                <td><code>DB_CONNECTION</code></td>
+                <td>mysql</td>
+                <td>Driver database MySQL/MariaDB</td>
+            </tr>
+            <tr>
+                <td><code>DB_HOST / DB_PORT</code></td>
+                <td>127.0.0.1 / 3306</td>
+                <td>Alamat host dan port server MariaDB</td>
+            </tr>
+            <tr>
+                <td><code>DB_DATABASE</code></td>
+                <td>tugasakhir</td>
+                <td>Nama basis data utama sistem</td>
+            </tr>
+            <tr>
+                <td><code>DB_USERNAME</code></td>
+                <td>root</td>
+                <td>Nama pengguna default XAMPP</td>
+            </tr>
+            <tr>
+                <td><code>DB_PASSWORD</code></td>
+                <td><em>(kosongkan)</em></td>
+                <td>Password default XAMPP adalah string kosong</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="callout-box warning">
+        <strong>Perhatian.</strong> Pastikan nama database pada parameter <code>DB_DATABASE</code> sama persis dengan database yang telah dibuat pada langkah B.2 (misalnya <code>tugasakhir</code>).
+    </div>
+
+    <h2 class="subsection-title">B.5 Memasang Dependensi dan Membangun Aset</h2>
+    <p>
+        Jalankan rangkaian perintah berikut secara berurutan. Perintah pertama memasang seluruh pustaka backend PHP melalui Composer, perintah kedua memasang paket pustaka frontend, dan perintah ketiga mengompilasi aset CSS serta JavaScript:
+    </p>
+
+    <div class="terminal-box"><span class="cmd">composer</span> install
+<span class="cmd">npm</span> install
+<span class="cmd">npm</span> run build
+<span class="cmd">php</span> artisan key:generate</div>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Proses Kompilasi Frontend &amp; Pembuatan Application Key</span>
+            </div>
+            <div class="figure-box-body" style="background:#0c1017; color:#a6e22e; font-family:Consolas, monospace;">
+                C:\xampp\htdocs\logistikapp&gt; npm run build<br>
+                vite v6.x.x building for production...<br>
+                &#x2713; 42 modules transformed.<br>
+                public/build/manifest.json          0.26 kB<br>
+                public/build/assets/app.css         34.12 kB<br>
+                public/build/assets/app.js          76.40 kB<br>
+                &#x2713; built in 1.48s<br><br>
+                C:\xampp\htdocs\logistikapp&gt; php artisan key:generate<br>
+                <span style="color:#66d9ef;">Application key set successfully.</span>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar B.3 Pembangunan aset tampilan antarmuka dan penyiapan kunci aplikasi</div>
+    </div>
+
+    <!-- ==================== HALAMAN 7: BAGIAN B.6 - B.7 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">B.6 Membuat Tabel dan Data Awal (Migrasi &amp; Seeder)</h2>
+    <p>
+        Jalankan perintah migrasi skema tabel beserta seeder untuk mengisi data awal secara otomatis (akun pengguna default, data pelanggan, spesifikasi muatan barang, koordinat GPS lokasi, relasi jarak rute antarkota, inventaris armada truk, serta tarif biaya standar):
+    </p>
+
+    <div class="terminal-box"><span class="cmd">php</span> artisan migrate --seed</div>
+
+    <p>
+        Pemeriksaan status migrasi dapat diverifikasi dengan perintah berikut:
+    </p>
+
+    <div class="terminal-box"><span class="cmd">php</span> artisan migrate:status</div>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Status Migrasi Database tugasakhir</span>
+            </div>
+            <div class="figure-box-body" style="background:#0c1017; color:#38bdf8; font-family:Consolas, monospace;">
+                +------+-------------------------------------------------------+-------+<br>
+                | Ran? | Migration                                             | Batch |<br>
+                +------+-------------------------------------------------------+-------+<br>
+                | Yes  | 0001_01_01_000000_create_users_table                  | 1     |<br>
+                | Yes  | 2025_01_01_000001_create_customers_table              | 1     |<br>
+                | Yes  | 2025_01_01_000002_create_barangs_table                | 1     |<br>
+                | Yes  | 2025_01_01_000003_create_trucks_table                 | 1     |<br>
+                | Yes  | 2025_01_01_000004_create_drivers_table                | 1     |<br>
+                | Yes  | 2025_01_01_000005_create_locations_table              | 1     |<br>
+                | Yes  | 2025_01_01_000006_create_routes_table                 | 1     |<br>
+                | Yes  | 2025_01_01_000007_create_komponen_biayas_table        | 1     |<br>
+                | Yes  | 2025_01_01_000008_create_orders_and_shipments_tables  | 1     |<br>
+                +------+-------------------------------------------------------+-------+
+            </div>
+        </div>
+        <div class="figure-caption">Gambar B.4 Seluruh tabel berhasil dimigrasi dan diisi oleh Database Seeder</div>
+    </div>
+
+    <h2 class="subsection-title">B.7 Menjalankan Aplikasi</h2>
+    <p>
+        Karena aplikasi diletakkan pada folder <code>htdocs</code> XAMPP, sistem dapat langsung diakses melalui Apache dengan membuka URL:
+    </p>
+
+    <div class="terminal-box">http://localhost/logistikapp/public/</div>
+
+    <p>
+        Sebagai alternatif, pengembang juga dapat mengaktifkan server lokal bawaan Laravel (Artisan Server) dengan mengetikkan perintah:
+    </p>
+
+    <div class="terminal-box"><span class="cmd">php</span> artisan serve</div>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Server Bawaan Laravel Berjalan</span>
+            </div>
+            <div class="figure-box-body" style="background:#0c1017; color:#38bdf8; font-family:Consolas, monospace;">
+                C:\xampp\htdocs\logistikapp&gt; php artisan serve<br>
+                <span style="color:#a6e22e;">INFO</span> Server running on [http://127.0.0.1:8000].<br>
+                Press Ctrl+C to stop the server
+            </div>
+        </div>
+        <div class="figure-caption">Gambar B.5 Layanan web server berhasil berjalan dan siap diakses pengguna</div>
+    </div>
+
+    <!-- ==================== HALAMAN 8: BAGIAN C.1 - C.2 ==================== -->
+    <div class="page-break"></div>
+
+    <h1 class="section-title">C. CARA PENGGUNAAN</h1>
+    
+    <h2 class="subsection-title">C.1 Mengakses Aplikasi dan Login</h2>
+    <p>
+        Buka peramban web (seperti Google Chrome atau Microsoft Edge), lalu masukkan alamat URL sistem (<code>http://localhost/logistikapp/public/</code> atau <code>http://127.0.0.1:8000</code>). Halaman yang pertama kali muncul adalah <strong>Halaman Login Terpadu</strong>. Masukkan alamat email dan kata sandi pengguna, kemudian tekan tombol <strong>Login</strong>. Sistem secara otomatis membaca peran (<em>role</em>) pengguna dan mengarahkan ke dashboard yang relevan.
+    </p>
+
+    <table class="doc-table">
+        <thead>
+            <tr>
+                <th style="width: 18%;">Peran (Role)</th>
+                <th style="width: 25%;">Email Default</th>
+                <th style="width: 18%;">Password</th>
+                <th style="width: 39%;">Cakupan Wewenang / Hak Akses</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td><strong>Administrator</strong></td>
+                <td><code>admin@gmail.com</code></td>
+                <td><code>ajeng</code></td>
+                <td>Pengelolaan seluruh Master Data: Customer, Barang, Lokasi, Rute Dijkstra, Truk, Supir, dan Komponen Biaya.</td>
+            </tr>
+            <tr>
+                <td><strong>Operator</strong></td>
+                <td><code>operator@gmail.com</code></td>
+                <td><code>sucipto</code></td>
+                <td>Operasional harian: Wizard Pengiriman Terintegrasi, Eksekusi Dijkstra &amp; ETA, Status Pengiriman, Cetak Surat Jalan PDF, dan Peta GIS.</td>
+            </tr>
+            <tr>
+                <td><strong>Manager</strong></td>
+                <td><code>manager@gmail.com</code></td>
+                <td><code>narlin</code></td>
+                <td>Monitoring eksekutif, grafik KPI analitik, Laporan Order, Laporan Pengiriman, Biaya Riil, Kinerja Supir, Utilisasi Truk, dan Ekspor Laporan PDF.</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Halaman Autentikasi Pengguna - Login</span>
+            </div>
+            <div class="figure-box-body" style="text-align:center; padding: 25px; background: #eaecf4;">
+                <div style="max-width: 360px; margin: 0 auto; background: #fff; padding: 25px; border-radius: 8px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+                    <h3 style="margin-top:0; color:#4e73df; font-family:sans-serif;">Logistik App</h3>
+                    <p style="font-size:8.5pt; color:#6c757d; margin-bottom:15px;">Sistem Manajemen Transportasi &amp; Rute Distribusi</p>
+                    <input type="text" value="operator@gmail.com" style="width:100%; padding:8px; margin-bottom:10px; border:1px solid #d1d3e2; border-radius:4px; font-size:9pt;" readonly><br>
+                    <input type="password" value="********" style="width:100%; padding:8px; margin-bottom:15px; border:1px solid #d1d3e2; border-radius:4px; font-size:9pt;" readonly><br>
+                    <button style="width:100%; background:#4e73df; color:#fff; border:none; padding:9px; border-radius:4px; font-weight:bold; cursor:pointer;">Masuk (Login)</button>
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.1 Halaman Login Sistem Terpadu Multi-Peran</div>
+    </div>
+
+    <h2 class="subsection-title">C.2 Dashboard Administrator</h2>
+    <p>
+        Dashboard Administrator berfungsi menyajikan rekapitulasi data acuan sistem (<em>Master Data</em>). Halaman ini menampilkan empat kartu statistik ringkasan utama: total pelanggan terdaftar, jumlah katalog muatan barang, total armada truk yang dimiliki, serta total supir aktif. Dari menu samping (<em>sidebar</em>), Administrator memiliki akses penuh untuk melakukan operasi penambahan (<em>create</em>), peremajaan (<em>update</em>), dan penghapusan (<em>delete</em>) data acuan dasar.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Dashboard Administrator - /dashboard</span>
+            </div>
+            <div class="figure-box-body">
+                <div style="display:flex; gap:12px; margin-bottom:15px;">
+                    <div style="flex:1; border-left:4px solid #4e73df; background:#f8f9fc; padding:10px; border-radius:4px;">
+                        <span style="font-size:7.5pt; color:#4e73df; font-weight:bold;">TOTAL CUSTOMER</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#5a5c69;">18 Pelanggan</div>
+                    </div>
+                    <div style="flex:1; border-left:4px solid #1cc88a; background:#f8f9fc; padding:10px; border-radius:4px;">
+                        <span style="font-size:7.5pt; color:#1cc88a; font-weight:bold;">MASTER BARANG</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#5a5c69;">24 Item</div>
+                    </div>
+                    <div style="flex:1; border-left:4px solid #36b9cc; background:#f8f9fc; padding:10px; border-radius:4px;">
+                        <span style="font-size:7.5pt; color:#36b9cc; font-weight:bold;">ARMADA TRUK</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#5a5c69;">12 Unit</div>
+                    </div>
+                    <div style="flex:1; border-left:4px solid #f6c23e; background:#f8f9fc; padding:10px; border-radius:4px;">
+                        <span style="font-size:7.5pt; color:#f6c23e; font-weight:bold;">TOTAL SUPIR</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#5a5c69;">15 Supir</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.2 Tampilan Dashboard Administrator</div>
+    </div>
+
+    <!-- ==================== HALAMAN 9: BAGIAN C.3 - C.4 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.3 Dashboard Operator</h2>
+    <p>
+        Dashboard Operator dirancang sebagai pusat kendali aktivitas pengiriman harian. Melalui dashboard ini, petugas operator dapat memantau status muatan secara langsung: jumlah pengiriman yang sedang <em>Menunggu</em> jadwal, pengiriman yang sedang <em>Dalam Perjalanan</em> lintas kota, dan pengiriman yang telah <em>Selesai</em> diturunkan di lokasi penerima. Selain itu, terdapat tombol pintas <strong>Buat Pengiriman Baru</strong> untuk segera membuka formulir wizard pengiriman berbasis algoritma Dijkstra.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Dashboard Operasional Pengiriman - /operator/dashboard</span>
+            </div>
+            <div class="figure-box-body">
+                <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+                    <div><strong style="font-size:11pt; color:#4e73df;">Pusat Distribusi Gudang Utama Surabaya</strong></div>
+                    <button style="background:#4e73df; color:#fff; border:none; padding:6px 12px; border-radius:4px; font-weight:bold;">+ Buat Integrated Shipment</button>
+                </div>
+                <div style="display:flex; gap:10px;">
+                    <div style="flex:1; background:#fef3c7; border:1px solid #fde68a; padding:10px; border-radius:4px; text-align:center;">
+                        <div style="font-size:14pt; font-weight:bold; color:#92400e;">4</div>
+                        <span style="font-size:8pt; font-weight:bold; color:#b45309;">STATUS MENUNGGU</span>
+                    </div>
+                    <div style="flex:1; background:#e0f2fe; border:1px solid #bae6fd; padding:10px; border-radius:4px; text-align:center;">
+                        <div style="font-size:14pt; font-weight:bold; color:#0369a1;">7</div>
+                        <span style="font-size:8pt; font-weight:bold; color:#0284c7;">DALAM PERJALANAN</span>
+                    </div>
+                    <div style="flex:1; background:#dcfce7; border:1px solid #bbf7d0; padding:10px; border-radius:4px; text-align:center;">
+                        <div style="font-size:14pt; font-weight:bold; color:#15803d;">35</div>
+                        <span style="font-size:8pt; font-weight:bold; color:#16a34a;">PENGIRIMAN SELESAI</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.3 Tampilan Dashboard Operasional Pengiriman</div>
+    </div>
+
+    <h2 class="subsection-title">C.4 Dashboard Manager</h2>
+    <p>
+        Dashboard Manager menyajikan visualisasi performa manajerial melalui diagram indikator kinerja (<em>Key Performance Indicators</em> / KPI) dan grafik rekapitulasi. Pimpinan dapat menganalisis rasio ketepatan waktu pengiriman barang (<em>On-Time Delivery Rate</em>), akumulasi total biaya bahan bakar solar, retribusi tol, uang saku pengemudi, serta grafik tren pengiriman bulanan untuk kebutuhan evaluasi strategi bisnis.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Dashboard Eksekutif Manager - /manager/dashboard</span>
+            </div>
+            <div class="figure-box-body">
+                <div style="display:flex; gap:12px; margin-bottom:12px;">
+                    <div style="flex:1; border:1px solid #e2e8f0; background:#f8fafc; padding:10px; border-radius:4px;">
+                        <span style="font-size:8pt; color:#64748b;">ON-TIME DELIVERY</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#10b981;">94.2%</div>
+                        <span style="font-size:7.5pt; color:#10b981;">&uarr; 3.1% dibanding bulan lalu</span>
+                    </div>
+                    <div style="flex:1; border:1px solid #e2e8f0; background:#f8fafc; padding:10px; border-radius:4px;">
+                        <span style="font-size:8pt; color:#64748b;">TOTAL BIAYA OPERASIONAL</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#0f172a;">Rp 84.750.000</div>
+                        <span style="font-size:7.5pt; color:#64748b;">BBM + Tol + Uang Saku</span>
+                    </div>
+                    <div style="flex:1; border:1px solid #e2e8f0; background:#f8fafc; padding:10px; border-radius:4px;">
+                        <span style="font-size:8pt; color:#64748b;">PRODUKTIVITAS ARMADA</span>
+                        <div style="font-size:14pt; font-weight:bold; color:#3b82f6;">88.5%</div>
+                        <span style="font-size:7.5pt; color:#3b82f6;">Utilisasi Truk Aktif</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.4 Tampilan Dashboard Eksekutif Manager</div>
+    </div>
+
+    <!-- ==================== HALAMAN 10: BAGIAN C.5 - C.7 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.5 Master Data Pelanggan (Customer)</h2>
+    <p>
+        Menu <strong>Customer</strong> (<code>/customers</code>) digunakan oleh Administrator untuk mengelola data perusahaan mitra atau perorangan yang menggunakan jasa ekspedisi. Informasi yang dicatat meliputi: <em>Nama Customer</em>, <em>Alamat Kantor/Pabrik</em>, <em>Nomor Telepon/HP</em>, dan <em>Email</em>. Data pelanggan ini menjadi rujukan utama saat Operator menerbitkan order pesanan baru.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Master Data Pelanggan - /customers</span>
+            </div>
+            <div class="figure-box-body">
+                <table style="width:100%; font-size:8.5pt; border-collapse:collapse;">
+                    <tr style="background:#f1f5f9; text-align:left;">
+                        <th style="padding:5px;">No</th><th style="padding:5px;">Nama Perusahaan</th><th style="padding:5px;">Alamat</th><th style="padding:5px;">Telepon</th><th style="padding:5px;">Aksi</th>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;">1</td><td style="padding:5px;"><strong>PT Semen Gresik Distribusi</strong></td><td style="padding:5px;">Jl. Raya Tuban KM 14, Tuban</td><td style="padding:5px;">0356-321456</td><td style="padding:5px;"><span class="badge badge-primary">Edit</span></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;">2</td><td style="padding:5px;"><strong>CV Makmur Logam Abadi</strong></td><td style="padding:5px;">Kawasan Industri Rungkut, Surabaya</td><td style="padding:5px;">031-8765432</td><td style="padding:5px;"><span class="badge badge-primary">Edit</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.5 Halaman Master Data Pelanggan (Customer)</div>
+    </div>
+
+    <h2 class="subsection-title">C.6 Master Data Barang (Katalog Muatan)</h2>
+    <p>
+        Menu <strong>Barang</strong> (<code>/barang</code>) mencatat spesifikasi komoditas muatan kargo. Data ini sangat krusial karena sistem menggunakannya untuk menghitung akumulasi tonase berat muatan dan volume kubikasi ruang kargo secara otomatis, guna mencegah armada truk mengalami kelebihan muatan (<em>overload / overdimension</em>).
+    </p>
+    <ul>
+        <li><strong>Kode &amp; Nama Barang:</strong> Penamaan resmi barang muatan (contoh: <em>BRG-001 - Semen Portland 50kg</em>).</li>
+        <li><strong>Berat Satuan (Kg):</strong> Bobot bersih per kemasan muatan.</li>
+        <li><strong>Volume Satuan (m&sup3; / CBM):</strong> Ruang kubikasi yang dibutuhkan barang dalam bak truk.</li>
+        <li><strong>Satuan:</strong> Unit kemasan (Sak, Box, Pallet, Drum, Batang).</li>
+    </ul>
+
+    <h2 class="subsection-title">C.7 Master Data Lokasi (Simpul / Nodes Distribusi)</h2>
+    <p>
+        Menu <strong>Locations</strong> (<code>/locations</code>) menyimpan seluruh simpul distribusi geografis, mencakup gudang sentral asal (<em>Origin Hub - Surabaya</em>), pusat pergudangan perantara (<em>Transit Hub</em>), hingga kota-kota tujuan pengiriman di seluruh wilayah Jawa Timur. Setiap lokasi wajib memiliki titik koordinat <strong>Latitude</strong> dan <strong>Longitude</strong> presisi untuk memplot posisi marker pada peta Leaflet GIS.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Master Titik Lokasi Simpul - /locations</span>
+            </div>
+            <div class="figure-box-body">
+                <table style="width:100%; font-size:8.5pt; border-collapse:collapse;">
+                    <tr style="background:#f1f5f9; text-align:left;">
+                        <th style="padding:5px;">Nama Simpul Lokasi</th><th style="padding:5px;">Tipe Simpul</th><th style="padding:5px;">Latitude</th><th style="padding:5px;">Longitude</th>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;"><strong>Surabaya (Gudang Utama)</strong></td><td style="padding:5px;"><span class="badge badge-success">Gudang Asal</span></td><td style="padding:5px;">-7.2575</td><td style="padding:5px;">112.7521</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;"><strong>Mojokerto (Hub)</strong></td><td style="padding:5px;"><span class="badge badge-primary">Hub Transit</span></td><td style="padding:5px;">-7.4726</td><td style="padding:5px;">112.4381</td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;"><strong>Madiun (Kota Tujuan)</strong></td><td style="padding:5px;"><span class="badge badge-warning">Kota Tujuan</span></td><td style="padding:5px;">-7.6298</td><td style="padding:5px;">111.5239</td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.6 Daftar Titik Koordinat Lokasi Distribusi (Nodes)</div>
+    </div>
+
+    <!-- ==================== HALAMAN 11: BAGIAN C.8 - C.11 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.8 Master Data Rute Antar Titik (Edges Graph &amp; Jarak Km)</h2>
+    <p>
+        Menu <strong>Routes</strong> (<code>/routes</code>) memetakan hubungan keterhubungan jalan (<em>edges</em>) antar satu simpul lokasi dengan simpul lainnya beserta bobot jarak tempuh riil dalam satuan kilometer (km). Tabel relasi ini menjadi struktur data graf utama yang ditelusuri oleh <strong>Algoritma Dijkstra</strong> saat mencari lintasan perjalanan terpendek dari Gudang Surabaya menuju kota tujuan akhir.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Master Relasi Segmen Rute Antar Simpul - /routes</span>
+            </div>
+            <div class="figure-box-body">
+                <table style="width:100%; font-size:8.5pt; border-collapse:collapse;">
+                    <tr style="background:#f1f5f9; text-align:left;">
+                        <th style="padding:5px;">Simpul Asal</th><th style="padding:5px;">Simpul Tujuan Langsung</th><th style="padding:5px;">Jarak Tempuh</th><th style="padding:5px;">Status Segmen</th>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;">Surabaya (Gudang Utama)</td><td style="padding:5px;">Mojokerto</td><td style="padding:5px;"><strong>52.00 Km</strong></td><td style="padding:5px;"><span class="badge badge-success">Aktif</span></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;">Mojokerto</td><td style="padding:5px;">Kertosono</td><td style="padding:5px;"><strong>41.50 Km</strong></td><td style="padding:5px;"><span class="badge badge-success">Aktif</span></td>
+                    </tr>
+                    <tr style="border-bottom:1px solid #e2e8f0;">
+                        <td style="padding:5px;">Kertosono</td><td style="padding:5px;">Madiun</td><td style="padding:5px;"><strong>68.20 Km</strong></td><td style="padding:5px;"><span class="badge badge-success">Aktif</span></td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.7 Bobot Jarak Antar Simpul Graf untuk Algoritma Dijkstra</div>
+    </div>
+
+    <h2 class="subsection-title">C.9 Master Data Truk (Armada &amp; Kapasitas Muat)</h2>
+    <p>
+        Menu <strong>Truck</strong> (<code>/truck</code>) mengelola daftar kendaraan operasional milik perusahaan logistik. Atribut data meliputi: <em>Nomor Polisi</em>, <em>Jenis/Tipe Armada</em> (CDD, Fuso, Tronton, Wingbox), <em>Kapasitas Berat Maksimal (Kg)</em>, <em>Kapasitas Volume (m&sup3;)</em>, serta status ketersediaan armada (<em>Tersedia</em>, <em>Digunakan</em>, atau <em>Perbaikan/Bengkel</em>).
+    </p>
+
+    <h2 class="subsection-title">C.10 Master Data Supir (Driver &amp; Lisensi SIM)</h2>
+    <p>
+        Menu <strong>Driver</strong> (<code>/driver</code>) mencatat profil supir pengantar kargo, nomor telepon aktif untuk koordinasi lapangan, masa berlaku lisensi mengemudi (SIM B1 / B2 Umum), serta status operasional driver. Pengemudi yang sedang mengemban surat jalan akan berstatus <em>Digunakan</em> secara otomatis dan tidak dapat dipilih untuk penugasan lain sampai pengiriman selesai.
+    </p>
+
+    <h2 class="subsection-title">C.11 Master Data Komponen Biaya Operasional</h2>
+    <p>
+        Menu <strong>Komponen Biaya</strong> (<code>/komponen-biaya</code>) mengatur standar acuan perhitungan tarif biaya perjalanan armada logistik, mencakup:
+    </p>
+    <ul>
+        <li><strong>Bahan Bakar Minyak (Solar):</strong> Dihitung otomatis berdasarkan rasio konsumsi solar per kilometer dikalikan total jarak rute terpendek Dijkstra.</li>
+        <li><strong>Biaya Tol Trans-Jawa:</strong> Tarif tol standar antar gerbang keluar kota tujuan.</li>
+        <li><strong>Uang Saku Supir:</strong> Biaya harian pengemudi dikalikan estimasi durasi hari perjalanan.</li>
+        <li><strong>Bongkar Muat:</strong> Standar upah tenaga kerja pembongkaran kargo di fasilitas tujuan.</li>
+    </ul>
+
+    <!-- ==================== HALAMAN 12: BAGIAN C.12 WIZARD PENGIRIMAN ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.12 Pembuatan Order &amp; Pengiriman Terintegrasi (Integrated Shipment Wizard)</h2>
+    <p>
+        Fitur unggulan utama sistem terletak pada menu <strong>Integrated Shipment Wizard</strong> (<code>/shipments-integrated/create</code>). Modul ini mengotomatisasi seluruh tahapan pra-pengiriman dalam 6 langkah terpadu pada satu antarmuka:
+    </p>
+
+    <ol>
+        <li>
+            <strong>Langkah 1 (Pra-Cek Armada &amp; Pemilihan Tujuan):</strong> Operator memilih Pelanggan pemesan, Kota Tujuan, dan Tanggal Estimasi Keberangkatan. Kemudian klik tombol <strong>Cek Armada &amp; Hitung ETA</strong>.
+        </li>
+        <li>
+            <strong>Langkah 2 (Eksekusi Dijkstra &amp; Visualisasi Rute Terpendek):</strong> Sistem secara otomatis mengeksekusi algoritma Dijkstra mencari jarak terpendek, menyajikan urutan kota simpul lintasan tercepat, menggambarkan rute polyline pada peta Leaflet GIS, serta menghitung tanggal dan jam estimasi tiba (ETA).
+        </li>
+        <li>
+            <strong>Langkah 3 (Penugasan Armada Truk &amp; Supir Siap Operasi):</strong> Dropdown pemilihan armada hanya menyaring truk dan pengemudi yang berstatus <em>Tersedia</em> pada tanggal pengiriman tersebut (mencegah bentrok jadwal dan penugasan ganda).
+        </li>
+        <li>
+            <strong>Langkah 4 (Alokasi Muatan Kargo):</strong> Operator memasukkan jenis dan kuantiti barang. Sistem memverifikasi kapasitas truk agar muatan tidak melampaui batas berat dan kubikasi.
+        </li>
+        <li>
+            <strong>Langkah 5 (Kalkulasi Tarif Biaya Riil):</strong> Sistem secara otomatis mengalkulasi rincian biaya operasional (BBM Solar, Tol, Uang Saku Pengemudi, dan Bongkar Muat).
+        </li>
+        <li>
+            <strong>Langkah 6 (Penyimpanan &amp; Penerbitan):</strong> Setelah disimpan, sistem menerbitkan Nomor Pesanan (Order ID), Nomor Surat Jalan (Shipment ID), mengunci status truk dan supir menjadi <em>Digunakan</em>, dan langsung menyediakan opsi cetak Surat Jalan resmi (PDF).
+        </li>
+    </ol>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Formulir Terpadu Pembuatan Pengiriman Berbasis Algoritma Dijkstra</span>
+            </div>
+            <div class="figure-box-body" style="background:#fff;">
+                <div style="background:#ecfdf5; border:1px solid #a7f3d0; padding:12px; border-radius:4px; margin-bottom:12px;">
+                    <div style="font-weight:bold; color:#065f46; font-size:10pt;">HASIL REKOMENDASI RUTE TERPENDEK (DIJKSTRA):</div>
+                    <div style="font-size:9.5pt; color:#047857; margin-top:4px;">
+                        Rute Terpilih: <strong>Surabaya &rarr; Mojokerto &rarr; Kertosono &rarr; Madiun</strong><br>
+                        Total Jarak Tempuh: <strong>161.70 Km</strong> | Estimasi Waktu Tiba (ETA): <strong>6 Jam 14 Menit</strong>
+                    </div>
+                </div>
+                <div style="border:1px dashed #94a3b8; background:#f8fafc; height:90px; display:flex; align-items:center; justify-content:center; color:#64748b; font-size:9pt; margin-bottom:10px;">
+                    [Tampilan Peta Interaktif Leaflet GIS - Polyline Garis Biru Rute Terpendek]
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.8 Antarmuka Pembuatan Pengiriman Terintegrasi (Integrated Shipment Wizard)</div>
+    </div>
+
+    <!-- ==================== HALAMAN 13: BAGIAN C.13 - C.15 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.13 Visualisasi Algoritma Dijkstra &amp; Perhitungan Estimasi Tiba (ETA)</h2>
+    <p>
+        Sistem menghitung lintasan terpendek dari <em>Origin Hub</em> (Gudang Surabaya) menuju simpul tujuan dengan prinsip relaksasi simpul graf. Rumusan matematis estimasi durasi operasional yang digunakan sistem adalah sebagai berikut:
+    </p>
+
+    <div class="callout-box" style="font-family:'Courier New', monospace; font-size:9.5pt;">
+        Total Jam Operasional = (Total Jarak Tempuh / 50 km/jam) + 3 Jam (Bongkar Muat)<br>
+        Durasi Hari = Floor( Total Jam Operasional / 10 Jam Kerja Maksimal per Hari )
+    </div>
+
+    <p>
+        Di bawah peta, sistem menyediakan tabel langkah matematis iterasi Dijkstra yang menampilkan perbandingan bobot jarak antar simpul tetangga yang ditelusuri hingga rute konvergen ditemukan.
+    </p>
+
+    <h2 class="subsection-title">C.14 Manajemen Daftar Pengiriman &amp; Pembaruan Status Real-Time</h2>
+    <p>
+        Menu <strong>Shipment List</strong> (<code>/shipments</code>) merangkum seluruh berkas pengiriman yang sedang berjalan maupun yang telah rampung. Operator dapat mengubah status pengiriman secara berkala:
+    </p>
+    <ul>
+        <li><strong>Menunggu:</strong> Surat jalan diterbitkan, armada bersiap di gudang keberangkatan.</li>
+        <li><strong>Dalam Perjalanan:</strong> Armada telah berangkat melintasi rute; status armada dan supir terkunci.</li>
+        <li><strong>Selesai:</strong> Barang telah diterima secara utuh di gudang customer. <em>Efek Otomatis:</em> Status armada truk dan pengemudi seketika dilepas (<em>release</em>) kembali menjadi <strong>Tersedia</strong> sehingga dapat ditugaskan pada order berikutnya.</li>
+        <li><strong>Retur / Batal:</strong> Pengiriman dibatalkan atau dikembalikan dengan mencatat alasan operasional.</li>
+    </ul>
+
+    <h2 class="subsection-title">C.15 Penerbitan &amp; Cetak Surat Jalan Resmi (PDF)</h2>
+    <p>
+        Dari daftar pengiriman, Operator dapat menekan tombol <strong>Cetak Surat Jalan</strong> (<code>/shipment/{id}/surat-jalan</code>). Sistem akan mengompilasi data menjadi berkas dokumen legal PDF siap cetak dengan layout baku industri logistik:
+    </p>
+    <ul>
+        <li>Kop Surat Resmi Logistik App beserta nomor surat jalan unik dan tanggal kirim.</li>
+        <li>Identitas Pelanggan, alamat fasilitas pembongkaran, dan narahubung penerima.</li>
+        <li>Identitas Armada Truk (No. Polisi, Tipe Truk) dan Nama Supir yang bertugas.</li>
+        <li>Daftar rincian muatan kargo: kuantiti, kemasan, satuan, dan total tonase berat.</li>
+        <li>Empat kolom tanda tangan basah: <strong>Bagian Gudang/Pengirim</strong>, <strong>Supir Pembawa Muatan</strong>, <strong>Penerima Barang</strong>, dan <strong>Petugas Keamanan (Security)</strong>.</li>
+    </ul>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Pratinjau Dokumen Surat Jalan Resmi Pengiriman Barang (PDF)</span>
+            </div>
+            <div class="figure-box-body" style="background:#fff; border:1px solid #ccc; padding:15px; font-size:8.5pt;">
+                <div style="border-bottom:2px solid #000; padding-bottom:5px; margin-bottom:8px; display:flex; justify-content:space-between;">
+                    <div><strong>LOGISTIK APP INDONESIA</strong><br><span style="font-size:7.5pt;">Pusat Distribusi Ekspedisi Darat Surabaya</span></div>
+                    <div style="text-align:right;"><strong>SURAT JALAN PENGIRIMAN</strong><br>No: SJ/2026/04/0082</div>
+                </div>
+                <div style="margin-bottom:8px;">Penerima: <strong>PT Semen Gresik Distribusi</strong> | Armada: <strong>L 9102 UQ (Fuso)</strong> | Supir: <strong>Bambang S.</strong></div>
+                <table style="width:100%; border:1px solid #999; border-collapse:collapse; text-align:left; font-size:8pt; margin-bottom:10px;">
+                    <tr style="background:#eee;"><th>No</th><th>Nama Barang</th><th>Kuantiti</th><th>Satuan</th><th>Total Berat</th></tr>
+                    <tr><td>1</td><td>Semen Curah Portland</td><td>200</td><td>Sak (50kg)</td><td>10.000 Kg</td></tr>
+                </table>
+                <div style="display:flex; justify-content:space-between; text-align:center; font-size:7.5pt; margin-top:15px;">
+                    <div>Pengirim Gudang<br><br><br>( .................... )</div>
+                    <div>Supir Ekspedisi<br><br><br>( Bambang S. )</div>
+                    <div>Penerima Barang<br><br><br>( .................... )</div>
+                    <div>Security Gate<br><br><br>( .................... )</div>
+                </div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.9 Format Dokumen Cetak Surat Jalan Resmi Pengiriman Barang (PDF)</div>
+    </div>
+
+    <!-- ==================== HALAMAN 14: BAGIAN C.16 - C.17 ==================== -->
+    <div class="page-break"></div>
+
+    <h2 class="subsection-title">C.16 Monitoring Pengiriman &amp; Pelacakan Armada Lintas Kota</h2>
+    <p>
+        Menu <strong>Monitoring Shipment</strong> (<code>/monitoring-shipment</code>) menyediakan dasbor pengawasan waktu nyata bagi petugas pengendali operasional untuk mengecek posisi perjalanan seluruh armada yang sedang berada di luar pool gudang. Halaman ini menampilkan nomor polisi truk, nomor surat jalan, nama driver, titik lokasi persinggahan terakhir, dan progres waktu tempuh terhadap target estimasi kedatangan (ETA).
+    </p>
+
+    <h2 class="subsection-title">C.17 Visualisasi Peta Rute Interaktif (GIS Leaflet Map)</h2>
+    <p>
+        Menu <strong>Visualisasi Map</strong> (<code>/visualisasi-map</code>) menampilkan seluruh jaringan logistik perusahaan dalam format peta interaktif layar penuh berbasis OpenStreetMap dan Leaflet JS. Operator dapat mengklik masing-masing penanda simpul kota untuk memeriksa koordinat lintang/bujur, serta melihat ketebalan garis penghubung (<em>polyline</em>) yang mencerminkan intensitas mobilitas armada antardaerah.
+    </p>
+
+    <div class="figure-container">
+        <div class="figure-box">
+            <div class="figure-box-header">
+                <span class="circle red"></span><span class="circle yellow"></span><span class="circle green"></span>
+                <span>Peta GIS Visualisasi Jaringan Rute Logistik - /visualisasi-map</span>
+            </div>
+            <div class="figure-box-body" style="background:#e5e7eb; height:130px; display:flex; flex-direction:column; align-items:center; justify-content:center; color:#4b5563;">
+                <div style="font-weight:bold; font-size:10pt;">GIS Leaflet Jaringan Rute Distribusi Jawa Timur</div>
+                <div style="font-size:8pt; margin-top:4px;">Menampilkan 12 Simpul Titik Kota &amp; 18 Segmen Jalan Terhubung</div>
+            </div>
+        </div>
+        <div class="figure-caption">Gambar C.10 Tampilan Visualisasi Peta Jaringan Distribusi Logistik (GIS Leaflet)</div>
+    </div>
+
+    <!-- ==================== HALAMAN 15: BAGIAN C.18 - C.23 LAPORAN MANAGER ==================== -->
+    <h2 class="subsection-title">C.18 Laporan Pemesanan (Order Report)</h2>
+    <p>
+        Menu <strong>Order Report</strong> (<code>/manager/order-report</code>) menyajikan rekapitulasi data pemesanan kargo dari seluruh customer. Manager dapat melakukan penapisan (<em>filtering</em>) berdasarkan rentang tanggal pemesanan serta memilah pesanan berdasarkan status eksekusinya.
+    </p>
+
+    <h2 class="subsection-title">C.19 Laporan Pengiriman &amp; Ketepatan Waktu (Shipment Report)</h2>
+    <p>
+        Menu <strong>Shipment Report</strong> (<code>/manager/shipment-report</code>) digunakan untuk mengukur kinerja ketepatan waktu pengiriman barang dengan mengaudit selisih antara Tanggal Estimasi Tiba (ETA hasil kalkulasi Dijkstra) terhadap Tanggal Realisasi Kedatangan aktual di lokasi bongkar.
+    </p>
+
+    <h2 class="subsection-title">C.20 Laporan Biaya Operasional (Biaya Report)</h2>
+    <p>
+        Menu <strong>Biaya Report</strong> (<code>/manager/biaya-report</code>) mengaudit seluruh pengeluaran kas operasional secara mendalam per nomor surat jalan: biaya bahan bakar solar, biaya retribusi tol, uang saku pengemudi, dan biaya buruh bongkar muat.
+    </p>
+
+    <h2 class="subsection-title">C.21 Evaluasi Kinerja Supir (Driver Performance)</h2>
+    <p>
+        Menu <strong>Driver Performance</strong> (<code>/manager/driver-performance</code>) menyajikan metrik produktivitas kerja tiap supir, meliputi total perjalanan (<em>trip</em>) yang diselesaikan, total jarak tempuh kumulatif (km), dan rasio penyelesaian tugas tanpa kendala.
+    </p>
+
+    <h2 class="subsection-title">C.22 Utilisasi Armada Truk (Truck Usage)</h2>
+    <p>
+        Menu <strong>Truck Usage</strong> (<code>/manager/truck-usage</code>) menilai produktivitas aset armada kendaraan dengan menghitung persentase hari operasi truk di jalan berbanding masa diam di bengkel/pool penyimpanan.
+    </p>
+
+    <h2 class="subsection-title">C.23 Cetak Dokumen Laporan Manajemen Eksekutif (PDF)</h2>
+    <p>
+        Menu <strong>Export Laporan PDF</strong> (<code>/manager/management-report/pdf</code>) mengekspor seluruh ringkasan kinerja logistik manajerial menjadi dokumen laporan resmi siap cetak untuk bahan evaluasi jajaran direksi.
+    </p>
+
+    <div class="callout-box">
+        <strong>Penutup.</strong> Buku panduan penggunaan (<em>User Manual</em>) ini disusun sebagai dokumen pendamping resmi dalam pengoperasian, pemeliharaan, serta evaluasi sistem informasi Logistik App pada lingkungan operasional perusahaan logistik.
+    </div>
+
+</body>
+</html>
